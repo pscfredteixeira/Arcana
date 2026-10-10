@@ -1,3 +1,4 @@
+import {initPWA} from './pwa.js';
 import {atelierPage,renderAtelier,handleAtelierClick} from '../games/atelierGame.js';
 import {sixPathsPage,renderSixPaths,handleSixPathsClick} from '../games/sixPathsGame.js';
 import {extendedLessons,lessonBySlug} from '../lessons/sprint7Lessons.js';
@@ -106,3 +107,4 @@ window.addEventListener('keydown',event=>{
 });
 window.addEventListener('hashchange',render);
 render();
+initPWA();
