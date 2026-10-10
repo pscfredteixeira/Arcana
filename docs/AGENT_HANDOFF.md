@@ -1,6 +1,6 @@
 # ARCANA — Guia para agente implementador
 
-O ARCANA foi aprovado como escola aberta de tarô, baseada no Rider–Waite–Smith, com Rachel Pollack como referência principal, Nei Naiff como complemento e identidade visual **Arquivo Vivo**.
+O ARCANA foi aprovado como escola aberta de tarô, baseada no Rider–Waite–Smith, com Rachel Pollack como referência principal, Nei Naiff como complemento e identidade visual **ARCANA**.
 
 ## Antes de qualquer alteração
 1. Ler apenas os arquivos relevantes à tarefa.
