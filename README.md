@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — em planejamento**
+**Escola interativa de tarô — Sprint 1 em prévia navegável**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -24,9 +24,17 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Registro de decisões](docs/DECISIONS.md)
 - [Direitos autorais e recursos visuais](docs/ASSET_POLICY.md)
 - [Instruções para o agente implementador](docs/AGENT_HANDOFF.md)
+- [Relatório do Sprint 1](docs/SPRINT1_REPORT.md)
+- [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
-## Status
-**Fase de arquitetura e documentação.** Não há site funcional nem publicação no GitHub Pages nesta etapa. O projeto será implementado por entregas pequenas e testáveis após a aprovação do escopo.
+## Status — Sprint 1
+**Primeira versão visual implementada na branch `main`**: página inicial, navegação responsiva, apresentação da formação, aula demonstrativa, Atlas pesquisável com seis cartas, páginas de detalhe e seção informativa de Práticas e Sobre.
+
+**Atenção:** o GitHub Pages ainda precisa ser ativado/confirmado para que haja um endereço público navegável. No repositório, abrir **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**. Após a publicação, o endereço esperado é `https://pscfredteixeira.github.io/Arcana/` (confirmar publicação antes de divulgar).
+
+Veja o [Relatório do Sprint 1](docs/SPRINT1_REPORT.md) e o [Manifesto inicial de imagens](docs/ASSET_MANIFEST.md).
+
+Os jogos e a mesa de tiragens serão implementados em sprints posteriores. Os livros originais não estão hospedados neste repositório.
 
 ## Princípio pedagógico
 A aprendizagem deve seguir **observar → reconhecer convenções → conectar símbolos → interpretar em contexto → justificar → rever hipóteses**. Interpretações abertas terão feedback fundamentado, não um único gabarito artificial.
@@ -36,3 +44,6 @@ Os livros de referência não serão copiados nem distribuídos neste repositór
 
 ---
 Planejamento iniciado em 10/10/2026.
+
+## Execução dos testes
+Para quem trabalha no código com Node.js 18 ou superior: `npm test`. O site é estático e usa ES Modules; para executar fora do GitHub Pages, sirva o diretório em um servidor HTTP local.
