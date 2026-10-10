@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 7 implementado**
+**Escola interativa de tarô — Sprint 8 implementado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -31,6 +31,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Relatório do Sprint 5](docs/SPRINT5_REPORT.md)
 - [Relatório do Sprint 6](docs/SPRINT6_REPORT.md)
 - [Relatório do Sprint 7](docs/SPRINT7_REPORT.md)
+- [Relatório do Sprint 8](docs/SPRINT8_REPORT.md)
 - [Auditoria editorial parcial](docs/CONTENT_AUDIT.md)
 - [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
@@ -86,3 +87,8 @@ Esses indicadores abrangem apenas as atividades atualmente disponíveis. O ARCAN
 A seção [Aprender](https://pscfredteixeira.github.io/Arcana/#/aprender) reúne quatro aulas aprofundadas: *O mapa das 78 cartas*, *A arte de olhar*, *O Mago e a Sacerdotisa* e *Os quatro naipes*. Cada nova aula inclui objetivos, leitura original, imagens históricas, comparação entre fontes quando apropriado e laboratório em três fases. A Oficina dos Naipes utiliza escolha por toque, sem arrastar. O aluno retoma as etapas em Meu Estudo e pode incluir o progresso nos backups locais.
 
 O projeto não se apresenta como currículo completo: ainda há módulos a escrever, cartas a aprofundar e uma auditoria visual e editorial ampla a realizar. Veja [Relatório do Sprint 7](docs/SPRINT7_REPORT.md) e [Auditoria de conteúdo](docs/CONTENT_AUDIT.md).
+
+## Sprint 8 — Duas experiências visuais inéditas
+Na área [Práticas](https://pscfredteixeira.github.io/Arcana/#/praticas), agora estão disponíveis o [Ateliê dos Símbolos](https://pscfredteixeira.github.io/Arcana/#/praticas/atelie), que permite investigar nove detalhes de três cartas e testar hipóteses contextualizadas, e [Os Seis Caminhos](https://pscfredteixeira.github.io/Arcana/#/praticas/seis-caminhos), inspirado na organização de Nei Naiff. Ambas as experiências foram desenvolvidas para toque e teclado, com feedback e progresso local, integradas ao Meu Estudo e ao backup JSON.
+
+As associações simbólicas são contextualizadas e não previsões. A checagem visual dos pontos clicáveis em aparelhos reais ainda precisa ser feita. Ver [relatório de implementação](docs/SPRINT8_REPORT.md).
