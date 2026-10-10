@@ -48,3 +48,8 @@ A tela `#/meu-estudo` reúne indicadores **somente das atividades implementadas*
 Três aulas autorais de conteúdo extenso — estrutura do baralho, Mago/Sacerdotisa e quatro naipes — adicionadas à aula inicial. Cada nova unidade possui quatro seções, referências aos PDFs de trabalho, imagens do Atlas e atividade de três fases com feedback. A Oficina de Correspondências dos Naipes funciona por seleção e toque. Conclusão independente por aula e etapas dos exercícios integram Meu Estudo e backup. Consulte [SPRINT7_REPORT.md](SPRINT7_REPORT.md) e [CONTENT_AUDIT.md](CONTENT_AUDIT.md).
 
 **Limites:** quatro aulas não encerram a formação prevista de quinze módulos; textos de 72 cartas ainda são introdutórios; verificação manual no celular e auditoria integral de imagens seguem pendentes.
+
+## Sprint 8 — Ateliê dos Símbolos e Seis Caminhos (10/10/2026)
+A área Práticas recebeu duas experiências interativas: Ateliê com nove detalhes de Louco, Mago e Sacerdotisa, organizado em descoberta de evidências e hipóteses contextualizadas; e Seis Caminhos, com missões sequenciais e síntese sobre a organização de Nei Naiff. Incluem feedback, toque sem arrastar e persistência, com progresso exibido em Meu Estudo e backup. Implementação modular e testes em [SPRINT8_REPORT.md](SPRINT8_REPORT.md).
+
+**Pendente:** conferir no Safari/iPhone a localização dos hotspots, legibilidade da trilha e navegação por teclado/tecnologias assistivas. A formação integral ainda será expandida.
