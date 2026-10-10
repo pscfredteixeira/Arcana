@@ -1,3 +1,4 @@
+import {atlasPageExpanded,atlasDetailExpanded,handleAtlasChange,handleAtlasClick,closeZoom,resetAtlasScroll} from '../ui/interactiveAtlas.js';
 import {fullLessonPage,renderLab,handleLabClick,saveReflection} from '../ui/fullLesson.js';
 import {cards,findCard} from '../data/cards.js';
 import {siteHeader,siteFooter,homePage,learnPage,lessonPage,atlasPage,atlasCards,detailPage,practicePage,aboutPage,missingPage} from '../ui/templates.js';
@@ -9,12 +10,12 @@ const getRoute=()=>{
   if(path==='/')return {active:'home',content:homePage(),title:'Arquivo Vivo'};
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
-  if(path==='/atlas')return {active:'atlas',content:atlasPage(),title:'Atlas'};
+  if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
   if(path==='/praticas')return {active:'practice',content:practicePage(),title:'Práticas'};
   if(path==='/sobre')return {active:'about',content:aboutPage(),title:'Sobre'};
   if(path.startsWith('/carta/')){
     const c=findCard(path.slice(7));
-    if(c)return {active:'atlas',content:detailPage(c),title:c.name};
+    if(c)return {active:'atlas',content:atlasDetailExpanded(c),title:c.name};
   }
   return {active:'',content:missingPage(),title:'Página não encontrada'};
 };
@@ -36,6 +37,7 @@ function updateAtlas(query){
  if(count)count.textContent=`${filtered.length} de ${cards.length} cartas disponíveis`;
 }
 function render(){
+ resetAtlasScroll();
  const route=getRoute();
  document.title=`${route.title} — ARCANA`;
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
@@ -44,10 +46,11 @@ function render(){
  window.scrollTo({top:0,left:0,behavior:'auto'});
 }
 app.addEventListener('input',event=>{
- if(event.target?.id==='atlas-search')updateAtlas(event.target.value);
+ if(event.target?.id==='atlas-search')handleAtlasChange(event.target);
  if(event.target?.id==='lesson-notes')saveReflection(event.target.value);
 });
 app.addEventListener('click',event=>{
+ if(handleAtlasClick(event.target))return;
  if(handleLabClick(event.target))return;
  const btn=event.target.closest('button[data-font]');
  if(btn){changeFont(btn.dataset.font);return;}
@@ -62,5 +65,6 @@ app.addEventListener('error',event=>{
  const img=event.target;
  if(img instanceof HTMLImageElement&&img.matches('[data-card-image]'))img.closest('.card-image-shell')?.classList.add('is-error');
 },true);
+window.addEventListener('keydown',event=>{if(event.key==='Escape')closeZoom();});
 window.addEventListener('hashchange',render);
 render();
