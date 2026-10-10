@@ -8,8 +8,8 @@ const source = path => readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
 test('o baralho ampliado tem 78 cartas distintas e iconografia identificada',()=>{
   assert.equal(cards.length,78);
-  assert.equal(new Set(cards.map(c=>c.slug)).size,6);
-  assert.equal(new Set(cards.map(c=>c.id)).size,6);
+  assert.equal(new Set(cards.map(c=>c.slug)).size,78);
+  assert.equal(new Set(cards.map(c=>c.id)).size,78);
   for(const c of cards){
     assert.match(c.image,/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\//);
     assert.match(c.commons,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
