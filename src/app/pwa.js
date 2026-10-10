@@ -53,9 +53,11 @@ function onClick(event){
    const eventToPrompt=deferredInstall;
    deferredInstall=null;
    // A instalação do Chrome é acionada somente após o clique humano.
-   void eventToPrompt.prompt().then?.(()=>eventToPrompt.userChoice).then?.(answer=>{
+   void (async()=>{try{
+    await eventToPrompt.prompt();
+    const answer=await eventToPrompt.userChoice;
     if(answer?.outcome==='accepted')hideInvitation(true);
-   }).catch?.(()=>{});
+   }catch{showInvitation({manual:true});}})();
   }else{showInvitation({manual:true});}
  }
 }
