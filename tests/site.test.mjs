@@ -57,7 +57,7 @@ test('página usa caminhos relativos compatíveis com GitHub Pages',()=>{
 test('pesquisa visual revela estados e navegação por teclado',()=>{
   assert.match(atlasPage(),/label class="search-field"/);
   assert.match(atlasCards(cards),/aria-label="Abrir/);
-  assert.match(lessonPage(),/aria-pressed/);
+  assert.match(lessonPage(),/data-font="normal"/);
   assert.match(source('styles/components.css'),/prefers-reduced-motion|focus-visible|font-controls/);
   assert.match(source('styles/base.css'),/prefers-reduced-motion/);
 });
