@@ -21,7 +21,7 @@ test('o baralho ampliado tem 78 cartas distintas e iconografia identificada',()=
 });
 
 test('navegação do protótipo cobre as áreas previstas',()=>{
-  assert.deepEqual(routes.map(r=>r.key),['home','learn','atlas','practice','about']);
+  assert.deepEqual(routes.map(r=>r.key),['home','learn','atlas','practice','study']);
   assert.equal(routes.length,5);
   for(const route of routes)assert.ok(siteHeader(route.key).includes('href="'+route.href+'"'));
 });
