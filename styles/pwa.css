@@ -1,0 +1,38 @@
+/* ARCANA como app: convite gentil, fora do fluxo da navegação. */
+#pwa-invite-portal{position:fixed;inset:auto 20px 24px auto;z-index:500;width:min(440px,calc(100vw - 24px));pointer-events:none}
+.pwa-invitation{position:relative;pointer-events:auto;background:#fffbf5;border:1px solid #b69c85;box-shadow:0 12px 45px #28170d40,0 3px 7px #28170d13;padding:24px;border-radius:13px;max-height:min(78dvh,650px);overflow-y:auto;overscroll-behavior:contain;animation:pwa-appear .38s cubic-bezier(.2,.7,.2,1) both}
+.pwa-invitation::before{content:'';position:absolute;inset:8px;border:1px solid #e8d8c7;border-radius:8px;pointer-events:none}
+.pwa-close{position:absolute;right:13px;top:11px;width:40px;height:40px;border:0;background:transparent;color:var(--wine);border-radius:50%;font-size:1.7rem;line-height:1}
+.pwa-close:hover{background:var(--paper-deep)}
+.pwa-intro{display:flex;gap:16px;align-items:center;padding:8px 30px 12px 0}
+.pwa-app-icon{width:62px;height:62px;flex-shrink:0;border:1px solid #bca18c;border-radius:13px;box-shadow:0 4px 12px #6b514220}
+.pwa-intro .eyebrow{font-size:.59rem;letter-spacing:.12em}
+.pwa-intro .eyebrow:before{width:12px;margin-right:6px}
+.pwa-intro h2{font-weight:400;font-size:clamp(1.5rem,5vw,1.95rem);color:var(--burgundy);line-height:1.1;letter-spacing:-.035em;margin:9px 0 0}
+.pwa-intro h2 em{color:var(--wine);font-weight:400}
+.pwa-invitation-lede{font-size:.85rem;color:#584b43;line-height:1.65;margin:7px 0 17px}
+.pwa-install-steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.pwa-install-steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid #e5d7c9}
+.pwa-install-steps li span{font-family:var(--serif);font-size:1.35rem;line-height:1.6;color:var(--wine)}
+.pwa-install-steps li p{font-size:.81rem;margin:0;line-height:1.65;color:#4e433b}
+.pwa-install-instruction{background:#f0e5d8;padding:15px;font-size:.86rem;color:#584b43}
+.pwa-invitation-actions{display:flex;gap:8px;align-items:center;margin:16px 0 0}
+.pwa-invitation-actions .button{flex:1;min-width:0;min-height:45px;padding:9px 12px;font-size:.8rem}
+.pwa-install-footnote{margin:14px 0 0;color:#796b60;font-size:.68rem;line-height:1.5}
+.pwa-footer-link{padding:0;border:0;background:transparent;text-decoration:underline;text-underline-offset:4px;font-size:inherit;color:inherit;min-height:35px}
+.pwa-footer-link:hover{color:var(--wine)}
+@keyframes pwa-appear{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ #pwa-invite-portal{left:12px;right:12px;width:auto;bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+ .pwa-invitation{padding:18px;max-height:min(69dvh,530px);border-radius:12px}
+ .pwa-intro{gap:12px;padding-top:6px;padding-right:20px}
+ .pwa-app-icon{width:56px;height:56px;border-radius:12px}
+ .pwa-intro h2{font-size:1.62rem}
+ .pwa-invitation-lede{font-size:.82rem}
+ .pwa-install-steps li{grid-template-columns:29px 1fr;gap:10px;padding:8px 0}
+ .pwa-install-steps li span{font-size:1.15rem}
+ .pwa-install-steps li p{font-size:.78rem}
+}
+@media(max-width:370px){.pwa-invitation{padding:15px}.pwa-intro h2{font-size:1.45rem}.pwa-app-icon{width:49px;height:49px}.pwa-invitation-actions .button{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.pwa-invitation{animation:none!important}}
+html[data-motion=reduce] .pwa-invitation{animation:none!important}
