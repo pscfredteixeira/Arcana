@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 6 implementado**
+**Escola interativa de tarô — Sprint 7 implementado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -30,13 +30,15 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Relatório do Sprint 4](docs/SPRINT4_REPORT.md)
 - [Relatório do Sprint 5](docs/SPRINT5_REPORT.md)
 - [Relatório do Sprint 6](docs/SPRINT6_REPORT.md)
+- [Relatório do Sprint 7](docs/SPRINT7_REPORT.md)
+- [Auditoria editorial parcial](docs/CONTENT_AUDIT.md)
 - [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
 ## Status — Sprint 5
 **Site público no GitHub Pages:** https://pscfredteixeira.github.io/Arcana/
 
-O ARCANA já possui a identidade visual **Arquivo Vivo**, navegação responsiva, aula aprofundada *A arte de olhar*, Atlas das 78 cartas RWS, jogo *Diamante dos Arcanos* e a Mesa de Tiragens com 3 ou 5 posições e diário de estudo local.
+O ARCANA já possui a identidade visual **Arquivo Vivo**, navegação responsiva, **quatro aulas aprofundadas**, Atlas das 78 cartas RWS, jogo *Diamante dos Arcanos* e a Mesa de Tiragens com 3 ou 5 posições e diário de estudo local.
 
 O projeto **não é ainda uma formação completa**. Faltam novos módulos de conteúdo, expansão de jogos, revisões carta a carta, melhoria da acessibilidade e testes de usabilidade em aparelhos reais.
 
@@ -79,3 +81,8 @@ Em [Meu Estudo](https://pscfredteixeira.github.io/Arcana/#/meu-estudo), o estuda
 O painel acrescenta tamanhos de fonte para leitura, modo de alto contraste, redução manual de animações e **exportação/importação de um backup JSON** dos dados locais. O arquivo é criado pelo navegador e não enviado a um servidor. **Importar substitui os registros locais existentes**; exporte uma cópia antes de restaurar. As anotações podem conter dados pessoais, por isso o backup deve ser guardado em local seguro.
 
 Esses indicadores abrangem apenas as atividades atualmente disponíveis. O ARCANA ainda não tem todo o currículo, login ou sincronização entre aparelhos. Consulte [SPRINT6_REPORT.md](docs/SPRINT6_REPORT.md) para a política de dados, os limites e o checklist de validação no celular.
+
+## Sprint 7 — Três novas aulas e Oficina de Correspondências
+A seção [Aprender](https://pscfredteixeira.github.io/Arcana/#/aprender) reúne quatro aulas aprofundadas: *O mapa das 78 cartas*, *A arte de olhar*, *O Mago e a Sacerdotisa* e *Os quatro naipes*. Cada nova aula inclui objetivos, leitura original, imagens históricas, comparação entre fontes quando apropriado e laboratório em três fases. A Oficina dos Naipes utiliza escolha por toque, sem arrastar. O aluno retoma as etapas em Meu Estudo e pode incluir o progresso nos backups locais.
+
+O projeto não se apresenta como currículo completo: ainda há módulos a escrever, cartas a aprofundar e uma auditoria visual e editorial ampla a realizar. Veja [Relatório do Sprint 7](docs/SPRINT7_REPORT.md) e [Auditoria de conteúdo](docs/CONTENT_AUDIT.md).
