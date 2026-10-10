@@ -1,5 +1,5 @@
 {
-  "name": "ARCANA — Arquivo Vivo de Tarô",
+  "name": "ARCANA — Escola Interativa de Tarô",
   "short_name": "ARCANA",
   "description": "Escola interativa de tarô com aulas, Atlas de 78 cartas e experiências visuais.",
   "lang": "pt-BR",
@@ -22,7 +22,7 @@
       "src": "./icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "./icons/icon-512.png",

@@ -8,7 +8,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - **Baralho de referência:** Rider–Waite–Smith (RWS).
 - **Referência interpretativa principal:** Rachel Pollack, *Setenta e oito graus de sabedoria*.
 - **Perspectiva complementar:** Nei Naiff, *Curso completo de tarô*, distinguindo os métodos quando divergem.
-- **Direção de arte:** Arquivo Vivo — identidade editorial clara, fundo tipo papel, vinho/bordô e cartas em destaque.
+- **Direção de arte:** identidade editorial ARCANA — identidade editorial clara, fundo tipo papel, vinho/bordô e cartas em destaque.
 - **Público:** do iniciante ao avançado.
 - **Experiência:** aulas, atlas de cartas, jogos e simulador de tiragens.
 - **Lançamento inicial:** website público sem login, preparado para GitHub Pages.
@@ -39,7 +39,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 ## Status — Sprint 5
 **Site público no GitHub Pages:** https://pscfredteixeira.github.io/Arcana/
 
-O ARCANA já possui a identidade visual **Arquivo Vivo**, navegação responsiva, **quatro aulas aprofundadas**, Atlas das 78 cartas RWS, jogo *Diamante dos Arcanos* e a Mesa de Tiragens com 3 ou 5 posições e diário de estudo local.
+O ARCANA já possui a identidade visual **identidade editorial ARCANA**, navegação responsiva, **quatro aulas aprofundadas**, Atlas das 78 cartas RWS, jogo *Diamante dos Arcanos* e a Mesa de Tiragens com 3 ou 5 posições e diário de estudo local.
 
 O projeto **não é ainda uma formação completa**. Faltam novos módulos de conteúdo, expansão de jogos, revisões carta a carta, melhoria da acessibilidade e testes de usabilidade em aparelhos reais.
 

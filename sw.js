@@ -1,7 +1,7 @@
 /* ARCANA — App shell cache. Dados de aluno continuam somente no localStorage.
- * Cache versão 1: atualizar a versão ao publicar sprints que alteram assets.
+ * Cache versão 2: atualizar a versão ao publicar sprints que alteram assets.
  */
-const CACHE_NAME='arcana-app-shell-v1';
+const CACHE_NAME='arcana-app-shell-v2';
 const APP_SHELL=[
   "./",
   "./index.html",

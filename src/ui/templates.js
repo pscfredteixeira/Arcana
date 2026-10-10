@@ -19,7 +19,7 @@ export function cardImage(card, eager=false) {
 }
 
 export function siteHeader(active) {
- const logo=`<a class="logo" href="#/" aria-label="ARCANA, página inicial"><span class="logo-main">ARCANA</span><span class="logo-caption">ARQUIVO VIVO</span></a>`;
+ const logo=`<a class="logo" href="#/" aria-label="ARCANA, página inicial"><span class="logo-main">ARCANA</span></a>`;
  const nav=`<nav aria-label="Navegação principal" class="top-nav">${routes.map(r=>`<a href="${r.href}" ${r.key===active?'aria-current="page"':''}>${r.label}</a>`).join('')}</nav>`;
  const mobile=`<nav aria-label="Navegação inferior" class="mobile-nav">${routes.map(r=>`<a href="${r.href}" ${r.key===active?'aria-current="page"':''}><span aria-hidden="true" class="nav-icon">${r.symbol}</span><span>${r.label}</span></a>`).join('')}</nav>`;
  return `<header class="site-header"><div class="container header-inner">${logo}${nav}<a class="study-top-link" href="#/meu-estudo">Meu estudo ↗</a></div></header>${mobile}`;

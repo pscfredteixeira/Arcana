@@ -15,7 +15,7 @@ const app=document.getElementById('app');
 const getHashPath=()=>decodeURIComponent(location.hash.slice(1).split('?')[0]||'/');
 const getRoute=()=>{
   const path=getHashPath();
-  if(path==='/')return {active:'home',content:homePage(),title:'Arquivo Vivo'};
+  if(path==='/')return {active:'home',content:homePage(),title:'Início'};
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
