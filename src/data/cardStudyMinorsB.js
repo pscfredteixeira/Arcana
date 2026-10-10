@@ -159,7 +159,7 @@ export const minorStudiesRest={
  question:'Por que um cavaleiro, figura geralmente ligada ao movimento, aparece tão imóvel?'
 },
 'rainha-de-ouros':{
- reading:'A Rainha contempla um pentáculo em ambiente fértil. O objeto é tratado com atenção; a paisagem sugere que sustentar recursos também envolve ambiente, tempo e cuidado.',
+ reading:'A Rainha contempla um pentáculo em ambiente fértil. O objeto é tratado com atenção; a paisagem sugere que sustentar recursos também envolve ambiente, tempo e cuidado. O gesto de contemplação pode ser lido como atenção responsável àquilo que foi conquistado e precisa ser mantido.',
  counter:'Cuidar de bens e pessoas não deve significar responsabilidade ilimitada. A carta não determina um papel materno obrigatório.',
  case:'Uma pessoa organiza a vida doméstica e profissional: como distribuir encargos e proteger seus próprios recursos?',
  question:'O que o modo de olhar para o pentáculo revela sobre a diferença entre ter e cuidar?'
