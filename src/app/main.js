@@ -1,3 +1,4 @@
+import {spreadPage,renderSpread,handleSpreadClick,handleSpreadInput} from '../spreads/spreadUI.js';
 import {practicesHub,diamondGamePage,renderDiamond,handleDiamondClick,handleDiamondInput} from '../games/diamondGame.js';
 import {atlasPageExpanded,atlasDetailExpanded,handleAtlasChange,handleAtlasClick,closeZoom,resetAtlasScroll} from '../ui/interactiveAtlas.js';
 import {fullLessonPage,renderLab,handleLabClick,saveReflection} from '../ui/fullLesson.js';
@@ -14,6 +15,7 @@ const getRoute=()=>{
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
   if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
+  if(path==='/praticas/mesa')return {active:'practice',content:spreadPage(),title:'Mesa de Tiragens'};
   if(path==='/sobre')return {active:'about',content:aboutPage(),title:'Sobre'};
   if(path.startsWith('/carta/')){
     const c=findCard(path.slice(7));
@@ -46,14 +48,17 @@ function render(){
  changeFont(fontPreference());
  renderLab();
  renderDiamond();
+ renderSpread();
  window.scrollTo({top:0,left:0,behavior:'auto'});
 }
 app.addEventListener('input',event=>{
  if(event.target?.id==='atlas-search')handleAtlasChange(event.target);
  if(event.target?.id==='lesson-notes')saveReflection(event.target.value);
  handleDiamondInput(event.target);
+ handleSpreadInput(event.target);
 });
 app.addEventListener('click',event=>{
+ if(handleSpreadClick(event.target))return;
  if(handleDiamondClick(event.target))return;
  if(handleAtlasClick(event.target))return;
  if(handleLabClick(event.target))return;
