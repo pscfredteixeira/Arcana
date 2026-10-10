@@ -6,7 +6,7 @@
 |---|---|---|
 | 0 | Auditoria de conteúdo, arquitetura, licenças, plano e contratos | Fontes mapeadas, decisões e requisitos rastreáveis |
 | 1 | Design System e navegação responsiva | Código de home, aula e atlas publicado no repositório; validação visual real e GitHub Pages ainda pendentes |
-| 2 | Primeira aula com conteúdo original revisado | Aula completa, progressão e feedback pedagógico |
+| 2 | Primeira aula com conteúdo original revisado | Aula completa, laboratório de 3 etapas, caderno e fontes publicados; validação visual real pendente |
 | 3 | Atlas visual interativo inicial | Cartas clicáveis, zoom, símbolos e comparação |
 | 4 | Primeiro jogo pedagógico | Objetivo, estados, feedback, toque/teclado e testes |
 | 5 | Mesa de tiragens didática | Distribuição visual, posições, registro de observações |
@@ -24,3 +24,6 @@ A primeira versão foi implementada em HTML/CSS/JavaScript modular, com navegaç
 
 ## Gestão de qualidade
 Ao término de cada sprint, registrar arquivos modificados, demonstração, testes, problemas conhecidos e próxima tarefa. Não afirmar conclusão apenas porque os arquivos existem.
+
+## Sprint 2 — andamento (10/10/2026)
+Aula completa *A arte de olhar* publicada, com seis capítulos, comparação visual, três exercícios graduais com feedback e registro individual no navegador. As páginas de fonte foram verificadas por amostragem nas obras fornecidas. Sintaxe e renderização dos templates passaram em verificações programáticas; testes automatizados disponíveis. Consulte [SPRINT2_REPORT.md](SPRINT2_REPORT.md). A conferência no iPhone ainda deve ser feita.
