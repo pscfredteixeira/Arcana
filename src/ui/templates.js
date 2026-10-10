@@ -26,7 +26,7 @@ export function siteHeader(active) {
 }
 
 export function siteFooter(){
- return `<footer class="site-footer"><div class="container footer-inner"><div><span class="brand-wordmark">ARCANA</span><p>Uma escola pública de tarô em construção. Conhecimento simbólico, observação e interpretação com contexto.</p></div><div class="footer-links"><a href="#/sobre">Sobre o projeto</a><button type="button" class="pwa-footer-link" data-pwa-open>Instalar ARCANA no celular</button><a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)" target="_blank" rel="noopener noreferrer">Origem das imagens ↗</a><a href="https://github.com/pscfredteixeira/Arcana" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>`;
+ return `<footer class="site-footer"><div class="container footer-inner"><div><span class="brand-wordmark">ARCANA</span><p>Uma escola pública de tarô em construção. Conhecimento simbólico, observação e interpretação com contexto.</p></div><div class="footer-links"><a href="#/comece-aqui">Comece aqui · Guia para iniciantes</a><a href="#/sobre">Sobre o projeto</a><button type="button" class="pwa-footer-link" data-pwa-open>Instalar ARCANA no celular</button><a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)" target="_blank" rel="noopener noreferrer">Origem das imagens ↗</a><a href="https://github.com/pscfredteixeira/Arcana" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>`;
 }
 
 export function homePage(){
