@@ -129,3 +129,15 @@
 }
 @media(max-width:380px){.diamond-slot{min-height:122px}.diamond-slot-art{width:66px}.diamond-pick-image{width:42px}.diamond-pick strong{font-size:.62rem}.diamond-heart-shape{font-size:1.7rem}.diamond-board{gap:5px}.diamond-root{padding-inline:9px}}
 @media(prefers-reduced-motion:reduce){.diamond-pick,.diamond-board,.diamond-slot,.diamond-progress-item{transition:none!important;animation:none!important}}
+
+/* Eixos do Diamante: a disposição visual é parte do argumento pedagógico. */
+.diamond-axis-pair{display:flex;align-items:center;justify-content:center;gap:34px;position:relative;isolation:isolate;margin:22px auto 28px;max-width:390px}
+.diamond-axis-pair.vertical{flex-direction:column;gap:25px}
+.diamond-axis-pair:before{content:'';position:absolute;z-index:-1;background:#b28377}
+.diamond-axis-pair.vertical:before{width:2px;height:84%;left:calc(50% - 1px);top:8%}
+.diamond-axis-pair.horizontal:before{height:2px;width:82%;left:9%;top:38%}
+.diamond-axis-card{flex:0 0 auto;width:min(40%,130px);text-align:center;min-width:0}
+.diamond-axis-pair.vertical .diamond-axis-card{width:110px}
+.diamond-axis-card .card-image-shell{background:#fff7e9;box-shadow:0 8px 18px #39272126;border:5px solid #fff6e8}
+.diamond-axis-card strong{display:block;font-family:var(--serif);font-size:.98rem;color:var(--burgundy);font-weight:500;margin-top:9px}
+@media(max-width:760px){.diamond-axis-pair.horizontal{gap:20px}.diamond-axis-card{width:min(42%,140px)}.diamond-axis-pair.vertical .diamond-axis-card{width:110px}}
