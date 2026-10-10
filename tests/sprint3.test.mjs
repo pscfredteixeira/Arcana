@@ -50,7 +50,7 @@ test('cartas sem lupa específica não exibem o algarismo 1 no meio da imagem',(
  for(const c of generic){
   const html=atlasDetailExpanded(c);
   assert.ok(!html.includes('data-spot="0"'),c.slug+' tinha marcador central');
-  assert.match(html,/Imagem sem marcadores sobrepostos/);
+  assert.match(html,/Toque em Ampliar carta/);
   assert.match(html,/data-open-zoom/);
  }
  for(const slug of ['o-louco','o-mago','a-sacerdotisa','a-imperatriz','o-imperador','o-hierofante']){
