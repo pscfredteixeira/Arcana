@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 3 publicado**
+**Escola interativa de tarô — Sprint 4 publicado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -27,6 +27,8 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Relatório do Sprint 1](docs/SPRINT1_REPORT.md)
 - [Relatório do Sprint 2](docs/SPRINT2_REPORT.md)
 - [Relatório do Sprint 3](docs/SPRINT3_REPORT.md)
+- [Relatório do Sprint 4](docs/SPRINT4_REPORT.md)
+- [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
 ## Status — Sprint 1
@@ -55,3 +57,8 @@ A primeira aula completa **A arte de olhar** já está integrada ao percurso **A
 
 ## Novidade do Sprint 3
 O **Atlas Vivo** agora exibe 78 cartas RWS, filtros por categoria e naipe, busca, fichas individuais, zoom e **Lupa Simbólica**. As seis cartas iniciais têm detalhes específicos; as demais têm um primeiro ponto de observação geral. O texto das 72 cartas acrescidas é introdutório e será aprofundado em etapas editoriais futuras. Ver [Relatório Sprint 3](docs/SPRINT3_REPORT.md).
+
+## Sprint 4 — Primeiro jogo completo
+Na área **Práticas**, o [Diamante dos Arcanos](https://pscfredteixeira.github.io/Arcana/#/praticas/diamante) propõe uma jornada em três fases. O estudante monta quatro cartas da configuração de Rachel Pollack (Louco no topo, Mago à esquerda, Sacerdotisa à direita, Mundo na base), investiga os dois eixos e constrói uma interpretação contextual. Inclui feedback fundamentado, tentativas ilimitadas, anotações livres e progresso armazenado no próprio navegador. Não é necessário arrastar cartas.
+
+Próximos passos: validar os detalhes de interface em celulares, executar os testes Node e desenvolver a mesa de tiragens do Sprint 5.
