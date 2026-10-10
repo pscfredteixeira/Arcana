@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 1 em prévia navegável**
+**Escola interativa de tarô — Sprint 2 publicado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -25,6 +25,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Direitos autorais e recursos visuais](docs/ASSET_POLICY.md)
 - [Instruções para o agente implementador](docs/AGENT_HANDOFF.md)
 - [Relatório do Sprint 1](docs/SPRINT1_REPORT.md)
+- [Relatório do Sprint 2](docs/SPRINT2_REPORT.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
 ## Status — Sprint 1
@@ -47,3 +48,6 @@ Planejamento iniciado em 10/10/2026.
 
 ## Execução dos testes
 Para quem trabalha no código com Node.js 18 ou superior: `npm test`. O site é estático e usa ES Modules; para executar fora do GitHub Pages, sirva o diretório em um servidor HTTP local.
+
+## Novidade do Sprint 2
+A primeira aula completa **A arte de olhar** já está integrada ao percurso **Aprender**. Inclui seis capítulos originais, referências a Rachel Pollack e Nei Naiff, laboratório interativo em três etapas e caderno privado no navegador. A aula pode ser aberta em `#/aula/primeiro-olhar`. A plataforma segue em desenvolvimento e outras aulas serão adicionadas por etapa.
