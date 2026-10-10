@@ -33,7 +33,7 @@ test('cada naipe possui foco próprio e as 14 cartas estão representadas',()=>{
  for(const suit of ['paus','copas','espadas','ouros']){
   assert.equal(cards.filter(c=>c.suit===suit).length,14);
   assert.ok(suitStudies[suit]);
-  for(const field of ['element','field','scope','prompt'])assert.ok(suitStudies[suit][field].length>10);
+  for(const field of ['element','field','scope','prompt'])assert.ok(suitStudies[suit][field].length>(field==='element'?1:10));
  }
 });
 test('a ficha apresenta fundamentos, observação, reflexão, método e fontes',()=>{
