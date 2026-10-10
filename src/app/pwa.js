@@ -26,7 +26,7 @@ export function installGuideMarkup({safari=safariOnIOS(),android=false}={}){
   +'<p class="pwa-invitation-lede">Coloque o ARCANA na tela inicial e abra a escola como um aplicativo. Sem App Store, sem criar uma conta.</p>'
   +intro
   +'<div class="pwa-invitation-actions">'+(android?'<button type="button" class="button" data-pwa-install>Instalar aplicativo</button>':'<button type="button" class="button" data-pwa-understood>Entendi</button>')+'<button type="button" class="button secondary" data-pwa-dismiss>Agora não</button></div>'
-  +'<p class="pwa-install-footnote">Seu progresso continua neste navegador. Instalar não transfere registros de outros dispositivos.</p></section>';
+  +'<p class="pwa-install-footnote">Já tem anotações? A versão instalada pode usar um armazenamento separado do Safari. <a href="#/meu-estudo" data-pwa-backup>Faça um backup em Meu Estudo</a> antes de instalar.</p></section>';
 }
 function hideInvitation(remember=false){
  if(remember)safeWrite(Date.now()+INSTALL_WAIT_DAYS*24*60*60*1000);
@@ -44,6 +44,7 @@ function showInvitation({manual=false}={}){
  if(manual)invitation.querySelector('.pwa-close')?.focus();
 }
 function onClick(event){
+ if(event.target.closest('[data-pwa-backup]')){hideInvitation(false);return;}
  if(event.target.closest('[data-pwa-open]')){
   event.preventDefault();showInvitation({manual:true});return;
  }
