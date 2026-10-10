@@ -1,3 +1,4 @@
+import {expandedCards} from './atlasCatalogue.js';
 /**
  * ARCANA / Sprint 1
  * Six initial RWS cards. Editorial notes are original summaries intended for a UI preview,
@@ -70,11 +71,12 @@ const records = [
   }
 ];
 
-export const cards = records.map(card => ({
+const allRecords = [...records.map((c,rank)=>({...c,arcana:'major',suit:null,rank})),...expandedCards];
+export const cards = allRecords.map(card => ({
   ...card,
   image:imageFile(card.file),
   commons:sourceFile(card.file),
-  imageLicense:'Domínio público — obra original de Pamela Colman Smith, 1910; arquivo do Wikimedia Commons'
+  imageLicense:'Obra histórica Rider–Waite–Smith de Pamela Colman Smith (1910). Consulte a licença e a procedência do arquivo no Wikimedia Commons.'
 }));
 
 export const findCard = slug => cards.find(card=>card.slug===slug);
