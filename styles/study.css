@@ -1,0 +1,66 @@
+/* Sprint 6 · Meu Estudo — identidade Arquivo Vivo */
+.study-page-intro h1 em{font-weight:400;color:var(--wine)}
+.study-section{padding:38px 0 46px;border-bottom:1px solid var(--line)}
+.study-section .section-head{margin-bottom:25px}
+.study-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 22px}
+.study-summary-number{padding:24px 16px;border:1px solid var(--line);background:var(--ivory);display:flex;flex-direction:column;gap:12px}
+.study-summary-number strong{font-family:var(--serif);font-size:clamp(1.75rem,3.4vw,3rem);color:var(--burgundy);font-weight:400;line-height:1}
+.study-summary-number span{font-size:.75rem;line-height:1.55;color:var(--muted)}
+.study-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.study-card{border:1px solid var(--line);background:var(--paper-deep);padding:23px;display:flex;flex-direction:column;min-height:238px}
+.study-card-top{display:flex;align-items:center;justify-content:space-between;color:var(--wine)}
+.study-card-top>span:last-child{font-family:var(--serif);font-size:1.5rem}
+.study-indicator{background:var(--ivory);border:1px solid var(--line);padding:6px 10px;border-radius:30px;font-size:.69rem;font-weight:700;color:var(--burgundy)}
+.study-indicator.finished{background:#e3eddd;border-color:#718267;color:#32482e}
+.study-card h3{color:var(--burgundy);font-size:1.65rem;line-height:1.25;margin:28px 0 9px}
+.study-card p{font-size:.82rem;color:var(--muted);line-height:1.65}
+.study-card-link{margin-top:auto;padding-top:12px;color:var(--wine);text-decoration:underline;text-underline-offset:4px;font-weight:700;font-size:.8rem}
+.study-setting-list{display:grid;gap:0;background:var(--ivory);border:1px solid var(--line)}
+.study-setting{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,1.25fr);gap:28px;padding:27px;border-bottom:1px solid var(--line);align-items:center}
+.study-setting:last-child{border-bottom:0}
+.study-setting h3{font-size:1.6rem;color:var(--burgundy);margin:0 0 8px}
+.study-setting p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.65;max-width:370px}
+.study-choice-grid{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.study-choice-grid button{padding:12px 15px;min-height:48px;min-width:96px;background:var(--paper);border:1px solid #aa9484;border-radius:6px;color:var(--burgundy);font-size:.8rem}
+.study-choice-grid button[aria-pressed=true]{background:var(--burgundy);color:#fff;border-color:var(--burgundy);font-weight:700}
+.study-choice-grid button:hover:not([aria-pressed=true]){background:var(--paper-deep)}
+.study-backup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.study-backup-card{min-width:0;background:var(--ivory);border:1px solid var(--line);padding:clamp(22px,3.5vw,34px)}
+.study-backup-card h3{font-size:1.85rem;color:var(--burgundy);margin:16px 0 12px}
+.study-backup-card p{font-size:.88rem;color:var(--muted);line-height:1.7}
+.study-backup-card .button{width:100%;margin-top:15px}
+.study-backup-card .study-backup-warning{font-size:.75rem;line-height:1.55;margin-top:14px}
+.study-import-label{display:block;color:var(--burgundy);font-size:.85rem;font-weight:700;margin:20px 0 9px}
+#study-import-file{width:100%;max-width:100%;font:inherit;font-size:.8rem;padding:10px;border:1px solid #a58c7c;background:var(--paper);border-radius:5px}
+#study-import-file::file-selector-button{background:var(--burgundy);border:none;color:#fff;padding:9px 13px;border-radius:4px;margin-right:10px;cursor:pointer}
+.study-import-preview{margin-top:16px}
+.study-import-confirm{background:var(--paper-deep);border-left:3px solid var(--wine);padding:15px}
+.study-import-confirm strong{font-size:.87rem;color:var(--burgundy)}
+.study-import-confirm p{font-size:.81rem;margin:8px 0;color:#55483c}
+.study-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.study-import-confirm .button{margin:0;width:auto;min-height:44px;font-size:.75rem;padding:11px}
+.study-message{font-size:.82rem;border-left:3px solid var(--wine);background:var(--paper-deep);padding:12px 14px;margin:0}
+.study-data-note{background:var(--paper-deep);border:1px solid var(--line);margin-top:20px;padding:20px 23px;font-size:.81rem;line-height:1.75;color:#50473f}
+.study-data-note strong{color:var(--burgundy)}
+.study-end-link{display:flex;align-items:center;gap:23px;flex-wrap:wrap;padding-top:35px}
+.study-lesson-finish{border:1px solid #ba9e89;background:var(--paper-deep);padding:clamp(22px,3vw,34px);margin:35px 0}
+.study-lesson-finish h2{color:var(--burgundy);font-size:clamp(1.5rem,2.7vw,2rem);margin:15px 0 12px}
+.study-lesson-finish p{color:var(--muted);font-size:.92rem}
+.study-lesson-finish .button{margin:10px 0;max-width:100%}
+.study-lesson-finish .text-link{display:block;margin:15px 0 0}
+.study-lesson-status:empty{display:none}
+.study-lesson-status{margin:9px 0;font-size:.83rem}
+.study-top-link{color:var(--wine);font-size:.77rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+html[data-contrast=high]{
+ --paper:#fffdf7;--paper-deep:#efe7db;--sand:#d9cbb7;--wine:#631a29;
+ --burgundy:#3b1020;--charcoal:#161312;--muted:#382f2a;--line:#776457;
+ --ivory:#fff;--pale-wine:#f3e0da;
+}
+html[data-contrast=high] .study-indicator.finished{color:#214126;background:#dcefdc;border-color:#437146}
+html[data-contrast=high] :focus-visible{outline:3px solid #a50046;outline-offset:4px}
+html[data-motion=reduce] *,html[data-motion=reduce] *::before,html[data-motion=reduce] *::after{
+ animation-duration:.01ms!important;animation-iteration-count:1!important;
+ transition-duration:.01ms!important;scroll-behavior:auto!important;
+}
+@media(max-width:900px){.study-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.study-setting{grid-template-columns:1fr;gap:16px}.study-choice-grid{justify-content:flex-start}.study-card-grid{grid-template-columns:1fr}.study-card{min-height:0}.study-card h3{margin-top:19px}}
+@media(max-width:680px){.study-section{padding:25px 0 33px}.study-summary{gap:8px}.study-summary-number{padding:19px 13px}.study-summary-number strong{font-size:2rem}.study-summary-number span{font-size:.72rem}.study-setting{padding:20px}.study-setting h3{font-size:1.45rem}.study-choice-grid button{min-height:48px;flex:1;min-width:0;padding:11px 8px}.font-size-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.study-backup-grid{grid-template-columns:1fr}.study-backup-card h3{font-size:1.65rem}.study-card-grid{gap:10px}.study-lesson-finish{padding:21px}.study-end-link{padding:30px 0 10px}}
