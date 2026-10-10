@@ -6,6 +6,8 @@ import {normalizedDiamond} from '../games/diamondLogic.js';
 import {normalizeReading,normalizeArchive} from '../spreads/spreadLogic.js';
 import {cards} from '../data/cards.js';
 import {PRACTICE_KEY,readPractices,normalizePractices} from '../lessons/lessonPractice.js';
+import {ATELIER_KEY,PATHS_KEY} from '../games/explorationsData.js';
+import {normalizeAtelier,normalizeJourney} from '../games/explorationsLogic.js';
 
 export const BACKUP_FORMAT='arcana-local-backup';
 export const BACKUP_VERSION=1;
@@ -21,7 +23,9 @@ export const ALLOWED_KEYS=Object.freeze([
   'arcana-diamond-v1',
   'arcana-spread-session-v1',
   'arcana-spread-archive-v1',
-  PRACTICE_KEY
+  PRACTICE_KEY,
+  ATELIER_KEY,
+  PATHS_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -32,7 +36,9 @@ const KEY_LIMITS={
  'arcana-diamond-v1':12000,
  'arcana-spread-session-v1':30000,
  'arcana-spread-archive-v1':240000,
- [PRACTICE_KEY]:2000
+ [PRACTICE_KEY]:2000,
+ [ATELIER_KEY]:4000,
+ [PATHS_KEY]:2000
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -78,6 +84,8 @@ export function readStudySummary(storage){
  const completed=completedLesson(storage);
  const allCompletions=completionMap(storage);
  const practices=readPractices(storage);
+ const atelier=normalizeAtelier(safeParse(safeGet(storage,ATELIER_KEY)));
+ const journey=normalizeJourney(safeParse(safeGet(storage,PATHS_KEY)));
  return {
   lessonCompleted:completed,
   lessonCompletions:allCompletions,
@@ -85,6 +93,10 @@ export function readStudySummary(storage){
   lessonsAvailableCount:LESSON_IDS.length,
   newPracticeSteps:Object.values(practices).reduce((n,s)=>n+(s?.step||0),0),
   newPracticeDone:Object.values(practices).filter(s=>s?.completed===true).length,
+  atelierDiscovered:atelier.completed.length,
+  atelierCompleted:atelier.completed.length===3,
+  pathsStation:journey.step,
+  pathsCompleted:journey.completed,
   lessonActivityStep:exerciseStep,
   diamondCompleted:diamond?.completed===true&&diamond?.step==='complete',
   diamondStarted:!!diamond&&diamond?.step!==undefined,
@@ -117,6 +129,16 @@ export function validateAndNormalizeKey(key,raw){
   const normalized=normalizePractices(v);
   if(Object.keys(normalized).length!==Object.keys(v).length)throw Error('Etapas dos exercícios inválidas.');
   return JSON.stringify(normalized);
+ }
+ if(key===ATELIER_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!['choose','inspect','connect','answer','finished'].includes(v.phase))throw Error('Ateliê inválido.');
+  return JSON.stringify(normalizeAtelier(v));
+ }
+ if(key===PATHS_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!['station','synthesis','complete'].includes(v.phase))throw Error('Caminhos inválidos.');
+  return JSON.stringify(normalizeJourney(v));
  }
  if(key==='arcana-firstlook-step'){
   const n=Number(raw);
