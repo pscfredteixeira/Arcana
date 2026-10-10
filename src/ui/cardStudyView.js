@@ -10,7 +10,7 @@ export function renderCardStudy(c){
  const simple=getBeginnerMeaning(c);
  if(!study)return '<p>Esta carta está aguardando revisão editorial aprofundada.</p>';
  const isMinor=study.type==='minor';
- const lede='Abaixo você encontra primeiro o significado mais comum da carta e um exemplo fácil. Depois, se quiser, pode ler a explicação detalhada.';
+ const lede='Você já viu o significado básico da carta. Agora vamos explicar o desenho, mostrar outras situações e entender como essas ideias surgem.';
  return '<div class="atlas-deep-reading">'
   +'<section class="beginner-meaning" aria-label="Significado da carta para iniciantes"><span class="eyebrow">PRIMEIRO, A EXPLICAÇÃO SIMPLES</span><h2>O que significa '+e(c.name)+'?</h2><p class="beginner-definition">'+e(simple?.meaning||c.meaning)+'</p><div class="beginner-real-example"><strong>Exemplo do dia a dia</strong><p>'+e(simple?.example||c.reflect)+'</p></div><p class="beginner-not-prediction">É uma interpretação tradicional possível, não uma previsão certa. A situação e as outras cartas podem mudar o destaque da leitura.</p></section>'
   +'<div class="atlas-reading-intro"><span class="eyebrow">CADERNO DE SÍMBOLOS · '+(isMinor?'ARCANOS MENORES':'ARCANOS MAIORES')+'</span><h2>Quer entender <em>por quê?</em></h2><p>'+lede+'</p></div>'
