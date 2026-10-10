@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 4 publicado**
+**Escola interativa de tarô — Sprint 5 publicado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -28,6 +28,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Relatório do Sprint 2](docs/SPRINT2_REPORT.md)
 - [Relatório do Sprint 3](docs/SPRINT3_REPORT.md)
 - [Relatório do Sprint 4](docs/SPRINT4_REPORT.md)
+- [Relatório do Sprint 5](docs/SPRINT5_REPORT.md)
 - [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
@@ -62,3 +63,8 @@ O **Atlas Vivo** agora exibe 78 cartas RWS, filtros por categoria e naipe, busca
 Na área **Práticas**, o [Diamante dos Arcanos](https://pscfredteixeira.github.io/Arcana/#/praticas/diamante) propõe uma jornada em três fases. O estudante monta quatro cartas da configuração de Rachel Pollack (Louco no topo, Mago à esquerda, Sacerdotisa à direita, Mundo na base), investiga os dois eixos e constrói uma interpretação contextual. Inclui feedback fundamentado, tentativas ilimitadas, anotações livres e progresso armazenado no próprio navegador. Não é necessário arrastar cartas.
 
 Próximos passos: validar os detalhes de interface em celulares, executar os testes Node e desenvolver a mesa de tiragens do Sprint 5.
+
+## Sprint 5 — Mesa de Tiragens
+A [Mesa de Tiragens](https://pscfredteixeira.github.io/Arcana/#/praticas/mesa), disponível em Práticas, oferece duas disposições pedagógicas originais: **Três Perspectivas** (3 cartas) e **Mapa de Perspectivas** (5 cartas). É possível escolher um baralho de 78 cartas ou apenas os 22 Arcanos Maiores, revelar imagens por toque, registrar hipóteses, escrever uma síntese e guardar até 15 leituras no diário local do navegador. O desenho dos modelos não é atribuído a Rachel Pollack nem a Nei Naiff.
+
+O projeto agora conta com um workflow GitHub Actions para executar `npm test` a cada atualização. O primeiro ciclo desse workflow, incluindo os testes do Sprint 5, terminou com sucesso. Ainda são necessárias inspeção e validação de aparência em iPhone e testes aprofundados de acessibilidade.
