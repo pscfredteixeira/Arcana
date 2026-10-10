@@ -1,3 +1,4 @@
+import {extendedLessons} from '../lessons/sprint7Lessons.js';
 import {cards} from '../data/cards.js';
 
 export const routes = [
@@ -39,7 +40,7 @@ export function homePage(){
  <div class="feature-grid">
  <a class="feature" href="#/aprender"><span class="ordinal">01 / Estudar</span><h3>O percurso</h3><p>Da estrutura do baralho às leituras: avance com explicações cuidadosas e tempo para refletir.</p><span class="feature-end">Conhecer o curso ↗</span></a>
  <a class="feature" href="#/atlas"><span class="ordinal">02 / Explorar</span><h3>O arquivo</h3><p>Observe as cartas de perto e aprenda a enxergar detalhes, símbolos e relações.</p><span class="feature-end">Abrir o Atlas ↗</span></a>
- <a class="feature" href="#/praticas"><span class="ordinal">03 / Experimentar</span><h3>O laboratório</h3><p>Comece com o Diamante dos Arcanos, um jogo de composição, comparação e interpretação. Novos desafios chegarão por etapas.</p><span class="feature-end">Jogar agora ↗</span></a>
+ <a class="feature" href="#/praticas"><span class="ordinal">03 / Experimentar</span><h3>O laboratório</h3><p>Estude em quatro aulas aprofundadas, experimente o Diamante dos Arcanos e explore a Mesa de Tiragens.</p><span class="feature-end">Jogar agora ↗</span></a>
  </div></section>
  <section class="pale-band"><div class="container quote-band"><blockquote>Uma carta não é apenas aquilo que ela significa. É também aquilo que aprendemos a observar.</blockquote><p>Estudamos a tradição Rider-Waite-Smith com a abordagem de Rachel Pollack como eixo e a contribuição metodológica de Nei Naiff como uma segunda perspectiva. As interpretações serão apresentadas como possibilidades fundamentadas, não certezas absolutas.</p></div></section>
  <section class="section container"><div class="section-head"><div><div class="eyebrow">Primeira exposição</div><h2>Seis portas de entrada.</h2></div><p>Uma amostra do Atlas Vivo. Toque em uma carta para observar e refletir sobre sua imagem.</p></div>
@@ -48,11 +49,16 @@ export function homePage(){
 }
 
 export function learnPage(){
- return `<div class="container"><header class="page-intro"><div class="eyebrow">Programa de formação</div><h1>Aprender a ler<br>as imagens.</h1><p class="lead">Um percurso progressivo do básico ao avançado. A primeira aula completa já está disponível, com leitura, laboratório e caderno de reflexão. Os demais módulos serão desenvolvidos por etapas.</p></header>
- <div class="curriculum-card"><span class="volume">01</span><div><span class="status">Aula completa disponível</span><h2>A arte de olhar</h2><p>Estudo aprofundado da imagem do Louco, relações com outras cartas, três desafios interativos e caderno de reflexão.</p></div><a class="text-link" href="#/aula/primeiro-olhar">Abrir aula →</a></div>
- <div class="curriculum-card is-future"><span class="volume">02</span><div><span class="status pending">Em desenvolvimento</span><h2>Fundamentos</h2><p>História, estrutura do baralho e um percurso pelas cartas dos Arcanos Maiores.</p></div><span class="status pending">Próximos sprints</span></div>
- <div class="curriculum-card is-future"><span class="volume">03</span><div><span class="status pending">Planejamento</span><h2>Relações e interpretações</h2><p>Arcanos Menores, naipes, cortes, tiragens, narrativas e prática avançada.</p></div><span class="status pending">Futuro</span></div>
- </div>`;
+ const catalog=[
+ {id:'F-02.01',number:'01',name:'O mapa das 78 cartas',label:'F-02 · Fundamentos',body:'Conheça a arquitetura do baralho: 22 Maiores, 56 Menores, cartas numeradas, figuras da corte e diferenças de numeração.',href:'#/aula/mapa-78-cartas'},
+ {id:'F-03.01',number:'02',name:'A arte de olhar',label:'F-03 · Fundamentos',body:'Observe o Louco, pratique três passos de leitura simbólica e construa uma hipótese contextual.',href:'#/aula/primeiro-olhar'},
+ {id:'F-04.01',number:'03',name:'O Mago e a Sacerdotisa',label:'F-04 · Fundamentos',body:'Ação, pausa e interioridade em imagens que dialogam. Compare as figuras em um laboratório de três etapas.',href:'#/aula/mago-e-sacerdotisa'},
+ {id:'I-01.01',number:'04',name:'Os quatro naipes',label:'I-01 · Intermediário',body:'Paus, Copas, Espadas e Ouros, elementos e método de Nei Naiff. Jogue a Oficina das Correspondências.',href:'#/aula/quatro-naipes'}
+ ];
+ return '<div class="container"><header class="page-intro"><div class="eyebrow">Programa de formação</div><h1>Aprender a ler<br>as imagens.</h1><p class="lead">Agora você encontra quatro aulas aprofundadas, com material de leitura, imagens históricas e laboratórios. É o início de uma formação maior; os outros módulos serão desenvolvidos gradualmente.</p></header><div class="eyebrow">Seu percurso disponível</div><h2 class="course-journey-title">Quatro portas de entrada.</h2>'
+ +catalog.map(c=>'<article class="curriculum-card"><span class="volume">'+c.number+'</span><div><span class="course-catalog-tag">'+c.label+'</span><h2>'+c.name+'</h2><p>'+c.body+'</p></div><a class="text-link" href="'+c.href+'">Abrir aula →</a></article>').join('')
+ +'<div class="curriculum-card is-future"><span class="volume">05</span><div><span class="status pending">Próximas etapas</span><h2>Formação em expansão</h2><p>História aprofundada, jornadas dos Maiores, cartas da corte, combinações, leituras avançadas e análise crítica das tradições ainda serão desenvolvidas.</p></div><span class="status pending">Em planejamento</span></div>'
+ +'<p class="course-catalog-note">As quatro aulas concluídas aqui não equivalem à formação inteira. Rachel Pollack é a referência interpretativa principal; Nei Naiff complementa a abordagem, com diferenças metodológicas explicitadas.</p></div>';
 }
 
 export function lessonPage(){
