@@ -4,6 +4,8 @@ import {
  completedLesson,setCompletedLesson,buildBackup,validateBackup,restoreBackup
 } from './studyData.js';
 import {escapeHTML as esc} from '../ui/templates.js';
+import {extendedLessons} from '../lessons/sprint7Lessons.js';
+import {progressOf} from '../lessons/lessonPractice.js';
 
 const FONTS=[['small','Pequena'],['normal','Padrão'],['large','Grande'],['larger','Muito grande']];
 const OPTIONS=[['standard','Original'],['high','Alto contraste']];
@@ -34,9 +36,15 @@ export function studyPage(){
  const chapterLine=summary.lessonCompleted?'Você marcou esta aula como concluída.':'Esta aula ainda não foi marcada como concluída.';
  const diamonds=summary.diamondCompleted?'O Diamante dos Arcanos foi concluído neste navegador.':summary.diamondStarted?'Você já começou o Diamante dos Arcanos.':'O Diamante dos Arcanos está disponível para começar.';
  const notes=summary.readingsSaved===1?'1 tiragem guardada':summary.readingsSaved+' tiragens guardadas';
+ const newCourseCards=extendedLessons.map(l=>{
+  const done=summary.lessonCompletions[l.id];const practice=progressOf(localStorage,l.id);
+  const note=(done?'Aula marcada como concluída.':'Aula disponível para leitura.')+' Atividade: '+(practice.completed?'três fases concluídas.':practice.step+' de 3 fases.');
+  return progressCard(l.title,note,done,'#/aula/'+l.slug,'Abrir aula');
+ }).join('');
  return '<div class="container"><header class="page-intro study-page-intro"><span class="eyebrow">Seu espaço de aprendizagem</span><h1>Meu <em>Estudo.</em></h1><p class="lead">Acompanhe o que já fez, adapte a leitura ao seu conforto e guarde uma cópia dos seus registros. Tudo permanece neste navegador, sem conta.</p></header>'
- +'<section class="study-section" id="study-progress"><div class="section-head"><div><span class="eyebrow">Meu percurso</span><h2>Pequenos avanços, registrados.</h2></div><p>Estes indicadores mostram apenas as atividades disponíveis atualmente, não o percentual da formação completa.</p></div><div class="study-summary"><div class="study-summary-number"><strong>'+(summary.lessonCompleted?'1 / 1':'0 / 1')+'</strong><span>aula disponível concluída</span></div><div class="study-summary-number"><strong>'+summary.lessonActivityStep+' / 3</strong><span>etapas do primeiro laboratório</span></div><div class="study-summary-number"><strong>'+(summary.diamondCompleted?'1 / 1':'0 / 1')+'</strong><span>jogo Diamante concluído</span></div><div class="study-summary-number"><strong>'+summary.readingsSaved+'</strong><span>tiragens no diário</span></div></div><div class="study-card-grid">'
+ +'<section class="study-section" id="study-progress"><div class="section-head"><div><span class="eyebrow">Meu percurso</span><h2>Pequenos avanços, registrados.</h2></div><p>Estes indicadores mostram apenas as atividades disponíveis atualmente, não o percentual da formação completa.</p></div><div class="study-summary"><div class="study-summary-number"><strong>'+summary.lessonsCompletedCount+' / '+summary.lessonsAvailableCount+'</strong><span>aulas disponíveis concluídas</span></div><div class="study-summary-number"><strong>'+summary.newPracticeSteps+' / 9</strong><span>etapas das três novas oficinas</span></div><div class="study-summary-number"><strong>'+(summary.diamondCompleted?'1 / 1':'0 / 1')+'</strong><span>jogo Diamante concluído</span></div><div class="study-summary-number"><strong>'+summary.readingsSaved+'</strong><span>tiragens no diário</span></div></div><div class="study-card-grid">'
  +progressCard('A arte de olhar',chapterLine,summary.lessonCompleted,'#/aula/primeiro-olhar','Retomar a aula')
+ +newCourseCards
  +progressCard('Diamante dos Arcanos',diamonds,summary.diamondCompleted,'#/praticas/diamante','Abrir o jogo')
  +'<article class="study-card"><div class="study-card-top"><span class="study-indicator">'+esc(notes)+'</span><span aria-hidden="true">◇</span></div><h3>Mesa de Tiragens</h3><p>Consulte seu diário de leituras e retome a prática. Os textos são armazenados só neste aparelho.</p><a class="study-card-link" href="#/praticas/mesa">Abrir a mesa →</a></article></div></section>'
  +'<section class="study-section" id="study-accessibility"><div class="section-head"><div><span class="eyebrow">Conforto visual</span><h2>Leia do seu jeito.</h2></div><p>Essas preferências ficam guardadas apenas neste navegador.</p></div><div class="study-setting-list">'
@@ -125,8 +133,9 @@ export function handleStudyClick(target){
   }catch(err){say('A restauração falhou. '+String(err.message||err));}
  }else if(cancel){pendingImport=null;announcement='Restauração cancelada. Nenhum registro foi alterado.';renderStudy();}
  else if(done){
-  const current=completedLesson(localStorage);
-  if(setCompletedLesson(localStorage,!current)){
+  const lessonId=done.dataset?.studyLessonToggle||'F-03.01';
+  const current=completedLesson(localStorage,lessonId);
+  if(setCompletedLesson(localStorage,!current,lessonId)){
    const button=document.querySelector('[data-study-lesson-toggle]');
    if(button){button.setAttribute('aria-pressed',String(!current));button.textContent=!current?'Aula marcada como concluída ✓':'Marcar aula como concluída';}
    const feedback=document.getElementById('lesson-completion-status');
@@ -135,11 +144,11 @@ export function handleStudyClick(target){
  }
  return true;
 }
-export function markLessonControl(){
- const isDone=completedLesson(localStorage);
- return '<section class="study-lesson-finish"><span class="eyebrow">Seu percurso</span><h2>Você concluiu esta leitura?</h2><p>Se já leu o material, praticou a observação e refletiu sobre as perguntas, marque esta aula como concluída. Isso registra apenas sua escolha neste navegador.</p><button type="button" class="button" data-study-lesson-toggle aria-pressed="'+isDone+'">'+(isDone?'Aula marcada como concluída ✓':'Marcar aula como concluída')+'</button><p class="study-lesson-status" id="lesson-completion-status" role="status" aria-live="polite"></p><a class="text-link" href="#/meu-estudo">Acompanhar meu estudo →</a></section>';
+export function markLessonControl(lessonId='F-03.01'){
+ const isDone=completedLesson(localStorage,lessonId);
+ return '<section class="study-lesson-finish"><span class="eyebrow">Seu percurso</span><h2>Você concluiu esta leitura?</h2><p>Se já leu o material, praticou a observação e refletiu sobre as perguntas, marque esta aula como concluída. Isso registra apenas sua escolha neste navegador.</p><button type="button" class="button" data-study-lesson-toggle="'+esc(lessonId)+'" aria-pressed="'+isDone+'">'+(isDone?'Aula marcada como concluída ✓':'Marcar aula como concluída')+'</button><p class="study-lesson-status" id="lesson-completion-status" role="status" aria-live="polite"></p><a class="text-link" href="#/meu-estudo">Acompanhar meu estudo →</a></section>';
 }
 export function renderStudyControl(){
  const area=document.getElementById('lesson-mark-control');
- if(area)area.innerHTML=markLessonControl();
+ if(area)area.innerHTML=markLessonControl(area.dataset.lessonId||'F-03.01');
 }
