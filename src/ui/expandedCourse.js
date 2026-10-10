@@ -15,7 +15,7 @@ const countSteps=lesson=>lesson.activity.length;
 
 function figure(cardsSlugs){
  const arr=cardsSlugs.map(bySlug).filter(Boolean);
- return '<figure class="course-gallery"><div class="course-gallery-grid columns-'+arr.length+'">'+arr.map(c=>'<a href="#/carta/'+e(c.slug)+'" title="Explorar '+e(c.name)+' no Atlas" class="course-gallery-card">'+cardImage(c)+'<span>'+e(c.name)+'</span></a>').join('')+'</div><figcaption>Imagens históricas de Pamela Colman Smith, Rider-Waite-Smith. Toque em uma carta para vê-la no Atlas Vivo. Fonte e condições de uso estão nas fichas individuais.</figcaption></figure>';
+ return '<figure class="course-gallery"><div class="course-gallery-grid columns-'+arr.length+'">'+arr.map(c=>'<a href="#/carta/'+e(c.slug)+'" title="Explorar '+e(c.name)+' no Atlas" class="course-gallery-card">'+cardImage(c)+'<span>'+e(c.name)+'</span></a>').join('')+'</div><figcaption>Imagens históricas de Pamela Colman Smith, Rider-Waite-Smith. Toque em uma carta para vê-la no Atlas Vivo. A origem de cada imagem está informada na página da carta.</figcaption></figure>';
 }
 function section(s){
  return '<section class="arcana-chapter course-chapter" id="'+e(s.id)+'"><span class="eyebrow">'+e(s.label)+'</span><h2>'+e(s.title)+'</h2>'+s.paragraphs.map(p=>'<p>'+e(p)+'</p>').join('')+'<aside class="lesson-principle"><strong>Para guardar</strong><p>'+e(s.principle)+'</p></aside></section>';
