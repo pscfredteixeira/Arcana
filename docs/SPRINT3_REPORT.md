@@ -10,7 +10,7 @@
 - **Lupa Simbólica**: áreas numeradas tocáveis e por teclado sobre a carta; explicações dos detalhes. Seis cartas iniciais têm áreas específicas; outras 72 contam inicialmente com um ponto geral de observação.
 - Ampliação de imagem em diálogo/modal, botão Fechar e tecla Escape.
 - Sugestões de cartas do mesmo conjunto para comparação.
-- Estilos mobile-first sem mudar a direção Arquivo Vivo.
+- Estilos mobile-first sem mudar a direção ARCANA.
 
 ## Fontes visuais
 Iconografia de Pamela Colman Smith, Rider–Waite–Smith (1910), a partir de páginas do Wikimedia Commons. Nomenclatura dos arquivos segue a coleção **Rider-Waite-Smith tarot deck (TaionWC)** e páginas individuais. As páginas de O Louco, Os Enamorados, Ás de Paus, Ás de Copas e Rei de Ouros foram conferidas como amostra; **a verificação individual dos 78 arquivos no navegador permanece pendente**, com alternativa textual quando a imagem não carregar.
