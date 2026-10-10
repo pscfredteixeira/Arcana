@@ -11,7 +11,7 @@
 | 4 | Primeiro jogo pedagógico | Diamante dos Arcanos em três fases, toque/teclado, feedback e salvamento local publicados; validação no celular pendente |
 | 5 | Mesa de tiragens didática | Dois modelos de 3 e 5 cartas, revelação guiada, registro por posição e diário local implementados; revisão em celular pendente |
 | 6 | Progresso local e acessibilidade | Meu Estudo, conclusão de aula, preferências visuais, backup JSON, restauração confirmada e testes; inspeção mobile e WCAG completa pendentes |
-| 7 | Ampliação de aulas, cartas e atividades | Conteúdo revisado e publicável por módulos |
+| 7 | Ampliação de aulas, cartas e atividades | Três aulas novas com fontes e oficinas, catálogo de 4 aulas e progresso integrado; currículo restante em produção |
 
 ## Situação após o Sprint 1
 A primeira versão foi implementada em HTML/CSS/JavaScript modular, com navegação, seis cartas, busca e aula demonstrativa. A revisão estática de sintaxe e a renderização dos templates passaram nos testes realizados com os módulos carregados. A validação no navegador (desktop e celular) e a ativação do GitHub Pages seguem pendentes. Detalhes em [SPRINT1_REPORT.md](SPRINT1_REPORT.md).
@@ -43,3 +43,8 @@ Publicada em `#/praticas/mesa`, com **Três Perspectivas** e **Mapa de Perspecti
 
 ## Sprint 6 — Meu Estudo (10/10/2026)
 A tela `#/meu-estudo` reúne indicadores **somente das atividades implementadas**, e não um percentual global do curso. A primeira aula pode ser marcada como concluída, sem alterar avaliações. Foram adicionados tamanho de fonte, contraste, movimento reduzido, exportação de backup JSON e importação com validação e confirmação. Correções de foco após navegação e diálogo do Atlas acompanham o sprint. Consulte [SPRINT6_REPORT.md](SPRINT6_REPORT.md). A revisão em Safari/iPhone e a auditoria WCAG aprofundada continuam pendentes.
+
+## Sprint 7 — Expansão editorial (10/10/2026)
+Três aulas autorais de conteúdo extenso — estrutura do baralho, Mago/Sacerdotisa e quatro naipes — adicionadas à aula inicial. Cada nova unidade possui quatro seções, referências aos PDFs de trabalho, imagens do Atlas e atividade de três fases com feedback. A Oficina de Correspondências dos Naipes funciona por seleção e toque. Conclusão independente por aula e etapas dos exercícios integram Meu Estudo e backup. Consulte [SPRINT7_REPORT.md](SPRINT7_REPORT.md) e [CONTENT_AUDIT.md](CONTENT_AUDIT.md).
+
+**Limites:** quatro aulas não encerram a formação prevista de quinze módulos; textos de 72 cartas ainda são introdutórios; verificação manual no celular e auditoria integral de imagens seguem pendentes.
