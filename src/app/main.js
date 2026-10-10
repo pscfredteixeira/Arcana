@@ -83,6 +83,13 @@ app.addEventListener('error',event=>{
  const img=event.target;
  if(img instanceof HTMLImageElement&&img.matches('[data-card-image]'))img.closest('.card-image-shell')?.classList.add('is-error');
 },true);
-window.addEventListener('keydown',event=>{if(event.key==='Escape')closeZoom();});
+window.addEventListener('keydown',event=>{
+ const modal=document.getElementById('atlas-lightbox');
+ if(event.key==='Escape'){closeZoom();return;}
+ if(event.key==='Tab'&&modal&&!modal.hidden){
+  event.preventDefault();
+  modal.querySelector('#close-atlas-zoom')?.focus();
+ }
+});
 window.addEventListener('hashchange',render);
 render();
