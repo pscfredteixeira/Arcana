@@ -43,3 +43,17 @@ test('roteador e estilos do sprint 3 estão integrados',()=>{
  assert.match(app,/handleAtlasClick/);
  assert.match(index,/styles\/atlas.css/);
 });
+
+test('cartas sem lupa específica não exibem o algarismo 1 no meio da imagem',()=>{
+ const generic=cards.filter(c=>!['o-louco','o-mago','a-sacerdotisa','a-imperatriz','o-imperador','o-hierofante'].includes(c.slug));
+ assert.equal(generic.length,72);
+ for(const c of generic){
+  const html=atlasDetailExpanded(c);
+  assert.ok(!html.includes('data-spot="0"'),c.slug+' tinha marcador central');
+  assert.match(html,/Imagem sem marcadores sobrepostos/);
+  assert.match(html,/data-open-zoom/);
+ }
+ for(const slug of ['o-louco','o-mago','a-sacerdotisa','a-imperatriz','o-imperador','o-hierofante']){
+  assert.match(atlasDetailExpanded(cards.find(c=>c.slug===slug)),/data-spot="0"/);
+ }
+});
