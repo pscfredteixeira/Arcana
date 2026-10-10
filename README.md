@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 5 publicado**
+**Escola interativa de tarô — Sprint 6 implementado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -29,6 +29,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Relatório do Sprint 3](docs/SPRINT3_REPORT.md)
 - [Relatório do Sprint 4](docs/SPRINT4_REPORT.md)
 - [Relatório do Sprint 5](docs/SPRINT5_REPORT.md)
+- [Relatório do Sprint 6](docs/SPRINT6_REPORT.md)
 - [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
@@ -71,3 +72,10 @@ Próximos passos: validar os detalhes de interface em celulares, executar os tes
 A [Mesa de Tiragens](https://pscfredteixeira.github.io/Arcana/#/praticas/mesa), disponível em Práticas, oferece duas disposições pedagógicas originais: **Três Perspectivas** (3 cartas) e **Mapa de Perspectivas** (5 cartas). É possível escolher um baralho de 78 cartas ou apenas os 22 Arcanos Maiores, revelar imagens por toque, registrar hipóteses, escrever uma síntese e guardar até 15 leituras no diário local do navegador. O desenho dos modelos não é atribuído a Rachel Pollack nem a Nei Naiff.
 
 O projeto agora conta com um workflow GitHub Actions para executar `npm test` a cada atualização. O primeiro ciclo desse workflow, incluindo os testes do Sprint 5, terminou com sucesso. Ainda são necessárias inspeção e validação de aparência em iPhone e testes aprofundados de acessibilidade.
+
+## Sprint 6 — Meu Estudo e cópia de segurança
+Em [Meu Estudo](https://pscfredteixeira.github.io/Arcana/#/meu-estudo), o estudante acompanha a primeira aula, suas três etapas, o jogo Diamante e a quantidade de tiragens guardadas. A conclusão de aula depende de uma marcação explícita.
+
+O painel acrescenta tamanhos de fonte para leitura, modo de alto contraste, redução manual de animações e **exportação/importação de um backup JSON** dos dados locais. O arquivo é criado pelo navegador e não enviado a um servidor. **Importar substitui os registros locais existentes**; exporte uma cópia antes de restaurar. As anotações podem conter dados pessoais, por isso o backup deve ser guardado em local seguro.
+
+Esses indicadores abrangem apenas as atividades atualmente disponíveis. O ARCANA ainda não tem todo o currículo, login ou sincronização entre aparelhos. Consulte [SPRINT6_REPORT.md](docs/SPRINT6_REPORT.md) para a política de dados, os limites e o checklist de validação no celular.
