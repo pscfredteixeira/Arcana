@@ -49,7 +49,7 @@ export function homePage(){
 
 export function learnPage(){
  return `<div class="container"><header class="page-intro"><div class="eyebrow">Programa de formação</div><h1>Aprender a ler<br>as imagens.</h1><p class="lead">Um percurso progressivo do básico ao avançado. Nesta etapa, você pode explorar uma aula introdutória. Os outros módulos serão desenvolvidos após revisão pedagógica.</p></header>
- <div class="curriculum-card"><span class="volume">01</span><div><span class="status">Primeira aula disponível</span><h2>O primeiro olhar</h2><p>Como começar a observar os símbolos sem decorar interpretações prontas.</p></div><a class="text-link" href="#/aula/primeiro-olhar">Abrir aula →</a></div>
+ <div class="curriculum-card"><span class="volume">01</span><div><span class="status">Aula completa disponível</span><h2>A arte de olhar</h2><p>Estudo aprofundado da imagem do Louco, relações com outras cartas, três desafios interativos e caderno de reflexão.</p></div><a class="text-link" href="#/aula/primeiro-olhar">Abrir aula →</a></div>
  <div class="curriculum-card is-future"><span class="volume">02</span><div><span class="status pending">Em desenvolvimento</span><h2>Fundamentos</h2><p>História, estrutura do baralho e um percurso pelas cartas dos Arcanos Maiores.</p></div><span class="status pending">Próximos sprints</span></div>
  <div class="curriculum-card is-future"><span class="volume">03</span><div><span class="status pending">Planejamento</span><h2>Relações e interpretações</h2><p>Arcanos Menores, naipes, cortes, tiragens, narrativas e prática avançada.</p></div><span class="status pending">Futuro</span></div>
  </div>`;
