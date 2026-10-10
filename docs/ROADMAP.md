@@ -7,7 +7,7 @@
 | 0 | Auditoria de conteúdo, arquitetura, licenças, plano e contratos | Fontes mapeadas, decisões e requisitos rastreáveis |
 | 1 | Design System e navegação responsiva | Código de home, aula e atlas publicado no repositório; validação visual real e GitHub Pages ainda pendentes |
 | 2 | Primeira aula com conteúdo original revisado | Aula completa, laboratório de 3 etapas, caderno e fontes publicados; validação visual real pendente |
-| 3 | Atlas visual interativo inicial | Cartas clicáveis, zoom, símbolos e comparação |
+| 3 | Atlas visual interativo inicial | 78 cartas, filtros, fichas e lupa publicados; revisão visual, acessibilidade e aprofundamento por carta pendentes |
 | 4 | Primeiro jogo pedagógico | Objetivo, estados, feedback, toque/teclado e testes |
 | 5 | Mesa de tiragens didática | Distribuição visual, posições, registro de observações |
 | 6 | Progresso local e acessibilidade | Preferências, persistência, contraste, foco e movimento reduzido |
@@ -27,3 +27,6 @@ Ao término de cada sprint, registrar arquivos modificados, demonstração, test
 
 ## Sprint 2 — andamento (10/10/2026)
 Aula completa *A arte de olhar* publicada, com seis capítulos, comparação visual, três exercícios graduais com feedback e registro individual no navegador. As páginas de fonte foram verificadas por amostragem nas obras fornecidas. Sintaxe e renderização dos templates passaram em verificações programáticas; testes automatizados disponíveis. Consulte [SPRINT2_REPORT.md](SPRINT2_REPORT.md). A conferência no iPhone ainda deve ser feita.
+
+## Sprint 3 — andamento (10/10/2026)
+Atlas das 78 cartas, filtros por naipe, lupa com pontos simbólicos, fichas e zoom publicados. Seis cartas possuem marcadores específicos e 72 têm uma exploração visual geral inicial. As descrições das 72 cartas são resumos introdutórios originais, não o curso aprofundado. Consulte [SPRINT3_REPORT.md](SPRINT3_REPORT.md). A revisão de todas as imagens e o teste real no celular permanecem pendentes.
