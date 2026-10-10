@@ -47,3 +47,9 @@
 .beginner-next .button{margin:6px 8px 6px 0}
 @media(max-width:720px){.beginner-glossary,.beginner-three-steps{grid-template-columns:1fr}.beginner-example{grid-template-columns:1fr}.beginner-example-art{width:160px;margin:0 auto}.beginner-arithmetic{gap:8px}.beginner-arithmetic small{font-size:.67rem}.beginner-arithmetic>span{font-size:1.1rem}.beginner-guide .page-intro{padding-bottom:34px}.beginner-guided-section{padding-top:29px}.beginner-guided-section h2{font-size:1.85rem}.beginner-chapter-summary{padding:17px}.beginner-definition{font-size:1.08rem!important}}
 @media(max-width:390px){.beginner-arithmetic{gap:4px;padding:18px 7px}.beginner-arithmetic small{font-size:.61rem}.beginner-meaning{padding:18px}}
+
+/* Resumo objetivo antes da carta, inclusive no iPhone */
+.atlas-beginner-topline{padding:18px 24px 20px;margin:0 0 22px;background:#fff9ef;border-left:5px solid #935a57;box-shadow:0 4px 12px #624f4310}
+.atlas-beginner-topline p{font-family:var(--serif);color:var(--burgundy);font-weight:500;font-size:clamp(1.25rem,3vw,1.6rem);line-height:1.4;margin:9px 0}
+.atlas-beginner-topline a{color:var(--wine);font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:780px){.atlas-beginner-topline{padding:16px 19px;margin:0 0 17px}.atlas-beginner-topline p{font-size:1.32rem}}
