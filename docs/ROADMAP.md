@@ -9,7 +9,7 @@
 | 2 | Primeira aula com conteúdo original revisado | Aula completa, laboratório de 3 etapas, caderno e fontes publicados; validação visual real pendente |
 | 3 | Atlas visual interativo inicial | 78 cartas, filtros, fichas e lupa publicados; revisão visual, acessibilidade e aprofundamento por carta pendentes |
 | 4 | Primeiro jogo pedagógico | Diamante dos Arcanos em três fases, toque/teclado, feedback e salvamento local publicados; validação no celular pendente |
-| 5 | Mesa de tiragens didática | Distribuição visual, posições, registro de observações |
+| 5 | Mesa de tiragens didática | Dois modelos de 3 e 5 cartas, revelação guiada, registro por posição e diário local implementados; revisão em celular pendente |
 | 6 | Progresso local e acessibilidade | Preferências, persistência, contraste, foco e movimento reduzido |
 | 7 | Ampliação de aulas, cartas e atividades | Conteúdo revisado e publicável por módulos |
 
@@ -35,3 +35,8 @@ Atlas das 78 cartas, filtros por naipe, lupa com pontos simbólicos, fichas e zo
 Primeiro jogo pedagógico publicado em `#/praticas/diamante`, com montagem de quatro cartas segundo Rachel Pollack, exploração dos eixos vertical e horizontal, interpretação de situação contextual e caderno opcional. Progresso local sem login. Código modular com regras puras e testes de transição. Ver [SPRINT4_REPORT.md](SPRINT4_REPORT.md) e [INTERACTIONS.md](INTERACTIONS.md).
 
 **Pendente antes do próximo sprint:** revisão visual e de usabilidade em celular, verificação da publicação GitHub Pages e execução dos testes de Node em ambiente local/CI.
+
+## Sprint 5 — Mesa de Tiragens (10/10/2026)
+Publicada em `#/praticas/mesa`, com **Três Perspectivas** e **Mapa de Perspectivas**. Ambas são estruturas didáticas originais, com escolha entre os 22 Maiores e todas as 78 cartas, distribuição sem repetição, interpretação por posição, síntese e até 15 registros no diário local. Ver [SPRINT5_REPORT.md](SPRINT5_REPORT.md).
+
+**Verificação:** primeiro workflow GitHub Actions criado no projeto, executando testes Node. Execução bem-sucedida; validação visual em dispositivos e WCAG plena ainda pendentes. Próxima etapa: priorizar progresso, acessibilidade e opções de backup local no Sprint 6.
