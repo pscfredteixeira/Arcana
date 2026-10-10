@@ -123,7 +123,7 @@ export const minorStudies={
  question:'O que diferencia trocar algo de entregar tudo ao outro?'
 },
 'tres-de-copas':{
- reading:'Três pessoas erguem taças juntas e formam uma cena que ultrapassa o par. A alegria aparece como experiência coletiva, relacionada a amizade, reconhecimento e apoio mútuo.',
+ reading:'Três pessoas erguem taças juntas e formam uma cena que ultrapassa o par. A alegria aparece como experiência coletiva, relacionada a amizade, reconhecimento e apoio mútuo. Os corpos erguendo as taças ajudam a visualizar uma participação que não depende de um único protagonista.',
  counter:'Celebração não significa ausência de conflitos no grupo. Nem toda comunidade é igualmente acessível a todos seus integrantes.',
  case:'Amigos comemoram uma conquista: como reconhecer a rede que possibilitou o percurso?',
  question:'Como o sentido da cena muda quando deixamos de pensar apenas em relações de duas pessoas?'
