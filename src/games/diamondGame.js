@@ -21,6 +21,8 @@ function focusAfter(selector){
 function goToPhase(){
  feedback=null;state.selected=null;state.checked=false;state.axisChoice=null;state.scenarioChoice=null;
  persist();renderDiamond();
+ const indicator=document.querySelector('.diamond-progress');
+ if(indicator)indicator.outerHTML=progress();
  const root=document.getElementById('diamond-root');
  if(root){
   const heading=root.querySelector('[data-dia-focus]');
@@ -48,7 +50,7 @@ function gameBoard(interactive=true){
   +boardCard('right',interactive)+boardCard('bottom',interactive)+'</div>';
 }
 function progress(){
- const current=state.step==='compose'?0:state.step==='axes'?1:2;
+ const current=state.step==='compose'?0:state.step==='axes'?1:state.step==='scenario'?2:3;
  return '<div class="diamond-progress" aria-label="Etapas do jogo">'+lesson.phases.map((p,i)=>'<div class="diamond-progress-item'+(i<current?' is-done':'')+(i===current?' is-active':'')+'"><span class="diamond-progress-count">'+(i<current?'✓':p.number)+'</span><span class="diamond-progress-text"><strong>'+p.name+'</strong><small>'+p.short+'</small></span></div>').join('')+'</div>';
 }
 function noteBox(html,className=''){
@@ -88,7 +90,7 @@ function scenario(){
  const q=lesson.scenario;
  const correct=state.scenarioChoice?evaluateOption(q.options,state.scenarioChoice)?.correct:false;
  return '<section class="diamond-phase"><div class="diamond-phase-heading"><span class="eyebrow">Etapa 03 · Síntese</span><h2 tabindex="-1" data-dia-focus>Um sentido começa numa pergunta.</h2><p>Coloque os contrastes do diamante em diálogo com uma situação concreta. A atividade avalia a coerência da justificativa, não uma previsão.</p></div>'
- +'<div class="diamond-story"><div class="diamond-story-context"><span class="eyebrow">Cena de estudo · fictícia</span><h3>'+esc(q.heading)+'</h3><p>'+esc(q.situation)+'</p>'+fixedCards()+'</div><div class="diamond-question"><h3>'+esc(q.question)+'</h3>'+choiceButtons(q.options,state.scenarioChoice,'data-dia-scenario')+optionsFeedback(q.options,state.scenarioChoice,'data-dia-scenario-next','Preparar minha síntese')+'</div></div>'
+ +'<div class="diamond-story"><div class="diamond-story-context"><span class="eyebrow">Cena de estudo · fictícia</span><h3>'+esc(q.heading)+'</h3><p>'+esc(q.situation)+'</p>'+fixedCards()+'</div><div class="diamond-question"><h3>'+esc(q.question)+'</h3>'+choiceButtons(q.options,state.scenarioChoice,'data-dia-scenario')+optionsFeedback(q.options,state.scenarioChoice,'data-dia-scenario-next','Concluir a jornada')+'</div></div>'
  +(correct?'<div class="diamond-reflection"><h3>Sua interpretação, sem gabarito</h3><label for="diamond-reflection">Escreva uma pergunta que ajude essa pessoa a pensar no projeto. Esta anotação é opcional.</label><textarea id="diamond-reflection" rows="4" maxlength="2000" placeholder="Uma questão que eu faria seria…">'+esc(state.reflection)+'</textarea><p class="diamond-save-note">Fica apenas neste navegador. Nenhuma interpretação pessoal será corrigida automaticamente.</p><div class="diamond-rubric"><strong>Ao revisar, verifique se você:</strong><ul>'+q.rubric.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div></div>':'')+'</section>';
 }
 function completed(){
