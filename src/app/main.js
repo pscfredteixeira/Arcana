@@ -1,3 +1,4 @@
+import {fullLessonPage,renderLab,handleLabClick,saveReflection} from '../ui/fullLesson.js';
 import {cards,findCard} from '../data/cards.js';
 import {siteHeader,siteFooter,homePage,learnPage,lessonPage,atlasPage,atlasCards,detailPage,practicePage,aboutPage,missingPage} from '../ui/templates.js';
 
@@ -7,7 +8,7 @@ const getRoute=()=>{
   const path=getHashPath();
   if(path==='/')return {active:'home',content:homePage(),title:'Arquivo Vivo'};
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
-  if(path==='/aula/primeiro-olhar')return {active:'learn',content:lessonPage(),title:'O primeiro olhar'};
+  if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path==='/atlas')return {active:'atlas',content:atlasPage(),title:'Atlas'};
   if(path==='/praticas')return {active:'practice',content:practicePage(),title:'Práticas'};
   if(path==='/sobre')return {active:'about',content:aboutPage(),title:'Sobre'};
@@ -39,19 +40,22 @@ function render(){
  document.title=`${route.title} — ARCANA`;
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
  changeFont(fontPreference());
+ renderLab();
  window.scrollTo({top:0,left:0,behavior:'auto'});
 }
 app.addEventListener('input',event=>{
  if(event.target?.id==='atlas-search')updateAtlas(event.target.value);
+ if(event.target?.id==='lesson-notes')saveReflection(event.target.value);
 });
 app.addEventListener('click',event=>{
+ if(handleLabClick(event.target))return;
  const btn=event.target.closest('button[data-font]');
  if(btn){changeFont(btn.dataset.font);return;}
  const anchor=event.target.closest('a[data-anchor]');
  if(anchor){
    event.preventDefault();
    const target=document.getElementById(anchor.dataset.anchor);
-   if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+   if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
  }
 });
 app.addEventListener('error',event=>{
