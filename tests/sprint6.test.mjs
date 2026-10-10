@@ -100,7 +100,7 @@ test('tela de estudo inclui progresso, legibilidade, arquivo e confirmação',()
  const local=fakeStorage({'arcana-font':'normal'});
  globalThis.localStorage=local;
  const html=studyPage();
- for(const phrase of ['Meu <em>Estudo','0 / 1','data-study-font="normal"','data-study-contrast="high"','data-study-motion="reduce"','data-study-export','study-import-file','privado']){
+ for(const phrase of ['Meu <em>Estudo','0 / 4','data-study-font="normal"','data-study-contrast="high"','data-study-motion="reduce"','data-study-export','study-import-file','privado']){
   if(phrase==='privado')continue;
   assert.ok(html.includes(phrase),phrase);
  }
