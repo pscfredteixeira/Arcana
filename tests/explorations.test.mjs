@@ -79,7 +79,7 @@ test('Ateliê real: observa nove pontos e completa três estudos com feedback',a
   ui.handleAtelierClick(event('[data-atelier-bridge]'));
   const invalid=atelier.bridge.options.findIndex(x=>!x.valid);
   ui.handleAtelierClick(event('[data-atelier-answer]',{atelierAnswer:String(invalid)}));
-  assert.match(root.innerHTML,/Ainda há um salto/);
+  assert.match(root.innerHTML,/Ainda não! Essa resposta afirma algo/);
   ui.handleAtelierClick(event('[data-atelier-retry]'));
   const correct=atelier.bridge.options.findIndex(x=>x.valid);
   ui.handleAtelierClick(event('[data-atelier-answer]',{atelierAnswer:String(correct)}));
