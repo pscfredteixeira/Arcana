@@ -1,0 +1,10 @@
+{
+  "name": "arcana-arquivo-vivo",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Escola de tarô ARCANA — prévia do Sprint 1",
+  "scripts": {
+    "test": "node --test"
+  }
+}
