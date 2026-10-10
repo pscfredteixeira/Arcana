@@ -39,12 +39,13 @@ test('cada naipe possui foco próprio e as 14 cartas estão representadas',()=>{
 test('a ficha apresenta fundamentos, observação, reflexão, método e fontes',()=>{
  for(const c of cards){
   const html=renderCardStudy(c);
-  assert.ok(html.includes('Olhe antes de interpretar'));
-  assert.ok(html.includes('O que a imagem coloca em jogo?'));
-  assert.ok(html.includes('A tensão que não deve ser apagada'));
-  assert.ok(html.includes('Um exemplo da vida cotidiana'));
+  assert.ok(html.includes('O que aparece no desenho?'));
+  assert.ok(html.includes('Por que a carta pode ter esse significado?'));
+  assert.ok(html.includes('Quando essa ideia também pode trazer dificuldades'));
+  assert.ok(html.includes('Outro exemplo do dia a dia'));
   assert.ok(html.includes('Pollack e Naiff'));
-  assert.ok(html.includes('BIBLIOGRAFIA E CRITÉRIO EDITORIAL'));
+  assert.ok(html.includes('Em palavras simples')||html.includes('O que significa '));
+  assert.ok(html.includes('DE ONDE VEM ESTE ESTUDO?'));
   assert.ok(html.length>3000,c.name+': ficha não detalhada');
   if(c.suit)assert.ok(html.includes('NAIPE / ELEMENTO SIMBÓLICO'));
   const page=atlasDetailExpanded(c);
