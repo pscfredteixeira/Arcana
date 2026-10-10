@@ -5,7 +5,7 @@ export const routes = [
   {href:'#/aprender',key:'learn',label:'Aprender',symbol:'▤'},
   {href:'#/atlas',key:'atlas',label:'Atlas',symbol:'▥'},
   {href:'#/praticas',key:'practice',label:'Práticas',symbol:'◇'},
-  {href:'#/sobre',key:'about',label:'Sobre',symbol:'○'}
+  {href:'#/meu-estudo',key:'study',label:'Meu estudo',symbol:'◷'}
 ];
 
 export const escapeHTML = text => String(text).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
@@ -21,7 +21,7 @@ export function siteHeader(active) {
  const logo=`<a class="logo" href="#/" aria-label="ARCANA, página inicial"><span class="logo-main">ARCANA</span><span class="logo-caption">ARQUIVO VIVO</span></a>`;
  const nav=`<nav aria-label="Navegação principal" class="top-nav">${routes.map(r=>`<a href="${r.href}" ${r.key===active?'aria-current="page"':''}>${r.label}</a>`).join('')}</nav>`;
  const mobile=`<nav aria-label="Navegação inferior" class="mobile-nav">${routes.map(r=>`<a href="${r.href}" ${r.key===active?'aria-current="page"':''}><span aria-hidden="true" class="nav-icon">${r.symbol}</span><span>${r.label}</span></a>`).join('')}</nav>`;
- return `<header class="site-header"><div class="container header-inner">${logo}${nav}<span class="header-extra">Um estudo em movimento</span></div></header>${mobile}`;
+ return `<header class="site-header"><div class="container header-inner">${logo}${nav}<a class="study-top-link" href="#/meu-estudo">Meu estudo ↗</a></div></header>${mobile}`;
 }
 
 export function siteFooter(){
@@ -31,7 +31,7 @@ export function siteFooter(){
 export function homePage(){
  return `<section class="hero"><div class="container hero-grid">
  <div class="hero-copy"><div class="eyebrow">Escola aberta de tarô</div><h1>Conhecimento antigo para <em>perguntas atuais.</em></h1><p class="lead">Descubra as imagens, as histórias e as possibilidades de interpretação do Rider-Waite-Smith, um símbolo de cada vez.</p>
- <div class="hero-actions"><a class="button" href="#/aprender">Começar a estudar <span aria-hidden="true" class="arrow">→</span></a><a class="button secondary" href="#/atlas">Explorar o Atlas</a></div>
+ <div class="hero-actions"><a class="button" href="#/aprender">Começar a estudar <span aria-hidden="true" class="arrow">→</span></a><a class="button secondary" href="#/atlas">Explorar o Atlas</a><a class="study-quick-link" href="#/meu-estudo">Meu estudo ↗</a></div>
  <div class="hero-note"><span class="accent">78</span><span>Cartas disponíveis no Atlas Vivo: 22 Arcanos Maiores e 56 Menores. Os estudos aprofundados serão ampliados por etapas.</span></div></div>
  <div class="hero-art" aria-label="Carta O Louco, primeira ilustração explorada no ARCANA"><div class="orbit"></div><div class="hero-card">${cardImage(cards[0],true)}</div><div class="hero-art-label">Toda jornada começa com um olhar.</div></div></div></section>
  <hr class="editorial-divider">
