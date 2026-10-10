@@ -68,6 +68,14 @@ function compose(){
 function fixedCards(){
  return '<div class="diamond-minirow">'+cardSlugs.map(slug=>{const c=bySlug(slug);return '<div class="diamond-mini-card">'+cardImage(c)+'<span>'+esc(c.name)+'</span></div>';}).join('')+'</div>';
 }
+function axisPair(index){
+ const pair=index===0?['o-louco','o-mundo']:['o-mago','a-sacerdotisa'];
+ const direction=index===0?'vertical':'horizontal';
+ return '<div class="diamond-axis-pair '+direction+'" role="group" aria-label="Comparação de '+(index===0?'O Louco e O Mundo':'O Mago e A Sacerdotisa')+'">'+pair.map(slug=>{
+  const c=bySlug(slug);
+  return '<div class="diamond-axis-card">'+cardImage(c)+'<strong>'+esc(c.name)+'</strong></div>';
+ }).join('')+'</div>';
+}
 function choiceButtons(options,selected,dataAttr){
  return '<div class="diamond-choices" role="group" aria-label="Alternativas">'+options.map((o,i)=>{
   const isChosen=o.id===selected;
@@ -84,7 +92,7 @@ function axes(){
  const a=lesson.axes[state.axisIndex];
  const sentence=state.axisIndex===0?'Observe a linha que vai do início das possibilidades à imagem de integração.':'Agora observe a linha que liga o Mago à Sacerdotisa. Compare as posturas e a composição.';
  return '<section class="diamond-phase"><div class="diamond-phase-heading"><span class="eyebrow">Etapa 02 · Relações · '+(state.axisIndex+1)+' de 2</span><h2 tabindex="-1" data-dia-focus>O que une as figuras?</h2><p>'+esc(sentence)+'</p></div>'
- +'<div class="diamond-axes-layout"><div class="diamond-axes-art"><div class="diamond-axis-label">'+(state.axisIndex===0?'↕ Linha vertical: 0 e XXI':'↔ Linha horizontal: I e II')+'</div>'+fixedCards()+'<p>Na proposta da autora, o desenho do diamante é uma ferramenta de comparação, não uma lei universal sobre pessoas e destinos.</p></div><div class="diamond-question"><span class="eyebrow">'+esc(a.title)+'</span><h3>'+esc(a.question)+'</h3>'+choiceButtons(a.options,state.axisChoice,'data-dia-axis')+optionsFeedback(a.options,state.axisChoice,'data-dia-axis-next',state.axisIndex===0?'Explorar o segundo eixo':'Ir à interpretação')+'</div></div></section>';
+ +'<div class="diamond-axes-layout"><div class="diamond-axes-art"><div class="diamond-axis-label">'+(state.axisIndex===0?'↕ Linha vertical: 0 e XXI':'↔ Linha horizontal: I e II')+'</div>'+axisPair(state.axisIndex)+'<p>Na proposta da autora, o desenho do diamante é uma ferramenta de comparação, não uma lei universal sobre pessoas e destinos.</p></div><div class="diamond-question"><span class="eyebrow">'+esc(a.title)+'</span><h3>'+esc(a.question)+'</h3>'+choiceButtons(a.options,state.axisChoice,'data-dia-axis')+optionsFeedback(a.options,state.axisChoice,'data-dia-axis-next',state.axisIndex===0?'Explorar o segundo eixo':'Ir à interpretação')+'</div></div></section>';
 }
 function scenario(){
  const q=lesson.scenario;
