@@ -14,10 +14,10 @@ test('ARCANA tem manifesto instalável com os ícones corretos',()=>{
  assert.equal(manifest.icons.find(i=>i.sizes==='192x192').type,'image/png');
  assert.equal(manifest.icons.find(i=>i.sizes==='512x512').type,'image/png');
  for(const icon of manifest.icons){
-  const path=icon.src.replace(/^\.\//,'');
+  const path=icon.src.replace(/^\.\//,'').split('?')[0];
   assert.ok(existsSync(new URL('../'+path,import.meta.url)),path);
  }
- for(const size of [180,192,512]){
+ for(const size of [32,180,192,512]){
   const path=new URL('../icons/icon-'+size+'.png',import.meta.url);
   assert.ok(existsSync(path),'Icon '+size);
   const png=readFileSync(path);
@@ -61,7 +61,11 @@ test('a marca visual e o nome do app não mostram o antigo subtítulo',()=>{
   assert.doesNotMatch(s,/arquivo vivo/i);
  }
  assert.match(header,/logo-main">ARCANA/);
- assert.match(index,/apple-touch-icon/);
+ assert.match(index,/apple-touch-icon\.png\?v=5/);
+ assert.match(index,/og:image/);
+ assert.match(index,/icon-32\.png\?v=5/);
+ assert.match(index,/manifest\.webmanifest\?v=5/);
+ assert.ok(existsSync(new URL('../apple-touch-icon.png',import.meta.url)));
  assert.match(index,/manifest\.webmanifest/);
  assert.match(index,/styles\/pwa\.css/);
 });

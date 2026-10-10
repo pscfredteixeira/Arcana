@@ -13,7 +13,7 @@ const isIOS=()=>/iPad|iPhone|iPod/i.test(navigator.userAgent)||(navigator.platfo
 const safariOnIOS=()=>isIOS()&&/Safari/i.test(navigator.userAgent)&&!/CriOS|FxiOS|EdgiOS|OPiOS|DuckDuckGo|Instagram|FBAN|FBAV/i.test(navigator.userAgent);
 const safeRead=()=>{try{return Number(localStorage.getItem(INSTALL_DISMISS_KEY))||0;}catch{return 0;}};
 const safeWrite=value=>{try{localStorage.setItem(INSTALL_DISMISS_KEY,String(value));}catch{}};
-const icon='./icons/icon-180.png';
+const icon='./apple-touch-icon.png?v=5';
 
 export function installGuideMarkup({safari=safariOnIOS(),android=false}={}){
  const intro=safari

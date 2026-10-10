@@ -26,10 +26,13 @@ A arte aprovada do ARCANA foi convertida para:
 - `icons/icon-192.png` — ícone para PWA;
 - `icons/icon-512.png` — ícone maior e instaladores compatíveis.
 
-O arquivo `icons/icon-source.jpg` conserva uma versão compacta do símbolo como fonte de geração. A automação `.github/workflows/build-icons.yml` cria as versões PNG automaticamente quando a fonte é alterada. O ícone mantém o desenho celestial em vinho e dourado, sem letras ou subtítulo.
+O arquivo `icons/icon-source.jpg` conserva uma versão compacta **sem moldura clara** do símbolo aprovado, com o fundo vinho até as bordas. A automação `.github/workflows/build-icons.yml` cria as versões PNG automaticamente quando a fonte é alterada. O ícone mantém o desenho celestial em vinho e dourado, sem letras ou subtítulo.
 
 ## Validação
 - Manifesto e metadados verificados por testes automatizados.
 - Geração dos três PNGs no GitHub Actions: concluída com sucesso.
 - Testes de integridade de tamanhos e presença dos assets: configurados em `tests/pwa.test.mjs`.
 - Verificação visual e processo manual de instalação no iPhone: ainda devem ser testados em aparelho real.
+
+## Ajuste de compartilhamento e atualização do ícone
+O iOS deve usar `apple-touch-icon.png` (180×180) na raiz, além dos ícones do manifesto, e a prévia de compartilhamento passa a ter `og:image` próprio apontando para o ícone de 512×512. Links versionados com `?v=5` ajudam a evitar reutilização de imagens antigas. Os ícones também passam a incluir `icons/icon-32.png` para favicon.
