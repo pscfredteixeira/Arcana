@@ -8,7 +8,7 @@
 - **D-005:** Nei Naiff como perspectiva complementar, diferenças preservadas.
 - **D-006:** Experiência equilibrada entre estudo aprofundado e jogos úteis.
 - **D-007:** Lançamento inicial via GitHub Pages, sem login.
-- **D-008:** Linguagem visual escolhida: **Arquivo Vivo**, editorial clara, tons de papiro e vinho/bordô.
+- **D-008:** Linguagem visual escolhida: **ARCANA**, editorial clara, tons de papiro e vinho/bordô.
 - **D-009:** Arquitetura modular; evitar HTML monolítico.
 - **D-010:** Preparar escopo/documentação antes de iniciar a programação.
 - **D-011:** Priorizar responsividade e acessibilidade no celular.
