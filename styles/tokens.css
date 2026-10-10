@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root{
+  color-scheme: light;
+  --paper:#f8f3e9;
+  --paper-deep:#eee5d7;
+  --sand:#e3d7c6;
+  --wine:#722f2f;
+  --burgundy:#4a1e1e;
+  --charcoal:#2b2b2b;
+  --sage:#747b69;
+  --muted:#70675e;
+  --line:#d9cec0;
+  --ivory:#fffdfa;
+  --pale-wine:#f0e4df;
+  --serif:'Playfair Display', Georgia, 'Times New Roman',serif;
+  --sans:'DM Sans', 'Inter', Arial, sans-serif;
+  --radius:13px;
+  --content:1160px;
+  --text-scale:1;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --shadow:0 16px 40px rgba(63,39,28,.09);
+}
