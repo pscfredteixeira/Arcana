@@ -39,7 +39,7 @@ function render(){
  document.title=`${route.title} — ARCANA`;
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
  changeFont(fontPreference());
- window.scrollTo({top:0,left:0,behavior:'instant'});
+ window.scrollTo({top:0,left:0,behavior:'auto'});
 }
 app.addEventListener('input',event=>{
  if(event.target?.id==='atlas-search')updateAtlas(event.target.value);
