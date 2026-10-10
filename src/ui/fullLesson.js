@@ -1,3 +1,4 @@
+import {plainGuideForSection} from '../lessons/lessonPlainGuides.js';
 import {firstLookContent as lesson} from '../lessons/firstLookContent.js';
 import {cards} from '../data/cards.js';
 import {cardImage,escapeHTML as esc} from './templates.js';
@@ -11,7 +12,7 @@ const storage=(key,value)=>{
  try {if(value===undefined)return localStorage.getItem(key); localStorage.setItem(key,String(value));}catch{return null;}
 };
 let state={step:Math.min(3,Math.max(0,Number(storage('arcana-firstlook-step'))||0)),picked:-1};
-const chapter=s=>'<section class="arcana-chapter" id="'+esc(s.id)+'"><span class="eyebrow">'+esc(s.eyebrow)+'</span><h2>'+esc(s.title)+'</h2>'+s.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<aside class="lesson-principle"><strong>Para guardar</strong><p>'+esc(s.principle)+'</p></aside></section>';
+const chapter=s=>'<section class="arcana-chapter" id="'+esc(s.id)+'"><span class="eyebrow">'+esc(s.eyebrow)+'</span><h2>'+esc(s.title)+'</h2>'+(plainGuideForSection(s.id)?'<aside class="beginner-chapter-summary"><strong>Em palavras simples</strong><p>'+esc(plainGuideForSection(s.id)[0])+'</p><small><strong>Exemplo:</strong> '+esc(plainGuideForSection(s.id)[1])+'</small></aside>':'')+s.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<aside class="lesson-principle"><strong>Para guardar</strong><p>'+esc(s.principle)+'</p></aside></section>';
 const citation=b=>'<p><strong>'+esc(b.author)+' — <em>'+esc(b.work)+'</em>.</strong> '+esc(b.where)+' '+esc(b.role)+'</p>';
 export function fullLessonPage(){
  const f=cards[0];
@@ -19,7 +20,7 @@ export function fullLessonPage(){
  const samples=lesson.cases.map(c=>'<article><h3>'+esc(c.context)+'</h3><dl><dt>O que vejo</dt><dd>'+esc(c.observation)+'</dd><dt>Hipótese</dt><dd>'+esc(c.inference)+'</dd><dt>Pergunta</dt><dd>'+esc(c.question)+'</dd></dl></article>').join('');
  const outcomes=lesson.outcomes.map(x=>'<li>'+esc(x)+'</li>').join('');
  const links=lesson.sections.map(c=>'<li><a href="#'+c.id+'" data-anchor="'+c.id+'">'+esc(c.title)+'</a></li>').join('');
- return '<div class="container"><header class="page-intro"><div class="breadcrumb"><a href="#/aprender">Aprender</a> / <span>Fundamentos · Aula 1</span></div></header><div class="lesson-layout"><article class="lesson-article prose full-lesson"><header class="article-head"><span class="eyebrow">'+esc(lesson.status)+'</span><h1>'+esc(lesson.title)+'.</h1><p class="dek">'+esc(lesson.subtitle)+'</p><p class="article-meta">'+esc(lesson.readingTime)+'</p><div class="lesson-outcomes"><h2>O que você vai aprender</h2><ul>'+outcomes+'</ul></div></header>'
+ return '<div class="container"><header class="page-intro"><div class="breadcrumb"><a href="#/aprender">Aprender</a> / <span>Fundamentos · Aula 1</span></div></header><div class="lesson-layout"><article class="lesson-article prose full-lesson"><header class="article-head"><span class="eyebrow">'+esc(lesson.status)+'</span><h1>'+esc(lesson.title)+'.</h1><p class="dek">'+esc(lesson.subtitle)+'</p><p class="article-meta">'+esc(lesson.readingTime)+'</p><div class="beginner-lesson-nav">Não sabe o que é arcano, naipe ou símbolo? <a href="#/comece-aqui">Comece pelo nosso guia</a>.</div><div class="lesson-outcomes"><h2>O que você vai aprender</h2><ul>'+outcomes+'</ul></div></header>'
  +chapter(lesson.sections[0])
  +'<figure class="lesson-feature-art"><div class="lesson-feature-card">'+cardImage(f)+'</div><figcaption><span class="eyebrow">Imagem em foco</span><h3>O Louco — 0</h3><p>Observe a direção do movimento, o cão, o terreno e a paisagem. Descreva primeiro; interprete depois.</p><a class="text-link" href="#/carta/o-louco">Ampliar no Atlas →</a></figcaption></figure>'
  +chapter(lesson.sections[1])+chapter(lesson.sections[2])
