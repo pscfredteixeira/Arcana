@@ -1,3 +1,4 @@
+import {practicesHub,diamondGamePage,renderDiamond,handleDiamondClick,handleDiamondInput} from '../games/diamondGame.js';
 import {atlasPageExpanded,atlasDetailExpanded,handleAtlasChange,handleAtlasClick,closeZoom,resetAtlasScroll} from '../ui/interactiveAtlas.js';
 import {fullLessonPage,renderLab,handleLabClick,saveReflection} from '../ui/fullLesson.js';
 import {cards,findCard} from '../data/cards.js';
@@ -11,7 +12,8 @@ const getRoute=()=>{
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
-  if(path==='/praticas')return {active:'practice',content:practicePage(),title:'Práticas'};
+  if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
+  if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
   if(path==='/sobre')return {active:'about',content:aboutPage(),title:'Sobre'};
   if(path.startsWith('/carta/')){
     const c=findCard(path.slice(7));
@@ -43,13 +45,16 @@ function render(){
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
  changeFont(fontPreference());
  renderLab();
+ renderDiamond();
  window.scrollTo({top:0,left:0,behavior:'auto'});
 }
 app.addEventListener('input',event=>{
  if(event.target?.id==='atlas-search')handleAtlasChange(event.target);
  if(event.target?.id==='lesson-notes')saveReflection(event.target.value);
+ handleDiamondInput(event.target);
 });
 app.addEventListener('click',event=>{
+ if(handleDiamondClick(event.target))return;
  if(handleAtlasClick(event.target))return;
  if(handleLabClick(event.target))return;
  const btn=event.target.closest('button[data-font]');
