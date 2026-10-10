@@ -83,7 +83,7 @@ function journal(){
  if(!history.length)return '<section class="spread-journal" id="diario"><span class="eyebrow">Seu arquivo pessoal</span><h2>Diário de tiragens.</h2><p>Suas leituras salvas aparecerão aqui, neste aparelho. Nenhuma leitura foi registrada ainda.</p></section>';
  return '<section class="spread-journal" id="diario"><div class="section-head"><div><span class="eyebrow">Seu arquivo pessoal</span><h2>Diário de tiragens.</h2></div><p>Até 15 registros neste navegador. Abra um para rever suas observações.</p></div><div class="spread-journal-list">'+history.map((item,index)=>{
   const reading=item.reading,def=spreads[reading.spreadId];
-  return '<details class="spread-journal-entry"><summary><span class="spread-journal-num">'+String(index+1).padStart(2,'0')+'</span><span><strong>'+esc(def.title)+'</strong><small>'+esc(formatDate(item.createdAt))+(reading.question?' · '+esc(reading.question.slice(0,90)):'')+'</small></span><span aria-hidden="true" class="spread-journal-chevron">+</span></summary><div class="spread-journal-body">'+def.positions.map((pos,i)=>'<div class="spread-journal-row"><strong>'+esc(pos.name)+' · '+esc(bySlug.get(reading.drawn[i])?.name||'Carta')+'</strong><p>'+esc(reading.notes[pos.id]||'Sem anotação nesta posição.')+'</p></div>').join('')+'<div class="spread-journal-row"><strong>Síntese</strong><p>'+esc(reading.synthesis||'Sem síntese escrita.')+'</p></div><div class="spread-journal-delete">'+(deletePending===item.id?'<span role="alert">Excluir este registro permanentemente deste navegador?</span> <button type="button" data-spread-delete-confirm="'+esc(item.id)+'">Confirmar exclusão</button> <button type="button" data-spread-delete-cancel>Cancelar</button>':'<button type="button" data-spread-delete="'+esc(item.id)+'">Excluir registro</button>')+'</div></div></details>';
+  return '<details class="spread-journal-entry" data-journal-id="'+esc(item.id)+'"><summary><span class="spread-journal-num">'+String(index+1).padStart(2,'0')+'</span><span><strong>'+esc(def.title)+'</strong><small>'+esc(formatDate(item.createdAt))+(reading.question?' · '+esc(reading.question.slice(0,90)):'')+'</small></span><span aria-hidden="true" class="spread-journal-chevron">+</span></summary><div class="spread-journal-body">'+def.positions.map((pos,i)=>'<div class="spread-journal-row"><strong>'+esc(pos.name)+' · '+esc(bySlug.get(reading.drawn[i])?.name||'Carta')+'</strong><p>'+esc(reading.notes[pos.id]||'Sem anotação nesta posição.')+'</p></div>').join('')+'<div class="spread-journal-row"><strong>Síntese</strong><p>'+esc(reading.synthesis||'Sem síntese escrita.')+'</p></div><div class="spread-journal-delete">'+(deletePending===item.id?'<span role="alert">Excluir este registro permanentemente deste navegador?</span> <button type="button" data-spread-delete-confirm="'+esc(item.id)+'">Confirmar exclusão</button> <button type="button" data-spread-delete-cancel>Cancelar</button>':'<button type="button" data-spread-delete="'+esc(item.id)+'">Excluir registro</button>')+'</div></div></details>';
  }).join('')+'</div><p class="spread-privacy">Os registros não sincronizam entre aparelhos. Limpar os dados do navegador pode apagá-los.</p></section>';
 }
 export function spreadPage(){
@@ -92,7 +92,13 @@ export function spreadPage(){
 export function renderSpread(){
  const root=document.getElementById('spread-root');if(!root)return;
  root.innerHTML=session.phase==='setup'?setup():session.phase==='table'?table():review();
- const j=document.getElementById('spread-journal-root');if(j)j.innerHTML=journal();
+ const j=document.getElementById('spread-journal-root');
+ if(j){
+  const openIds=Array.from(j.querySelectorAll?.('details.spread-journal-entry[open]')||[]).map(d=>d.dataset.journalId);
+  j.innerHTML=journal();
+  if(openIds.length)for(const detail of (j.querySelectorAll?.('details.spread-journal-entry')||[])){if(openIds.includes(detail.dataset.journalId))detail.open=true;}
+  if(deletePending){const pending=Array.from(j.querySelectorAll?.('details.spread-journal-entry')||[]).find(d=>d.dataset.journalId===deletePending);if(pending)pending.open=true;}
+ }
 }
 export function handleSpreadInput(target){
  if(target.id==='spread-question'){session.question=target.value.slice(0,500);session.savedId=null;saveSession();return true;}
