@@ -50,3 +50,17 @@ A Fábrica de Símbolos e os Seis Caminhos aparecem como **planejados**, não im
 **Avaliação:** interpretação aberta não recebe nota automática; a interface oferece sugestões, exemplos de detalhe observável, hipótese contextual e rubrica de autoavaliação. Perguntas e textos não são enviados a servidores, mas também não são criptografados.
 
 Ver [SPRINT5_REPORT.md](SPRINT5_REPORT.md).
+
+## Ateliê dos Símbolos (Sprint 8)
+**Rota:** `#/praticas/atelie`. **Eixo didático:** imagens do Rider-Waite-Smith e método relacional de Rachel Pollack, capítulos iniciais de *Setenta e oito graus de sabedoria*.
+
+Escolha Louco, Mago ou Sacerdotisa. Em cada carta, selecione três pontos visuais por marcador ou botão textual. Cada indício revela observação verificável, leitura simbólica possível e pergunta aberta. Após coletar três, escolha uma hipótese apropriada para um caso fictício. Receba feedback para alternativas adequadas e inadequadas. Colete nove indícios nas três cartas e refaça à vontade.
+
+**Estado:** `arcana-atelier-v1` com `selected`, `phase`, `seen`, `completed`; incluído no backup do navegador.
+
+## Os Seis Caminhos (Sprint 8)
+**Rota:** `#/praticas/seis-caminhos`. **Fonte do mapa:** Nei Naiff, *Curso completo de tarô*, lições 6–11: Vontade I–V, Livre-arbítrio VI, Prazer VII–XI, Dor XII–XVI, Esperança XVII, Evolução XVIII–XXI. RWS utilizado apenas para a iconografia exibida.
+
+Seis estações em trilha visual, cada uma com três cartas. O estudante identifica uma carta representativa de cada grupo, recebe fundamentação e desbloqueia a próxima missão. Uma síntese final destaca que a classificação de Naiff é metodológica, não preditiva. O avanço não é liberado com respostas incorretas.
+
+**Estado:** `arcana-six-paths-v1`, incluído no backup local. Detalhes em [SPRINT8_REPORT.md](SPRINT8_REPORT.md).
