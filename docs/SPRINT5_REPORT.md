@@ -1,7 +1,7 @@
 # ARCANA — Relatório do Sprint 5
 
 **Data:** 10 de outubro de 2026  
-**Tema:** Mesa de Tiragens didática (Arquivo Vivo)  
+**Tema:** Mesa de Tiragens didática (ARCANA)  
 **Status:** implementação entregue no repositório, testes automatizados em GitHub Actions aprovados; avaliação visual em iPhone ainda a realizar.
 
 ## O que foi desenvolvido
@@ -32,7 +32,7 @@ A área **Práticas** agora oferece acesso à **Mesa de Tiragens** em `#/pratica
 - As perguntas, anotações e leituras ficam em `localStorage`, sem upload a servidor. Limpar dados do navegador pode apagá-las; não existe login ou sincronização entre aparelhos.
 - Os campos de usuário são escapados antes de ser exibidos no HTML. O estado persistido passa por validação de formato e identificação das cartas.
 - O sistema exige revelar todas as cartas antes de permitir a síntese final.
-- A interface preserva a linguagem **Arquivo Vivo**: papel/papiro, vinho/bordô, serifadas, contraste entre papel de estudo e mesa escura, botões adequados ao toque e texto legível.
+- A interface preserva a linguagem **ARCANA**: papel/papiro, vinho/bordô, serifadas, contraste entre papel de estudo e mesa escura, botões adequados ao toque e texto legível.
 
 ## Arquitetura
 Arquivos novos:
