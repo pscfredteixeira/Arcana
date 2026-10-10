@@ -141,3 +141,18 @@
 .diamond-axis-card .card-image-shell{background:#fff7e9;box-shadow:0 8px 18px #39272126;border:5px solid #fff6e8}
 .diamond-axis-card strong{display:block;font-family:var(--serif);font-size:.98rem;color:var(--burgundy);font-weight:500;margin-top:9px}
 @media(max-width:760px){.diamond-axis-pair.horizontal{gap:20px}.diamond-axis-card{width:min(42%,140px)}.diamond-axis-pair.vertical .diamond-axis-card{width:110px}}
+
+/* Acabamento de leitura em telas pequenas: nomes antes de ornamentos. */
+@media(max-width:760px){
+ .diamond-pick strong{font-size:.76rem;line-height:1.25;overflow-wrap:break-word}
+ .diamond-pick-image{width:min(100%,55px)}
+ .diamond-slot-title{font-size:.68rem;letter-spacing:.04em}
+ .diamond-slot-cardname{font-size:.78rem}
+ .diamond-slot-art{width:min(100%,71px)}
+ .diamond-heart>span:last-child{font-size:.53rem}
+}
+@media(max-width:380px){
+ .diamond-pick strong{font-size:.69rem}
+ .diamond-slot-cardname{font-size:.72rem}
+ .diamond-slot-art{width:min(100%,65px)}
+}
