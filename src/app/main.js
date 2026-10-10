@@ -53,6 +53,7 @@ function render(){
  renderSpread();
  renderStudyControl();
  window.scrollTo({top:0,left:0,behavior:'auto'});
+ document.getElementById('main')?.focus({preventScroll:true});
 }
 app.addEventListener('input',event=>{
  if(event.target?.id==='atlas-search')handleAtlasChange(event.target);
@@ -75,7 +76,7 @@ app.addEventListener('click',event=>{
  if(anchor){
    event.preventDefault();
    const target=document.getElementById(anchor.dataset.anchor);
-   if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+   if(target)target.scrollIntoView({behavior:(document.documentElement.dataset.motion==='reduce'||matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth',block:'start'});
  }
 });
 app.addEventListener('error',event=>{
