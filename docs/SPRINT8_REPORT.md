@@ -31,7 +31,7 @@ A trilha tem seis estações com um mapa que se preenche progressivamente. Cada 
 **Limite metodológico importante:** o ARCANA usa a numeração Rider–Waite–Smith nas imagens exibidas. Nei Naiff trabalha também com convenções de outros baralhos; Força/Justiça podem ocupar posições diferentes. A divisão por faixas e nomes é creditada à proposta de Naiff, não apresentada como estrutura universal. O Louco (0) se relaciona simbolicamente aos ciclos, mas não é colocado de forma arbitrária em uma faixa numérica do jogo.
 
 ## Design e acessibilidade
-- Identidade Arquivo Vivo: papel, vinho, iluminação quente, serifada editorial e realce delicado de progresso.
+- Identidade ARCANA: papel, vinho, iluminação quente, serifada editorial e realce delicado de progresso.
 - Estética de coleção, mesa de imagens e trilha de seis estações, **não apenas perguntas simples em sequência**.
 - Cartas RWS em primeiro plano, alvos com dimensão confortável para toque, layout responsivo e alternativas textuais de cada hotspot.
 - Estados visíveis (escolhido, visitado, correto, incorreto), feedback pedagógico por texto, indicações de progresso e opção de refazer.
