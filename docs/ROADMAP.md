@@ -10,7 +10,7 @@
 | 3 | Atlas visual interativo inicial | 78 cartas, filtros, fichas e lupa publicados; revisão visual, acessibilidade e aprofundamento por carta pendentes |
 | 4 | Primeiro jogo pedagógico | Diamante dos Arcanos em três fases, toque/teclado, feedback e salvamento local publicados; validação no celular pendente |
 | 5 | Mesa de tiragens didática | Dois modelos de 3 e 5 cartas, revelação guiada, registro por posição e diário local implementados; revisão em celular pendente |
-| 6 | Progresso local e acessibilidade | Preferências, persistência, contraste, foco e movimento reduzido |
+| 6 | Progresso local e acessibilidade | Meu Estudo, conclusão de aula, preferências visuais, backup JSON, restauração confirmada e testes; inspeção mobile e WCAG completa pendentes |
 | 7 | Ampliação de aulas, cartas e atividades | Conteúdo revisado e publicável por módulos |
 
 ## Situação após o Sprint 1
@@ -40,3 +40,6 @@ Primeiro jogo pedagógico publicado em `#/praticas/diamante`, com montagem de qu
 Publicada em `#/praticas/mesa`, com **Três Perspectivas** e **Mapa de Perspectivas**. Ambas são estruturas didáticas originais, com escolha entre os 22 Maiores e todas as 78 cartas, distribuição sem repetição, interpretação por posição, síntese e até 15 registros no diário local. Ver [SPRINT5_REPORT.md](SPRINT5_REPORT.md).
 
 **Verificação:** primeiro workflow GitHub Actions criado no projeto, executando testes Node. Execução bem-sucedida; validação visual em dispositivos e WCAG plena ainda pendentes. Próxima etapa: priorizar progresso, acessibilidade e opções de backup local no Sprint 6.
+
+## Sprint 6 — Meu Estudo (10/10/2026)
+A tela `#/meu-estudo` reúne indicadores **somente das atividades implementadas**, e não um percentual global do curso. A primeira aula pode ser marcada como concluída, sem alterar avaliações. Foram adicionados tamanho de fonte, contraste, movimento reduzido, exportação de backup JSON e importação com validação e confirmação. Correções de foco após navegação e diálogo do Atlas acompanham o sprint. Consulte [SPRINT6_REPORT.md](SPRINT6_REPORT.md). A revisão em Safari/iPhone e a auditoria WCAG aprofundada continuam pendentes.
