@@ -31,7 +31,7 @@ Resumo das três competências trabalhadas, registro opcional da reflexão e op�
 ## Integridade do projeto
 - Reutilização das cartas e imagens já catalogadas pelo Atlas.
 - HTML, lógica de estado e material pedagógico em módulos separados.
-- Estilos específicos para o jogo, sem substituir as cores ou componentes do Arquivo Vivo.
+- Estilos específicos para o jogo, sem substituir as cores ou componentes do ARCANA.
 - Rota direta: `#/praticas/diamante`; catálogo em `#/praticas`.
 - Nova interface responsiva, com cartões de seleção, tabuleiro e feedback legível.
 - Respeito à configuração global `prefers-reduced-motion`.
