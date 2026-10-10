@@ -1,3 +1,5 @@
+import {extendedLessons,lessonBySlug} from '../lessons/sprint7Lessons.js';
+import {expandedLessonPage,renderCoursePractice,handleCourseClick} from '../ui/expandedCourse.js';
 import {studyPage,applyStudyPreferences,handleStudyClick,handleStudyFile,renderStudyControl} from '../study/studyUI.js';
 import {spreadPage,renderSpread,handleSpreadClick,handleSpreadInput} from '../spreads/spreadUI.js';
 import {practicesHub,diamondGamePage,renderDiamond,handleDiamondClick,handleDiamondInput} from '../games/diamondGame.js';
@@ -13,6 +15,7 @@ const getRoute=()=>{
   if(path==='/')return {active:'home',content:homePage(),title:'Arquivo Vivo'};
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
+  if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
   if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
@@ -49,6 +52,7 @@ function render(){
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
  applyStudyPreferences();
  renderLab();
+ renderCoursePractice();
  renderDiamond();
  renderSpread();
  renderStudyControl();
@@ -65,6 +69,7 @@ app.addEventListener('change',event=>{
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+ if(handleCourseClick(event.target))return;
  if(handleStudyClick(event.target))return;
  if(handleSpreadClick(event.target))return;
  if(handleDiamondClick(event.target))return;
