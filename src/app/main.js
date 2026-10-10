@@ -1,3 +1,5 @@
+import {atelierPage,renderAtelier,handleAtelierClick} from '../games/atelierGame.js';
+import {sixPathsPage,renderSixPaths,handleSixPathsClick} from '../games/sixPathsGame.js';
 import {extendedLessons,lessonBySlug} from '../lessons/sprint7Lessons.js';
 import {expandedLessonPage,renderCoursePractice,handleCourseClick} from '../ui/expandedCourse.js';
 import {studyPage,applyStudyPreferences,handleStudyClick,handleStudyFile,renderStudyControl} from '../study/studyUI.js';
@@ -20,6 +22,8 @@ const getRoute=()=>{
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
   if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
   if(path==='/praticas/mesa')return {active:'practice',content:spreadPage(),title:'Mesa de Tiragens'};
+  if(path==='/praticas/atelie')return {active:'practice',content:atelierPage(),title:'Ateliê dos Símbolos'};
+  if(path==='/praticas/seis-caminhos')return {active:'practice',content:sixPathsPage(),title:'Seis Caminhos'};
   if(path==='/meu-estudo')return {active:'study',content:studyPage(),title:'Meu Estudo'};
   if(path==='/sobre')return {active:'',content:aboutPage(),title:'Sobre'};
   if(path.startsWith('/carta/')){
@@ -54,6 +58,8 @@ function render(){
  renderLab();
  renderCoursePractice();
  renderDiamond();
+ renderAtelier();
+ renderSixPaths();
  renderSpread();
  renderStudyControl();
  window.scrollTo({top:0,left:0,behavior:'auto'});
@@ -69,6 +75,8 @@ app.addEventListener('change',event=>{
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+ if(handleAtelierClick(event.target))return;
+ if(handleSixPathsClick(event.target))return;
  if(handleCourseClick(event.target))return;
  if(handleStudyClick(event.target))return;
  if(handleSpreadClick(event.target))return;
