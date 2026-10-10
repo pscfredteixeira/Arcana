@@ -19,3 +19,8 @@ Não adicionar outras cartas ou imagens sem registrar procedência e verificar i
 ## Outros recursos
 - **Playfair Display** e **Inter** via Google Fonts; verificar disponibilidade e condições de licença no ambiente final.
 - Nenhum arquivo de fonte foi distribuído junto ao projeto.
+
+## Sprint 3 — extensão do acervo
+A coleção exibida foi ampliada de seis para 78 cartas históricas de Pamela Colman Smith. A tabela completa de nomes de arquivo está declarada em `src/data/atlasCatalogue.js`, complementando as seis primeiras cartas listadas acima. Para arcanos maiores, o padrão é `RWS Tarot NN Nome.jpg`; para menores, `WandsNN.jpg`, `CupsNN.jpg`, `SwordsNN.jpg`, `PentsNN.jpg`, inclusive as figuras de 11 a 14. A amostragem de arquivos foi consultada no Wikimedia Commons, incluindo Os Enamorados, Ás de Paus, Ás de Copas e Rei de Ouros. Os links de cada carta apontam ao arquivo individual. **Conferência visual exaustiva dos 78 arquivos ainda pendente**; o código inclui fallback textual.
+
+Índice original: https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)
