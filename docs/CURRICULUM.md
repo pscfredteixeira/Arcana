@@ -39,3 +39,16 @@ ID estável; título; objetivo observável; pré-requisitos; fontes e páginas v
 - **Ter, Ser, Estar, Ficar:** ligar elementos, naipes e planos em um laboratório interativo, segundo a classificação de Naiff.
 
 Essas atividades serão descritas tecnicamente antes de começar o código.
+
+## Aulas aprofundadas publicadas até o Sprint 7
+
+| Ordem de leitura sugerida | Unidade | Estado | Rota |
+|---|---|---|---|
+| 01 | F-02.01 — O mapa das 78 cartas | Aula + laboratório de 3 fases | `#/aula/mapa-78-cartas` |
+| 02 | F-03.01 — A arte de olhar | Aula + laboratório de 3 fases | `#/aula/primeiro-olhar` |
+| 03 | F-04.01 — O Mago e a Sacerdotisa | Aula + laboratório de 3 fases | `#/aula/mago-e-sacerdotisa` |
+| 04 | I-01.01 — Os quatro naipes | Aula + Oficina de Correspondências em 3 fases | `#/aula/quatro-naipes` |
+
+**Nota:** I-01 está em nível intermediário, mas é oferecida como quarta porta de entrada visual. Essa ordem de navegação não significa que todos os pré-requisitos dos módulos intermediários tenham sido concluídos. A sequência abrangente continua em elaboração. Marcadores de conclusão são decisões do aluno, não certificados.
+
+O conteúdo de cada uma das três novas aulas está em `src/lessons/sprint7Lessons.js`. Rastreabilidade dos livros e pendências editoriais: [CONTENT_AUDIT.md](CONTENT_AUDIT.md).
