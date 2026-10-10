@@ -1,0 +1,49 @@
+/* ARCANA — Camada didática: explicação direta primeiro, estudo aprofundado depois. */
+.beginner-meaning{background:#fff9ee;border:2px solid #9c6855;padding:clamp(19px,4vw,35px);margin-bottom:24px;box-shadow:0 5px 18px #6e493017}
+.beginner-meaning .eyebrow{color:var(--wine);font-size:.7rem;letter-spacing:.12em}
+.beginner-meaning h2{font-family:var(--serif);color:var(--burgundy);font-size:clamp(1.7rem,3.5vw,2.35rem);line-height:1.22;margin:12px 0 14px}
+.beginner-definition{font-size:clamp(1.03rem,2vw,1.2rem)!important;line-height:1.65!important;color:#372826!important;font-weight:600;margin:0 0 23px!important}
+.beginner-real-example{border-left:4px solid #b68971;background:#f0e5d8;padding:17px 20px;margin-bottom:18px}
+.beginner-real-example strong{font-size:.9rem;color:var(--burgundy)}
+.beginner-real-example p{font-size:.93rem!important;line-height:1.7!important;margin:8px 0 0!important;color:#4b3b32!important}
+.beginner-not-prediction{font-size:.76rem!important;color:#66564b!important;line-height:1.7!important;margin:0!important}
+.beginner-lesson-nav{background:#f1e9df;border:1px solid #d4c5b6;padding:13px 18px;margin:20px 0;font-size:.9rem;line-height:1.6;color:#554538}
+.beginner-lesson-nav a,.beginner-guide a:not(.button){color:var(--wine);text-underline-offset:3px;font-weight:650}
+.beginner-chapter-summary{border:1px solid #c5a58a;background:#faf2e7;padding:19px 23px;margin:22px 0 29px}
+.beginner-chapter-summary>strong{color:var(--burgundy);font-family:var(--serif);font-size:1.25rem}
+.beginner-chapter-summary p{color:#45382f;font-size:1rem;line-height:1.75;margin:9px 0 12px}
+.beginner-chapter-summary small{color:#5d4a40;font-size:.85rem;line-height:1.7;display:block}
+.beginner-guide{max-width:1050px}
+.beginner-guide .page-intro h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.18}
+.beginner-guide .page-intro em{color:var(--wine);font-weight:400}
+.beginner-guided-section{padding:38px 0 43px;border-top:1px solid var(--line)}
+.beginner-guided-section h2,.beginner-next h2{font-family:var(--serif);font-size:clamp(1.9rem,3.7vw,2.8rem);line-height:1.22;color:var(--burgundy);margin:10px 0 20px;font-weight:500}
+.beginner-guided-section>p,.beginner-guided-section>div>p{color:#56483d;line-height:1.8;font-size:1rem;max-width:800px}
+.beginner-arithmetic{display:flex;justify-content:center;align-items:center;gap:15px;padding:24px 15px;margin:30px 0 0;background:#f3e8dc;border:1px solid #d8c3b2}
+.beginner-arithmetic>span{font-family:var(--serif);font-size:1.7rem;color:#a17767}
+.beginner-arithmetic>span:has(strong){display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:0}
+.beginner-arithmetic strong{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:400;color:var(--burgundy);line-height:1.1}
+.beginner-arithmetic small{font-family:var(--sans);font-size:.77rem;color:#655648;line-height:1.5;margin-top:9px;max-width:135px}
+.beginner-example{display:grid;grid-template-columns:minmax(100px,.6fr) minmax(0,1.4fr);gap:clamp(22px,4vw,40px);padding:clamp(15px,3vw,32px);background:#f0e4d6;border:1px solid #d2bba5}
+.beginner-example-art{max-width:265px;margin:auto}
+.beginner-example h3{font-family:var(--serif);color:var(--burgundy);font-size:1.9rem;margin:8px 0 15px}
+.beginner-example p{font-size:.94rem;line-height:1.75;color:#4b4138;margin:10px 0}
+.beginner-example p strong{color:var(--burgundy)}
+.beginner-example .button{margin-top:12px}
+.beginner-three-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}
+.beginner-three-steps article{background:#f8f0e7;border:1px solid #d4bbaa;padding:21px;min-width:0}
+.beginner-three-steps article>span{display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;background:var(--burgundy);color:#fff;line-height:1;width:43px;height:43px;border-radius:50%}
+.beginner-three-steps h3{font-family:var(--serif);font-size:1.7rem;color:var(--burgundy);margin:15px 0 9px}
+.beginner-three-steps p{font-size:.86rem;line-height:1.75;color:#594c41}
+.beginner-glossary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:25px}
+.beginner-glossary details{border:1px solid #ccb5a0;background:#fbf7f0;min-width:0}
+.beginner-glossary summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;cursor:pointer;color:var(--burgundy);font-weight:700;min-height:55px}
+.beginner-glossary summary::-webkit-details-marker{display:none}
+.beginner-glossary summary>span{font-size:1.25rem;font-weight:400}
+.beginner-glossary details[open] summary>span{transform:rotate(45deg)}
+.beginner-glossary details p{padding:12px 18px 19px;border-top:1px solid #e2d4c6;line-height:1.7;font-size:.89rem;color:#55483c;margin:0}
+.beginner-next{padding:clamp(23px,4vw,40px);background:#e9dcd0;border:1px solid #c6b19e;margin-bottom:70px}
+.beginner-next p{line-height:1.75;color:#54453c;max-width:700px}
+.beginner-next .button{margin:6px 8px 6px 0}
+@media(max-width:720px){.beginner-glossary,.beginner-three-steps{grid-template-columns:1fr}.beginner-example{grid-template-columns:1fr}.beginner-example-art{width:160px;margin:0 auto}.beginner-arithmetic{gap:8px}.beginner-arithmetic small{font-size:.67rem}.beginner-arithmetic>span{font-size:1.1rem}.beginner-guide .page-intro{padding-bottom:34px}.beginner-guided-section{padding-top:29px}.beginner-guided-section h2{font-size:1.85rem}.beginner-chapter-summary{padding:17px}.beginner-definition{font-size:1.08rem!important}}
+@media(max-width:390px){.beginner-arithmetic{gap:4px;padding:18px 7px}.beginner-arithmetic small{font-size:.61rem}.beginner-meaning{padding:18px}}
