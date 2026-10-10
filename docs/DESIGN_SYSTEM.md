@@ -1,6 +1,6 @@
 # ARCANA — Design System v0.1
 
-## Identidade aprovada: ARQUIVO VIVO
+## Identidade aprovada: ARCANA
 Uma biblioteca viva de imagens e significados: editorial, contemporânea, sofisticada e silenciosa. Cartas históricas têm destaque; a interface é o suporte da leitura, não o espetáculo.
 
 ## Paleta de partida
