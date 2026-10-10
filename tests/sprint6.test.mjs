@@ -60,7 +60,7 @@ test('backup preserva os oito tipos de dados permitidos e ignora chaves externas
  assert.equal(backup.format,BACKUP_FORMAT);
  assert.equal(backup.version,BACKUP_VERSION);
  assert.equal(Object.keys(backup.data).length,8);
- assert.ok(ALLOWED_KEYS.every(k=>Object.hasOwn(backup.data,k)));
+ assert.ok(Object.keys(backup.data).every(k=>ALLOWED_KEYS.includes(k)));
  assert.equal(Object.hasOwn(backup.data,'outra-aplicacao'),false);
  const normalized=validateBackup(JSON.parse(JSON.stringify(backup)));
  const restored=fakeStorage({'outra-aplicacao':'Não alterar','arcana-font':'small','arcana-firstlook-notes':'Antigo'});
