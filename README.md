@@ -1,6 +1,6 @@
 # ARCANA
 
-**Escola interativa de tarô — Sprint 2 publicado**
+**Escola interativa de tarô — Sprint 3 publicado**
 
 O ARCANA será uma plataforma educacional pública, em português brasileiro, para aprender tarô do básico ao avançado por meio de conteúdo aprofundado, exploração visual, jogos pedagógicos e prática interpretativa.
 
@@ -26,6 +26,7 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Instruções para o agente implementador](docs/AGENT_HANDOFF.md)
 - [Relatório do Sprint 1](docs/SPRINT1_REPORT.md)
 - [Relatório do Sprint 2](docs/SPRINT2_REPORT.md)
+- [Relatório do Sprint 3](docs/SPRINT3_REPORT.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
 ## Status — Sprint 1
@@ -51,3 +52,6 @@ Para quem trabalha no código com Node.js 18 ou superior: `npm test`. O site é 
 
 ## Novidade do Sprint 2
 A primeira aula completa **A arte de olhar** já está integrada ao percurso **Aprender**. Inclui seis capítulos originais, referências a Rachel Pollack e Nei Naiff, laboratório interativo em três etapas e caderno privado no navegador. A aula pode ser aberta em `#/aula/primeiro-olhar`. A plataforma segue em desenvolvimento e outras aulas serão adicionadas por etapa.
+
+## Novidade do Sprint 3
+O **Atlas Vivo** agora exibe 78 cartas RWS, filtros por categoria e naipe, busca, fichas individuais, zoom e **Lupa Simbólica**. As seis cartas iniciais têm detalhes específicos; as demais têm um primeiro ponto de observação geral. O texto das 72 cartas acrescidas é introdutório e será aprofundado em etapas editoriais futuras. Ver [Relatório Sprint 3](docs/SPRINT3_REPORT.md).
