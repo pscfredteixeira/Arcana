@@ -32,14 +32,17 @@ O ARCANA será uma plataforma educacional pública, em português brasileiro, pa
 - [Interações e mecânicas educativas](docs/INTERACTIONS.md)
 - [Manifesto de imagens](docs/ASSET_MANIFEST.md)
 
-## Status — Sprint 1
-**Primeira versão visual implementada na branch `main`**: página inicial, navegação responsiva, apresentação da formação, aula demonstrativa, Atlas pesquisável com seis cartas, páginas de detalhe e seção informativa de Práticas e Sobre.
+## Status — Sprint 5
+**Site público no GitHub Pages:** https://pscfredteixeira.github.io/Arcana/
 
-**Atenção:** o GitHub Pages ainda precisa ser ativado/confirmado para que haja um endereço público navegável. No repositório, abrir **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**. Após a publicação, o endereço esperado é `https://pscfredteixeira.github.io/Arcana/` (confirmar publicação antes de divulgar).
+O ARCANA já possui a identidade visual **Arquivo Vivo**, navegação responsiva, aula aprofundada *A arte de olhar*, Atlas das 78 cartas RWS, jogo *Diamante dos Arcanos* e a Mesa de Tiragens com 3 ou 5 posições e diário de estudo local.
 
-Veja o [Relatório do Sprint 1](docs/SPRINT1_REPORT.md) e o [Manifesto inicial de imagens](docs/ASSET_MANIFEST.md).
+O projeto **não é ainda uma formação completa**. Faltam novos módulos de conteúdo, expansão de jogos, revisões carta a carta, melhoria da acessibilidade e testes de usabilidade em aparelhos reais.
 
-Os jogos e a mesa de tiragens serão implementados em sprints posteriores. Os livros originais não estão hospedados neste repositório.
+- [Resumo do Sprint 5](docs/SPRINT5_REPORT.md)
+- [Relatório do Sprint 4](docs/SPRINT4_REPORT.md)
+- [Manifesto de imagens](docs/ASSET_MANIFEST.md)
+- [Acompanhar testes automáticos](https://github.com/pscfredteixeira/Arcana/actions)
 
 ## Princípio pedagógico
 A aprendizagem deve seguir **observar → reconhecer convenções → conectar símbolos → interpretar em contexto → justificar → rever hipóteses**. Interpretações abertas terão feedback fundamentado, não um único gabarito artificial.
@@ -51,7 +54,7 @@ Os livros de referência não serão copiados nem distribuídos neste repositór
 Planejamento iniciado em 10/10/2026.
 
 ## Execução dos testes
-Para quem trabalha no código com Node.js 18 ou superior: `npm test`. O site é estático e usa ES Modules; para executar fora do GitHub Pages, sirva o diretório em um servidor HTTP local.
+Para quem trabalha no código com Node.js 22 ou superior: `npm test`. O site é estático e usa ES Modules; para executar fora do GitHub Pages, sirva o diretório em um servidor HTTP local.
 
 ## Novidade do Sprint 2
 A primeira aula completa **A arte de olhar** já está integrada ao percurso **Aprender**. Inclui seis capítulos originais, referências a Rachel Pollack e Nei Naiff, laboratório interativo em três etapas e caderno privado no navegador. A aula pode ser aberta em `#/aula/primeiro-olhar`. A plataforma segue em desenvolvimento e outras aulas serão adicionadas por etapa.
