@@ -8,7 +8,7 @@
 | 1 | Design System e navegação responsiva | Código de home, aula e atlas publicado no repositório; validação visual real e GitHub Pages ainda pendentes |
 | 2 | Primeira aula com conteúdo original revisado | Aula completa, laboratório de 3 etapas, caderno e fontes publicados; validação visual real pendente |
 | 3 | Atlas visual interativo inicial | 78 cartas, filtros, fichas e lupa publicados; revisão visual, acessibilidade e aprofundamento por carta pendentes |
-| 4 | Primeiro jogo pedagógico | Objetivo, estados, feedback, toque/teclado e testes |
+| 4 | Primeiro jogo pedagógico | Diamante dos Arcanos em três fases, toque/teclado, feedback e salvamento local publicados; validação no celular pendente |
 | 5 | Mesa de tiragens didática | Distribuição visual, posições, registro de observações |
 | 6 | Progresso local e acessibilidade | Preferências, persistência, contraste, foco e movimento reduzido |
 | 7 | Ampliação de aulas, cartas e atividades | Conteúdo revisado e publicável por módulos |
@@ -30,3 +30,8 @@ Aula completa *A arte de olhar* publicada, com seis capítulos, comparação vis
 
 ## Sprint 3 — andamento (10/10/2026)
 Atlas das 78 cartas, filtros por naipe, lupa com pontos simbólicos, fichas e zoom publicados. Seis cartas possuem marcadores específicos e 72 têm uma exploração visual geral inicial. As descrições das 72 cartas são resumos introdutórios originais, não o curso aprofundado. Consulte [SPRINT3_REPORT.md](SPRINT3_REPORT.md). A revisão de todas as imagens e o teste real no celular permanecem pendentes.
+
+## Sprint 4 — Diamante dos Arcanos (10/10/2026)
+Primeiro jogo pedagógico publicado em `#/praticas/diamante`, com montagem de quatro cartas segundo Rachel Pollack, exploração dos eixos vertical e horizontal, interpretação de situação contextual e caderno opcional. Progresso local sem login. Código modular com regras puras e testes de transição. Ver [SPRINT4_REPORT.md](SPRINT4_REPORT.md) e [INTERACTIONS.md](INTERACTIONS.md).
+
+**Pendente antes do próximo sprint:** revisão visual e de usabilidade em celular, verificação da publicação GitHub Pages e execução dos testes de Node em ambiente local/CI.
