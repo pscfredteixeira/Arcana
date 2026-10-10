@@ -7,7 +7,7 @@ Formar leitores de tarô do básico ao avançado, integrando estudo da tradiçã
 - Site aberto, português brasileiro, sem contas de usuário na primeira versão.
 - Hospedagem futura em GitHub Pages.
 - Rachel Pollack como referência interpretativa principal, Nei Naiff como fonte complementar identificada.
-- Direção de arte Arquivo Vivo.
+- Direção de arte ARCANA.
 - Exploração livre e percurso guiado para iniciantes.
 - 78 cartas consultáveis de forma progressiva.
 - Atividades reais: atlas visual, laboratório de símbolos, exercícios narrativos, revisão e mesa de tiragens.
