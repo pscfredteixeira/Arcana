@@ -5,11 +5,13 @@
 import {normalizedDiamond} from '../games/diamondLogic.js';
 import {normalizeReading,normalizeArchive} from '../spreads/spreadLogic.js';
 import {cards} from '../data/cards.js';
+import {PRACTICE_KEY,readPractices,normalizePractices} from '../lessons/lessonPractice.js';
 
 export const BACKUP_FORMAT='arcana-local-backup';
 export const BACKUP_VERSION=1;
 export const UI_PREFS_KEY='arcana-ui-preferences-v1';
 export const LESSON_KEY='arcana-lesson-completed-v1';
+export const LESSON_IDS=Object.freeze(['F-02.01','F-03.01','F-04.01','I-01.01']);
 export const ALLOWED_KEYS=Object.freeze([
   'arcana-font',
   UI_PREFS_KEY,
@@ -18,7 +20,8 @@ export const ALLOWED_KEYS=Object.freeze([
   'arcana-firstlook-notes',
   'arcana-diamond-v1',
   'arcana-spread-session-v1',
-  'arcana-spread-archive-v1'
+  'arcana-spread-archive-v1',
+  PRACTICE_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -28,7 +31,8 @@ const KEY_LIMITS={
  'arcana-firstlook-notes':3000,
  'arcana-diamond-v1':12000,
  'arcana-spread-session-v1':30000,
- 'arcana-spread-archive-v1':240000
+ 'arcana-spread-archive-v1':240000,
+ [PRACTICE_KEY]:2000
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -50,12 +54,20 @@ export function safeGet(storage,key){
 export function safePut(storage,key,value){
  try{storage.setItem(key,value);return true;}catch{return false;}
 }
-export function completedLesson(storage){
+function completionMap(storage){
  const parsed=safeParse(safeGet(storage,LESSON_KEY));
- return plainObject(parsed)&&parsed['F-03.01']===true;
+ const result={};
+ for(const id of LESSON_IDS)result[id]=plainObject(parsed)&&parsed[id]===true;
+ return result;
 }
-export function setCompletedLesson(storage,value){
- return safePut(storage,LESSON_KEY,JSON.stringify({'F-03.01':value===true}));
+export function completedLesson(storage,id='F-03.01'){
+ return LESSON_IDS.includes(id)&&completionMap(storage)[id]===true;
+}
+export function setCompletedLesson(storage,value,id='F-03.01'){
+ if(!LESSON_IDS.includes(id))return false;
+ const all=completionMap(storage);
+ all[id]=value===true;
+ return safePut(storage,LESSON_KEY,JSON.stringify(all));
 }
 export function readStudySummary(storage){
  const diamond=safeParse(safeGet(storage,'arcana-diamond-v1'));
@@ -64,8 +76,15 @@ export function readStudySummary(storage){
  const rawStep=Number(safeGet(storage,'arcana-firstlook-step'));
  const exerciseStep=Number.isInteger(rawStep)?Math.max(0,Math.min(3,rawStep)):0;
  const completed=completedLesson(storage);
+ const allCompletions=completionMap(storage);
+ const practices=readPractices(storage);
  return {
   lessonCompleted:completed,
+  lessonCompletions:allCompletions,
+  lessonsCompletedCount:Object.values(allCompletions).filter(Boolean).length,
+  lessonsAvailableCount:LESSON_IDS.length,
+  newPracticeSteps:Object.values(practices).reduce((n,s)=>n+(s?.step||0),0),
+  newPracticeDone:Object.values(practices).filter(s=>s?.completed===true).length,
   lessonActivityStep:exerciseStep,
   diamondCompleted:diamond?.completed===true&&diamond?.step==='complete',
   diamondStarted:!!diamond&&diamond?.step!==undefined,
@@ -89,8 +108,15 @@ export function validateAndNormalizeKey(key,raw){
  }
  if(key===LESSON_KEY){
   const v=safeParse(raw);
-  if(!plainObject(v)||typeof v['F-03.01']!=='boolean')throw Error('Conclusão de aula inválida.');
-  return JSON.stringify({'F-03.01':v['F-03.01']});
+  if(!plainObject(v)||typeof v['F-03.01']!=='boolean'||Object.keys(v).some(k=>!LESSON_IDS.includes(k)||typeof v[k]!=='boolean'))throw Error('Conclusão de aula inválida.');
+  return JSON.stringify(Object.fromEntries(LESSON_IDS.map(id=>[id,v[id]===true])));
+ }
+ if(key===PRACTICE_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||Object.keys(v).some(k=>!LESSON_IDS.includes(k)||k==='F-03.01'))throw Error('Progresso dos exercícios inválido.');
+  const normalized=normalizePractices(v);
+  if(Object.keys(normalized).length!==Object.keys(v).length)throw Error('Etapas dos exercícios inválidas.');
+  return JSON.stringify(normalized);
  }
  if(key==='arcana-firstlook-step'){
   const n=Number(raw);
