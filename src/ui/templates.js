@@ -31,34 +31,34 @@ export function siteFooter(){
 
 export function homePage(){
  return `<section class="hero"><div class="container hero-grid">
- <div class="hero-copy"><div class="eyebrow">Escola aberta de tarô</div><h1>Conhecimento antigo para <em>perguntas atuais.</em></h1><p class="lead">Descubra as imagens, as histórias e as possibilidades de interpretação do Rider-Waite-Smith, um símbolo de cada vez.</p>
- <div class="hero-actions"><a class="button" href="#/aprender">Começar a estudar <span aria-hidden="true" class="arrow">→</span></a><a class="button secondary" href="#/atlas">Explorar o Atlas</a><a class="study-quick-link" href="#/meu-estudo">Meu estudo ↗</a></div>
- <div class="hero-note"><span class="accent">78</span><span>Cartas disponíveis no Atlas Vivo: 22 Arcanos Maiores e 56 Menores. Os estudos aprofundados serão ampliados por etapas.</span></div></div>
+ <div class="hero-copy"><div class="eyebrow">Escola aberta de tarô</div><h1>Conhecimento antigo para <em>perguntas atuais.</em></h1><p class="lead">Aprenda tarô do zero. Entenda o significado das 78 cartas, veja exemplos simples e pratique no seu ritmo.</p>
+ <div class="hero-actions"><a class="button" href="#/comece-aqui">Nunca estudou tarô? Comece aqui</a><a class="button secondary" href="#/aprender">Ver as aulas <span aria-hidden="true" class="arrow">→</span></a><a class="button secondary" href="#/atlas">Explorar o Atlas</a><a class="study-quick-link" href="#/meu-estudo">Meu estudo ↗</a></div>
+ <div class="hero-note"><span class="accent">78</span><span>Cartas explicadas no Atlas: 22 Maiores e 56 Menores. Cada carta tem um significado simples e um estudo mais completo.</span></div></div>
  <div class="hero-art" aria-label="Carta O Louco, primeira ilustração explorada no ARCANA"><div class="orbit"></div><div class="hero-card">${cardImage(cards[0],true)}</div><div class="hero-art-label">Toda jornada começa com um olhar.</div></div></div></section>
  <hr class="editorial-divider">
- <section class="section container"><div class="section-head"><div><div class="eyebrow">Três maneiras de descobrir</div><h2>Uma escola para olhar<br>além dos significados.</h2></div><p>O ARCANA une estudo guiado, iconografia histórica e experiências práticas. Cada descoberta começa pela própria imagem.</p></div>
+ <section class="section container"><div class="section-head"><div><div class="eyebrow">Três maneiras de descobrir</div><h2>Aprenda primeiro o básico.<br>Depois, aprofunde.</h2></div><p>Leia explicações fáceis, observe desenhos e pratique. Não precisa conhecer os termos do tarô antes de começar.</p></div>
  <div class="feature-grid">
- <a class="feature" href="#/aprender"><span class="ordinal">01 / Estudar</span><h3>O percurso</h3><p>Da estrutura do baralho às leituras: avance com explicações cuidadosas e tempo para refletir.</p><span class="feature-end">Conhecer o curso ↗</span></a>
- <a class="feature" href="#/atlas"><span class="ordinal">02 / Explorar</span><h3>O arquivo</h3><p>Observe as cartas de perto e aprenda a enxergar detalhes, símbolos e relações.</p><span class="feature-end">Abrir o Atlas ↗</span></a>
- <a class="feature" href="#/praticas"><span class="ordinal">03 / Experimentar</span><h3>O laboratório</h3><p>Estude em quatro aulas aprofundadas, experimente o Diamante dos Arcanos e explore a Mesa de Tiragens.</p><span class="feature-end">Jogar agora ↗</span></a>
+ <a class="feature" href="#/aprender"><span class="ordinal">01 / Estudar</span><h3>As aulas</h3><p>Comece pelo que é tarô, entenda os grupos de cartas e avance de uma aula por vez.</p><span class="feature-end">Ver as aulas ↗</span></a>
+ <a class="feature" href="#/atlas"><span class="ordinal">02 / Explorar</span><h3>As cartas</h3><p>Leia o significado das 78 cartas, com exemplos e explicações do que aparece nas imagens.</p><span class="feature-end">Ver as cartas ↗</span></a>
+ <a class="feature" href="#/praticas"><span class="ordinal">03 / Experimentar</span><h3>Os jogos</h3><p>Use jogos e atividades para treinar o que aprendeu nas aulas e nas cartas.</p><span class="feature-end">Jogar agora ↗</span></a>
  </div></section>
  <section class="pale-band"><div class="container quote-band"><blockquote>Uma carta não é apenas aquilo que ela significa. É também aquilo que aprendemos a observar.</blockquote><p>Estudamos a tradição Rider-Waite-Smith com a abordagem de Rachel Pollack como eixo e a contribuição metodológica de Nei Naiff como uma segunda perspectiva. As interpretações serão apresentadas como possibilidades fundamentadas, não certezas absolutas.</p></div></section>
- <section class="section container"><div class="section-head"><div><div class="eyebrow">Primeira exposição</div><h2>Seis portas de entrada.</h2></div><p>Uma amostra do Atlas Vivo. Toque em uma carta para observar e refletir sobre sua imagem.</p></div>
+ <section class="section container"><div class="section-head"><div><div class="eyebrow">Primeira exposição</div><h2>Seis portas de entrada.</h2></div><p>Escolha uma carta. Você encontrará uma explicação fácil antes das partes mais detalhadas.</p></div>
  <div class="atlas-grid">${cards.map(c=>`<article class="atlas-item"><a href="#/carta/${c.slug}" aria-label="Explorar ${escapeHTML(c.name)}">${cardImage(c)}<span class="roman">${c.numeral}</span><span class="name">${c.name}</span></a></article>`).join('')}</div>
  <p style="margin-top:30px"><a class="text-link" href="#/atlas">Explorar o Atlas completo da prévia →</a></p></section>`;
 }
 
 export function learnPage(){
  const catalog=[
- {id:'F-02.01',number:'01',name:'O mapa das 78 cartas',label:'F-02 · Fundamentos',body:'Conheça a arquitetura do baralho: 22 Maiores, 56 Menores, cartas numeradas, figuras da corte e diferenças de numeração.',href:'#/aula/mapa-78-cartas'},
- {id:'F-03.01',number:'02',name:'A arte de olhar',label:'F-03 · Fundamentos',body:'Observe o Louco, pratique três passos de leitura simbólica e construa uma hipótese contextual.',href:'#/aula/primeiro-olhar'},
- {id:'F-04.01',number:'03',name:'O Mago e a Sacerdotisa',label:'F-04 · Fundamentos',body:'Ação, pausa e interioridade em imagens que dialogam. Compare as figuras em um laboratório de três etapas.',href:'#/aula/mago-e-sacerdotisa'},
- {id:'I-01.01',number:'04',name:'Os quatro naipes',label:'I-01 · Intermediário',body:'Paus, Copas, Espadas e Ouros, elementos e método de Nei Naiff. Jogue a Oficina das Correspondências.',href:'#/aula/quatro-naipes'}
+ {id:'F-02.01',number:'01',name:'O mapa das 78 cartas',label:'F-02 · Fundamentos',body:'Descubra por que existem 78 cartas, como elas são divididas e o que significam palavras como “arcano” e “naipe”.',href:'#/aula/mapa-78-cartas'},
+ {id:'F-03.01',number:'02',name:'A arte de olhar',label:'F-03 · Fundamentos',body:'Aprenda a olhar uma carta, entender seu significado e relacioná-la com uma situação simples.',href:'#/aula/primeiro-olhar'},
+ {id:'F-04.01',number:'03',name:'O Mago e a Sacerdotisa',label:'F-04 · Fundamentos',body:'Entenda duas cartas muito importantes: O Mago fala de agir; A Sacerdotisa ajuda a pensar antes de agir.',href:'#/aula/mago-e-sacerdotisa'},
+ {id:'I-01.01',number:'04',name:'Os quatro naipes',label:'I-01 · Intermediário',body:'Aprenda os quatro grupos das cartas menores e o que cada um costuma representar. Depois, pratique num jogo.',href:'#/aula/quatro-naipes'}
  ];
- return '<div class="container"><header class="page-intro"><div class="eyebrow">Programa de formação</div><h1>Aprender a ler<br>as imagens.</h1><p class="lead">Agora você encontra quatro aulas aprofundadas, com material de leitura, imagens históricas e laboratórios. É o início de uma formação maior; os outros módulos serão desenvolvidos gradualmente.</p></header><div class="eyebrow">Seu percurso disponível</div><h2 class="course-journey-title">Quatro portas de entrada.</h2>'
+ return '<div class="container"><header class="page-intro"><div class="eyebrow">Programa de formação</div><h1>Aprender a ler<br>as imagens.</h1><p class="lead">Este curso começa do zero. As quatro aulas disponíveis ensinam, passo a passo, como o baralho funciona e como ler uma carta. Se encontrar uma palavra difícil, visite o nosso dicionário.</p></header><div class="eyebrow">Não sabe por onde começar? <a href="#/comece-aqui">Leia primeiro o guia para iniciantes</a></div><h2 class="course-journey-title">Quatro aulas para começar.</h2>'
  +catalog.map(c=>'<article class="curriculum-card"><span class="volume">'+c.number+'</span><div><span class="course-catalog-tag">'+c.label+'</span><h2>'+c.name+'</h2><p>'+c.body+'</p></div><a class="text-link" href="'+c.href+'">Abrir aula →</a></article>').join('')
  +'<div class="curriculum-card is-future"><span class="volume">05</span><div><span class="status pending">Próximas etapas</span><h2>Formação em expansão</h2><p>História aprofundada, jornadas dos Maiores, cartas da corte, combinações, leituras avançadas e análise crítica das tradições ainda serão desenvolvidas.</p></div><span class="status pending">Em planejamento</span></div>'
- +'<p class="course-catalog-note">As quatro aulas concluídas aqui não equivalem à formação inteira. Rachel Pollack é a referência interpretativa principal; Nei Naiff complementa a abordagem, com diferenças metodológicas explicitadas.</p></div>';
+ +'<p class="course-catalog-note">Estas são as primeiras quatro aulas, não o curso inteiro. Usamos os livros de Rachel Pollack e Nei Naiff como referências e explicamos quando os autores apresentam ideias diferentes.</p></div>';
 }
 
 export function lessonPage(){
