@@ -25,27 +25,33 @@ jobs:
           python-version: '3.12'
       - name: Instalar Pillow
         run: python -m pip install --quiet pillow
-      - name: Preparar icones a partir da arte aprovada
+      - name: Gerar icones sem bordas brancas
         run: |
           python - <<'PY'
-          from PIL import Image
+          from PIL import Image, ImageFilter
           from pathlib import Path
-          source = Path('icons/icon-source.jpg')
-          assert source.is_file(), 'Icone de origem nao encontrado'
-          image = Image.open(source).convert('RGB')
-          for size in (180, 192, 512):
-              output = Path(f'icons/icon-{size}.png')
-              image.resize((size,size),Image.Resampling.LANCZOS).save(output,optimize=True)
-              print(output, output.stat().st_size, 'bytes')
+          source=Image.open('icons/icon-source.jpg').convert('RGB')
+          assert source.size[0]==source.size[1], 'Imagem-fonte deve ser quadrada'
+          # O desenho aprovado preenche completamente a imagem. Nao adicionar
+          # placas brancas, margens ou cantos arredondados (iOS faz a mascara).
+          for size in (32,180,192,512):
+              im=source.resize((size,size),Image.Resampling.LANCZOS)
+              if size>=192:
+                  im=im.filter(ImageFilter.UnsharpMask(radius=0.7,percent=85,threshold=3))
+              output=Path(f'icons/icon-{size}.png')
+              im.save(output,optimize=True)
+              print(output,output.stat().st_size,'bytes')
+              if size==180:
+                  im.save('apple-touch-icon.png',optimize=True)
           PY
       - name: Publicar icones
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add icons/icon-180.png icons/icon-192.png icons/icon-512.png
+          git add icons/icon-32.png icons/icon-180.png icons/icon-192.png icons/icon-512.png apple-touch-icon.png
           if git diff --cached --quiet; then
             echo 'Icones ja estao atualizados.'
           else
-            git commit -m 'assets(pwa): gera icones ARCANA para iOS e Android'
+            git commit -m 'assets(pwa): icone ARCANA sem moldura branca'
             git push
           fi
