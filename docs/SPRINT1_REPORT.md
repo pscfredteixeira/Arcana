@@ -4,7 +4,7 @@
 **Status:** arquivos de implementação entregues; verificação de navegador e publicação pública pendentes.
 
 ## O que foi implementado
-- Página inicial editorial na linguagem Arquivo Vivo (papiro, vinho, serifada Playfair Display e interface Inter).
+- Página inicial editorial na linguagem ARCANA (papiro, vinho, serifada Playfair Display e interface Inter).
 - Cabeçalho responsivo e navegação por cinco áreas; em celulares a navegação passa para uma barra inferior.
 - Página de apresentação do percurso formativo, com distinção entre aula disponível e módulos futuros.
 - Aula introdutória demonstrativa *O primeiro olhar*, com texto original e controles de tamanho da fonte armazenados no navegador.
