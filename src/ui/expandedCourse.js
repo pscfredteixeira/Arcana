@@ -1,3 +1,4 @@
+import {learningScaffold,beginnerExercises} from '../games/learningScaffolds.js';
 import {accessibleSection} from '../lessons/accessibleLessonProse.js';
 import {plainGuideForSection} from '../lessons/lessonPlainGuides.js';
 import {cards} from '../data/cards.js';
@@ -64,12 +65,13 @@ function progress(lesson,step){
 function choice(activity,lesson,step){
  const answered=selectedChoice!==null;
  const chosen=activity.options[selectedChoice];
- return '<div class="course-quiz"><span class="eyebrow">'+e(activity.title)+'</span><h3>'+e(activity.question)+'</h3><div class="course-quiz-answers" role="group" aria-label="Alternativas">'+activity.options.map((o,i)=>'<button type="button" data-course-choice="'+i+'" '+(answered?'disabled':'')+' class="'+(selectedChoice===i?(o.right?'correct':'incorrect'):'')+'"><span class="course-quiz-index">'+String(i+1).padStart(2,'0')+'</span><span>'+e(o.text)+'</span></button>').join('')+'</div>'
+ return '<div class="course-quiz"><span class="eyebrow">'+e(activity.title)+'</span><h3>'+e(activity.question)+'</h3>'+(help?learningScaffold(help):'')+'<div class="course-quiz-answers" role="group" aria-label="Alternativas">'+activity.options.map((o,i)=>'<button type="button" data-course-choice="'+i+'" '+(answered?'disabled':'')+' class="'+(selectedChoice===i?(o.right?'correct':'incorrect'):'')+'"><span class="course-quiz-index">'+String(i+1).padStart(2,'0')+'</span><span>'+e(o.text)+'</span></button>').join('')+'</div>'
  +(chosen?'<div class="course-feedback '+(chosen.right?'correct':'incorrect')+'" role="status"><strong>'+(chosen.right?'Você construiu uma relação consistente.':'Vamos olhar novamente.')+'</strong><p>'+e(chosen.why)+'</p></div><div class="course-quiz-actions"><button type="button" class="button '+(chosen.right?'':'secondary')+'" data-course-'+(chosen.right?'next':'retry')+'>'+(chosen.right?'Continuar →':'Tentar outra resposta')+'</button></div>':'')+'</div>';
 }
 function match(activity,lesson,step){
+ const help=beginnerExercises.course[lesson.slug]?.[step];
  const finished=activity.items.every(item=>matches[item.id]===item.answer);
- const question='<span class="eyebrow">'+e(activity.title)+'</span><h3>'+e(activity.question)+'</h3><p>Toque em uma carta e depois no elemento correspondente. Não é necessário arrastar.</p>';
+ const question='<span class="eyebrow">'+e(activity.title)+'</span><h3>'+e(activity.question)+'</h3>'+(help?learningScaffold(help):'')+'<p>Toque em uma carta e depois no elemento correspondente. Não é necessário arrastar.</p>';
  const itemCards=activity.items.map(item=>{
   const c=bySlug(item.card);
   const ok=matches[item.id]===item.answer;
@@ -135,7 +137,7 @@ export function handleCourseClick(target){
   if(!item){matchFeedback='Escolha primeiro uma das cartas.';renderCoursePractice();return true;}
   const picked=matchTarget.dataset.courseMatchTarget;
   if(item.answer===picked){matches[item.id]=picked;matchFeedback=item.why;chosenMatch=null;}
-  else{matchFeedback='Essa associação não corresponde à convenção estudada. Observe o naipe e tente novamente.';}
+  else{matchFeedback='Ainda não. '+item.label+' é associado a '+item.answer+' nesta tradição. Observe o objeto e tente relacioná-lo ao elemento correto.';}
   renderCoursePractice();
  }
  return true;
