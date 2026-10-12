@@ -1,3 +1,4 @@
+import {DIALOGUE_KEY,loadDialogue,normalizeDialogue,dialogueProgress} from '../dialogue/dialogueLogic.js';
 import {MAJOR_JOURNEY_KEY,loadMajorJourney,normalizeMajorJourney,majorProgress} from '../journey/majorJourneyLogic.js';
 import {ASSESSMENT_KEY,loadAssessment,normalizeAssessment,resultsAssessment} from '../assessment/assessmentLogic.js';
 /**
@@ -29,7 +30,8 @@ export const ALLOWED_KEYS=Object.freeze([
   ATELIER_KEY,
   PATHS_KEY,
   ASSESSMENT_KEY,
-  MAJOR_JOURNEY_KEY
+  MAJOR_JOURNEY_KEY,
+  DIALOGUE_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -44,7 +46,8 @@ const KEY_LIMITS={
  [ATELIER_KEY]:4000,
  [PATHS_KEY]:2000,
  [ASSESSMENT_KEY]:9500,
- [MAJOR_JOURNEY_KEY]:18000
+ [MAJOR_JOURNEY_KEY]:18000,
+ [DIALOGUE_KEY]:8000
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -95,7 +98,14 @@ export function readStudySummary(storage){
  const assessment=loadAssessment(storage);
  const resultAssessment=resultsAssessment(assessment);
  const majorJourney=majorProgress(loadMajorJourney(storage));
+ const dialogue=dialogueProgress(loadDialogue(storage));
  return {
+  dialogueCompleted:dialogue.done,
+  dialogueTotal:dialogue.total,
+  dialogueFinished:dialogue.finished,
+  dialogueIndependent:dialogue.independent,
+  dialogueWithSupport:dialogue.withSupport,
+  dialogueChapters:dialogue.chapters,
   majorJourneyCompleted:majorJourney.completed,
   majorJourneyTotal:majorJourney.total,
   majorJourneyFinished:majorJourney.finished,
@@ -151,6 +161,11 @@ export function validateAndNormalizeKey(key,raw){
   const v=safeParse(raw);
   if(!plainObject(v)||!['choose','inspect','connect','answer','finished'].includes(v.phase))throw Error('Ateliê inválido.');
   return JSON.stringify(normalizeAtelier(v));
+ }
+ if(key===DIALOGUE_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!plainObject(v.answers)||!plainObject(v.notes))throw Error('Progresso de Cartas em Diálogo inválido.');
+  return JSON.stringify(normalizeDialogue(v));
  }
  if(key===MAJOR_JOURNEY_KEY){
   const v=safeParse(raw);
