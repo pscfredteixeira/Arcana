@@ -53,3 +53,16 @@
 .atlas-beginner-topline p{font-family:var(--serif);color:var(--burgundy);font-weight:500;font-size:clamp(1.25rem,3vw,1.6rem);line-height:1.4;margin:9px 0}
 .atlas-beginner-topline a{color:var(--wine);font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:780px){.atlas-beginner-topline{padding:16px 19px;margin:0 0 17px}.atlas-beginner-topline p{font-size:1.32rem}}
+
+/* Leitura progressiva: núcleo didático visível, análise teórica opcional. */
+.lesson-more-theory{margin:22px 0 26px;background:#f4eee7;border:1px solid #c8b6a8}
+.lesson-more-theory summary{min-height:64px;padding:15px 19px;cursor:pointer}
+.lesson-more-theory summary small{display:block;font-size:.78rem;line-height:1.5;margin:3px 0 0;color:#695b51;font-weight:400}
+.lesson-more-theory-text{border-top:1px solid #c8b6a8;padding:17px 21px 8px}
+.lesson-more-theory-text p{line-height:1.85;font-size:.95rem;margin:0 0 17px}
+.atlas-advanced-study{margin:10px 0 32px}
+.atlas-advanced-study .atlas-study-context-inner p:first-child{font-weight:600;color:#68483f}
+@media(max-width:700px){
+.lesson-more-theory summary{min-height:70px;padding:15px}
+.lesson-more-theory-text{padding:15px 17px 6px}
+}
