@@ -52,3 +52,13 @@ Essas atividades serão descritas tecnicamente antes de começar o código.
 **Nota:** I-01 está em nível intermediário, mas é oferecida como quarta porta de entrada visual. Essa ordem de navegação não significa que todos os pré-requisitos dos módulos intermediários tenham sido concluídos. A sequência abrangente continua em elaboração. Marcadores de conclusão são decisões do aluno, não certificados.
 
 O conteúdo de cada uma das três novas aulas está em `src/lessons/sprint7Lessons.js`. Rastreabilidade dos livros e pendências editoriais: [CONTENT_AUDIT.md](CONTENT_AUDIT.md).
+
+## Sprint 9 — Jornada dos 22 Maiores (12/10/2026)
+
+Disponível em `#/jornada`: o Louco e três grupos de sete cartas (I–VII, VIII–XIV, XV–XXI), com observação da imagem, explicação em linguagem corrente, exercício com feedback e anotação opcional por carta. Progresso integrado a Meu estudo e backup. A divisão é uma proposta didática que dialoga com Pollack, não uma regra universal sobre a vida humana. Ver [SPRINT9_REPORT.md](SPRINT9_REPORT.md).
+
+## Sprint 10 — Cartas em Diálogo (12/10/2026)
+
+Disponível em `#/praticas/cartas-em-dialogo`: sete exercícios de comparação em quatro revisões que correspondem aos capítulos da Jornada. Duas cartas lado a lado, exemplos cotidianos, feedback específico, dica opcional, síntese do capítulo e anotações. A oficina é independente do avanço na Jornada e seu progresso é armazenado localmente com backup. Ver [SPRINT10_REPORT.md](SPRINT10_REPORT.md).
+
+**Próxima etapa possível:** ampliar para trios de cartas e justificativas escritas, combinadas com revisão espaçada. O curso completo de quinze módulos continua em expansão.
