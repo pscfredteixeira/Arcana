@@ -23,28 +23,28 @@ export const diamondContent = Object.freeze({
  ],
  axes:[
   {id:'vertical',title:'Eixo vertical',cards:['O Louco','O Mundo'],
-   question:'Na leitura proposta por Pollack, o que une simbolicamente o Louco (0) e o Mundo (XXI)?',
+   question:'Na comparação feita por Rachel Pollack, o que O Louco e O Mundo podem representar?',
    options:[
-    {id:'a',text:'Representam dois modos simbólicos de unidade: potencialidade inicial e integração.',correct:true,explanation:'A autora relaciona o zero a possibilidades ainda não definidas e o Mundo à integração dos opostos. É uma leitura simbólica específica.'},
-    {id:'b',text:'São cartas com o mesmo desenho, sem diferenças de postura.',correct:false,explanation:'As figuras compartilham uma qualidade de movimento, mas têm composições distintas. Compare roupas, cenário e posição.'},
+    {id:'a',text:'O Louco pode lembrar o começo cheio de possibilidades. O Mundo pode lembrar a conclusão e o que foi aprendido.',correct:true,explanation:'Isso resume a comparação feita por Pollack: a primeira carta abre possibilidades e a última pode representar a reunião da experiência. É uma interpretação simbólica, não um destino obrigatório.'},
+    {id:'b',text:'As duas cartas mostram exatamente o mesmo desenho, sem diferença alguma.',correct:false,explanation:'Os desenhos são diferentes. Olhe para o lugar onde as pessoas estão e para a posição de seus corpos.'},
     {id:'c',text:'Comprovam que o destino da pessoa já está determinado.',correct:false,explanation:'O capítulo trata de símbolos e desenvolvimento, não de uma garantia sobre eventos futuros.'}
    ]},
   {id:'horizontal',title:'Eixo horizontal',cards:['O Mago','A Sacerdotisa'],
-   question:'Que relação Pollack observa entre o Mago (I) e a Sacerdotisa (II)?',
+   question:'Qual diferença aparece quando comparamos O Mago e A Sacerdotisa?',
    options:[
-    {id:'a',text:'O Mago simboliza o futuro; a Sacerdotisa descreve o passado de maneira literal.',correct:false,explanation:'A relação descrita não é uma fórmula temporal literal. Olhe as posturas e o contraste entre as cartas.'},
-    {id:'b',text:'Constituem uma dualidade de estados mais fixos, colocada em relação ao eixo vertical.',correct:true,explanation:'Isso corresponde ao esquema do capítulo. A autora emprega polaridades simbólicas próprias de sua tradição, que não devem ser tomadas como categorias humanas universais.'},
-    {id:'c',text:'As duas cartas representam exatamente a mesma atitude, sem tensão.',correct:false,explanation:'A comparação tem sentido justamente porque os símbolos e posições não são idênticos.'}
+    {id:'a',text:'O Mago sempre prevê o futuro e A Sacerdotisa sempre descreve o passado.',correct:false,explanation:'As cartas não funcionam como relógio. Compare as posturas: uma figura faz gestos diante de ferramentas, a outra está sentada.'},
+    {id:'b',text:'O Mago pode lembrar ação; A Sacerdotisa, observação e espera. Pollack compara essas duas atitudes.',correct:true,explanation:'É essa a comparação do livro: duas maneiras de se relacionar com uma situação. As duas atitudes podem existir na mesma pessoa.'},
+    {id:'c',text:'As duas cartas representam exatamente a mesma atitude e não há diferença a observar.',correct:false,explanation:'A comparação tem sentido justamente porque os símbolos e posições não são idênticos.'}
    ]}
  ],
  scenario:{
   heading:'E se o diamante fosse uma pergunta?',
   situation:'Uma pessoa quer iniciar um trabalho criativo. Tem muitas possibilidades e energia, mas sente dificuldade para escolher um caminho e trabalhar com constância.',
-  question:'Qual resposta usa os dois eixos como ferramenta de reflexão, sem prever o futuro?',
+  question:'Qual resposta ajuda a pensar no projeto, usando as cartas sem prometer o futuro?',
   options:[
    {id:'a',text:'O Louco garante que ela terá sucesso; o Mundo confirma que tudo terminará bem.',correct:false,explanation:'A proposta transforma o símbolo em certeza sobre resultados. O exercício pede hipóteses fundamentadas, não garantias.'},
-   {id:'b',text:'A abertura do Louco pode inspirar o início; a atenção do Mago aos recursos e a pausa da Sacerdotisa oferecem contrastes; o Mundo levanta a pergunta sobre integração.',correct:true,explanation:'Você fez as cartas dialogarem, relacionou-as à situação e preservou a natureza interpretativa do exercício.'},
-   {id:'c',text:'A Sacerdotisa prova que a pessoa deve abandonar a ideia e nunca agir.',correct:false,explanation:'Uma única figura não determina a vida do consulente. A comparação entre cartas deve ampliar perguntas, não encerrar escolhas.'}
+   {id:'b',text:'O Louco lembra começar; O Mago lembra usar recursos; A Sacerdotisa lembra parar para pensar; O Mundo ajuda a perguntar como juntar tudo o que foi aprendido.',correct:true,explanation:'Boa leitura: você explicou o sentido de cada carta e ligou essas ideias ao projeto, sem prometer resultado.'},
+   {id:'c',text:'A Sacerdotisa prova que a pessoa deve abandonar a ideia e nunca agir.',correct:false,explanation:'A carta não pode decidir a vida de alguém. Ela ajuda a formular perguntas, não a impor uma escolha.'}
   ],
   reflection:'Que gesto pequeno poderia transformar a possibilidade do Louco em uma ação do Mago, sem abandonar a escuta da Sacerdotisa? O que significaria integrar essas atitudes no Mundo?',
   rubric:['Use ao menos dois detalhes das imagens.','Diferencie uma hipótese de uma certeza.','Conecte a leitura ao trabalho criativo, não a uma previsão.']
