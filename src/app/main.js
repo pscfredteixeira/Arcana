@@ -1,3 +1,4 @@
+import {majorJourneyHub,majorStationPage,handleMajorJourneyClick,handleMajorJourneyInput} from '../journey/majorJourneyUI.js';
 import {assessmentPage,renderAssessment,handleAssessmentClick,handleAssessmentInput,handleAssessmentChange} from '../assessment/assessmentUI.js';
 import {beginnerGuidePage} from '../ui/beginnerGuide.js';
 import {initPWA} from './pwa.js';
@@ -19,6 +20,8 @@ const getRoute=()=>{
   const path=getHashPath();
   if(path==='/')return {active:'home',content:homePage(),title:'Início'};
   if(path==='/comece-aqui')return {active:'learn',content:beginnerGuidePage(),title:'Comece aqui'};
+  if(path==='/jornada')return {active:'learn',content:majorJourneyHub(),title:'Jornada dos Arcanos Maiores'};
+  if(path.startsWith('/jornada/')){const slug=path.slice(9);const content=majorStationPage(slug);if(content)return {active:'learn',content,title:'Jornada dos Arcanos Maiores'};}
   if(path==='/aprender')return {active:'learn',content:learnPage(),title:'Aprender'};
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
@@ -77,12 +80,14 @@ app.addEventListener('input',event=>{
  handleDiamondInput(event.target);
  handleSpreadInput(event.target);
  handleAssessmentInput(event.target);
+ handleMajorJourneyInput(event.target);
 });
 app.addEventListener('change',event=>{
   handleAssessmentChange(event.target);
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+  if(handleMajorJourneyClick(event.target))return;
   if(handleAssessmentClick(event.target))return;
  if(handleAtelierClick(event.target))return;
  if(handleSixPathsClick(event.target))return;
