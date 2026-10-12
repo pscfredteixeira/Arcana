@@ -122,3 +122,19 @@
 .journey-review-link .button{white-space:nowrap;text-align:center}
 .dialogue-practices-promo{margin-top:25px}
 @media(max-width:640px){.journey-review-link{flex-direction:column;align-items:stretch;padding:17px}.journey-review-link .button{width:100%}}
+
+/* Celular: duas imagens numa coluna de leitura ampla, sem textos estreitos. */
+@media(max-width:650px){
+ .dialogue-cards{grid-template-columns:1fr;gap:12px}
+ .dialogue-cards article{display:grid;grid-template-columns:minmax(96px,120px) minmax(0,1fr);gap:13px;align-items:start;padding:14px}
+ .dialogue-card-image{width:100%;max-width:120px;margin:0}
+ .dialogue-cards article h3{font-size:1.34rem;margin:6px 0 10px}
+ .dialogue-cards article p{font-size:.95rem;line-height:1.68}
+ .dialogue-instruction,.dialogue-answers button,.dialogue-bridge p{font-size:.95rem}
+ .dialogue-card-image img{display:block}
+}
+@media(max-width:390px){
+ .dialogue-cards article{grid-template-columns:96px minmax(0,1fr);gap:11px}
+ .dialogue-cards article p{font-size:.92rem;line-height:1.65}
+ .dialogue-cards article h3{font-size:1.22rem}
+}
