@@ -61,6 +61,7 @@ function render(){
  app.innerHTML=siteHeader(route.active)+`<main tabindex="-1" id="main">${route.content}</main>`+siteFooter();
  applyStudyPreferences();
  renderLab();
+ renderAssessment();
  renderCoursePractice();
  renderDiamond();
  renderAtelier();
