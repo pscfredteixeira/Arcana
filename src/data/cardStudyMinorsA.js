@@ -7,22 +7,22 @@
 export const suitStudies={
 paus:{
  element:'Fogo',field:'iniciativa, projetos, coragem de agir, trabalho criativo e mobilização de energia',
- scope:'Em Paus, a pergunta frequentemente se dirige ao movimento: quem inicia, quem sustenta, de onde vem o impulso e a que custo ele é mantido. Não confunda energia com garantia de êxito; o desenho de cada carta altera a direção dessa investigação.',
+ scope:'As cartas de Paus costumam falar de vontade de agir, projetos e criatividade. Mas cada uma mostra uma situação diferente: uma ideia nova, um conflito, uma conquista ou muito trabalho. Veja o desenho para entender qual delas aparece.',
  prompt:'Que iniciativa merece atenção e quais limites permitem sustentá-la?'
 },
 copas:{
  element:'Água',field:'vínculos, afetos, desejos, imaginação e formas de expressar o que sentimos',
- scope:'Em Copas, observe a relação entre recipientes, pessoas e água. As cenas podem sugerir encontros, frustrações, recordações e desejos, mas não oferecem acesso direto aos sentimentos secretos de terceiros.',
+ scope:'As cartas de Copas costumam falar de sentimentos e relacionamentos. Algumas mostram encontros e alegria; outras mostram tristeza, lembranças ou afastamentos. A imagem ajuda a reconhecer qual é o assunto.',
  prompt:'Que vínculo, expectativa ou experiência afetiva está em questão — e quais fatos a sustentam?'
 },
 espadas:{
  element:'Ar',field:'pensamento, linguagem, escolhas, distinções, conflitos e modos de compreender uma situação',
- scope:'Em Espadas, os objetos cortantes podem funcionar como imagens de discernimento ou conflito. A presença da espada não basta para anunciar desgraça: a posição dos corpos, o ambiente e a pergunta mudam a leitura.',
+ scope:'As cartas de Espadas costumam falar de ideias, escolhas e discussões. Uma espada no desenho não significa que algo ruim vai acontecer. Olhe a posição das pessoas e o que está acontecendo.',
  prompt:'Qual ideia, palavra ou conflito precisa ser examinado com maior clareza?'
 },
 ouros:{
  element:'Terra',field:'recursos, corpo, trabalho, tempo, vínculos materiais e condições concretas da vida',
- scope:'Em Ouros, examine o que é construído, cuidado, administrado, compartilhado ou acumulado. A materialidade inclui mais do que dinheiro e jamais garante riqueza ou pobreza como resultado automático.',
+ scope:'As cartas de Ouros costumam falar da vida prática: trabalho, dinheiro, tempo, objetos, cuidado e recursos. Não prometem riqueza nem pobreza. Veja se a cena mostra começo, esforço, dificuldade ou estabilidade.',
  prompt:'Quais condições práticas sustentam o que está sendo desejado?'
 }};
 export const minorStudies={
