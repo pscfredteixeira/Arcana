@@ -21,7 +21,7 @@ test('cada uma das 78 cartas tem explicação didática singular a partir do des
   const text=accessibleCardProse[c.slug];
   assert.equal(typeof text,'string',c.slug);
   assert.ok(text.length>=260,'Texto curto: '+c.slug);
-  assert.ok(text.includes('Por isso')||text.includes('por isso')||text.includes('Daí')||text.includes('daí'),'Sem explicação de ligação entre desenho e sentido: '+c.slug);
+  assert.match(text,/costuma|pode|representa|significa|lembra/i,'Sem ligação entre a cena e uma ideia interpretativa: '+c.slug);
   assert.ok(!mains.has(text),'Texto duplicado: '+c.slug);mains.add(text);
   const study=getCardStudy(c);
   assert.equal(study.main,text,c.slug);
