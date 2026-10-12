@@ -76,6 +76,7 @@ app.addEventListener('input',event=>{
  if(event.target?.id==='lesson-notes')saveReflection(event.target.value);
  handleDiamondInput(event.target);
  handleSpreadInput(event.target);
+ handleAssessmentInput(event.target);
 });
 app.addEventListener('change',event=>{
   handleAssessmentChange(event.target);
