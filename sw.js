@@ -1,7 +1,7 @@
 /* ARCANA — App shell cache. Dados de aluno continuam somente no localStorage.
- * Cache versão 5: atualizar a versão ao publicar sprints que alteram assets.
+ * Cache versão 6: atualizar a versão ao publicar sprints que alteram assets.
  */
-const CACHE_NAME='arcana-app-shell-v5';
+const CACHE_NAME='arcana-app-shell-v6';
 const APP_SHELL=[
   "./",
   "./index.html",
@@ -21,6 +21,11 @@ const APP_SHELL=[
   "./src/data/atlasCatalogue.js",
   "./src/data/cards.js",
   "./src/data/beginnerMeanings.js",
+  "./src/data/accessibleMajors.js",
+  "./src/data/accessiblePausCopas.js",
+  "./src/data/accessibleEspadasOuros.js",
+  "./src/data/accessibleCardProse.js",
+  "./src/lessons/accessibleLessonProse.js",
   "./src/lessons/lessonPlainGuides.js",
   "./src/ui/beginnerGuide.js",
   "./src/data/diamondContent.js",
