@@ -1,3 +1,4 @@
+import {assessmentPage,renderAssessment,handleAssessmentClick,handleAssessmentInput,handleAssessmentChange} from '../assessment/assessmentUI.js';
 import {beginnerGuidePage} from '../ui/beginnerGuide.js';
 import {initPWA} from './pwa.js';
 import {atelierPage,renderAtelier,handleAtelierClick} from '../games/atelierGame.js';
@@ -23,6 +24,7 @@ const getRoute=()=>{
   if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
+  if(path==='/avaliacao')return {active:'learn',content:assessmentPage(),title:'Avaliação de aprendizagem'};
   if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
   if(path==='/praticas/mesa')return {active:'practice',content:spreadPage(),title:'Mesa de Tiragens'};
   if(path==='/praticas/atelie')return {active:'practice',content:atelierPage(),title:'Ateliê dos Símbolos'};
@@ -75,9 +77,11 @@ app.addEventListener('input',event=>{
  handleSpreadInput(event.target);
 });
 app.addEventListener('change',event=>{
+  handleAssessmentChange(event.target);
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+  if(handleAssessmentClick(event.target))return;
  if(handleAtelierClick(event.target))return;
  if(handleSixPathsClick(event.target))return;
  if(handleCourseClick(event.target))return;
