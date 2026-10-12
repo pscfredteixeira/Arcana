@@ -20,16 +20,16 @@ const paths=[
 ];
 const courtNouns={11:'Valete/Pajem',12:'Cavaleiro',13:'Rainha',14:'Rei'};
 const numberLearning={
-1:'Nos Ases, a imagem costuma apresentar o naipe como potencialidade ou oferta. Uma possibilidade só se torna experiência quando encontra situações concretas.',
-2:'O Dois cria uma relação: acordo, impasse, equilíbrio ou confronto entre posições que ainda precisam ser examinadas.',
-3:'O Três sugere desdobramentos, cooperação ou efeitos da interação; observe quem participa e como o movimento se organiza.',
-4:'O Quatro permite observar estruturas e condições de estabilidade, mas também limites e a possibilidade de estagnação.',
-5:'O Cinco destaca fricções e dificuldades que exigem reorganização; a cena específica dirá se predominam perda, conflito ou desafio.',
-6:'O Seis convida a olhar os efeitos de um processo e as relações sociais envolvidas: apoio, travessia, reconhecimento ou troca.',
-7:'O Sete frequentemente exige revisão de estratégia, escolhas ou expectativas. O número não basta para definir o valor da experiência.',
-8:'O Oito desloca o foco para um processo em andamento: trabalho, ação, limites ou uma travessia que pede continuidade.',
-9:'O Nove abre perguntas sobre experiências acumuladas, satisfação, defesa ou autonomia, conforme o naipe e sua imagem.',
-10:'O Dez apresenta uma fase de intensidade ou fechamento no interior do naipe; conclusão não implica necessariamente conforto.'
+1:'O Ás é a primeira carta numerada de um naipe. Em muitas imagens, ele apresenta uma possibilidade de começo. Veja o que é oferecido e pense no que precisaria acontecer para essa ideia se tornar real.',
+2:'O Dois mostra duas unidades do mesmo naipe. Pode ajudar a pensar em uma escolha, troca ou equilíbrio. Observe a cena para descobrir se as duas partes estão cooperando ou enfrentando um problema.',
+3:'O Três mostra três unidades. Em muitas cartas, isso abre espaço para uma ação compartilhada ou para os resultados de algo que começou. O desenho desta carta ajuda a descobrir qual é o caso.',
+4:'O Quatro costuma ajudar a pensar em manter alguma coisa organizada. Mas a mesma segurança que protege também pode prender. Veja se as figuras parecem confortáveis ou limitadas.',
+5:'O Cinco é muitas vezes uma carta de desafio. Ele pode mostrar discussões, perdas ou falta de recursos. O tipo de dificuldade muda conforme o naipe e o que a cena apresenta.',
+6:'O Seis costuma mostrar o que acontece depois de uma dificuldade ou movimento anterior. Observe se a carta fala de ajuda, passagem, reconhecimento ou relações entre pessoas.',
+7:'O Sete pede atenção ao caminho escolhido. Às vezes precisamos insistir; em outras, pensar melhor nas opções. Olhe primeiro para o que a personagem faz.',
+8:'O Oito costuma mostrar alguma coisa em andamento. Pode haver movimento, estudo, trabalho ou limites que precisam ser enfrentados. Descubra qual situação está presente nesta imagem.',
+9:'O Nove costuma lembrar algo que já foi vivido e acumulado. A pessoa pode estar satisfeita, protegida ou cansada. O naipe e a cena mostram qual dessas ideias fica mais forte.',
+10:'O Dez fecha a sequência das dez cartas numeradas do naipe. Isso pode significar realização ou excesso. Não pense que todo final é feliz ou ruim: veja o que acontece no desenho.'
 };
 function rankText(c){
  if(c.rank<=10)return numberLearning[c.rank]||'Observe os elementos numerados e as relações entre eles.';
