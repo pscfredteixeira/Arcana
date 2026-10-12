@@ -1,3 +1,4 @@
+import {accessibleCardProse} from './accessibleCardProse.js';
 import {majorStudies} from './cardStudyMajors.js';
 import {minorStudies,suitStudies} from './cardStudyMinorsA.js';
 import {minorStudiesRest} from './cardStudyMinorsB.js';
@@ -13,9 +14,9 @@ import {minorStudiesRest} from './cardStudyMinorsB.js';
  */
 export const allStudies=Object.freeze({...majorStudies,...minorStudies,...minorStudiesRest});
 const paths=[
-'Separar o que está presente na imagem daquilo que o leitor acrescenta.',
-'Interpretar como hipótese contextualizada, nunca como diagnóstico ou previsão comprovada.',
-'Comparar cartas e tradições antes de transformar uma palavra-chave em regra.'
+'Primeiro diga o que aparece no desenho. Depois explique o que isso pode significar.',
+'Lembre que um significado é uma possibilidade de leitura, não uma garantia do que vai acontecer.',
+'Se estiver em dúvida, compare com outra carta e pergunte que parte da situação ainda precisa entender.'
 ];
 const courtNouns={11:'Valete/Pajem',12:'Cavaleiro',13:'Rainha',14:'Rei'};
 const numberLearning={
@@ -33,27 +34,27 @@ const numberLearning={
 function rankText(c){
  if(c.rank<=10)return numberLearning[c.rank]||'Observe os elementos numerados e as relações entre eles.';
  const court=courtNouns[c.rank];
- return 'Como figura da corte, '+court+' pode representar atitudes, maneiras de agir ou funções numa história. Não é necessário associar a carta a uma pessoa de idade ou gênero específicos; as cortes são um vocabulário simbólico e variam entre tradições.';
+ return 'Esta é uma figura da corte: '+court+'. No tarô, as figuras da corte podem lembrar maneiras de agir ou papéis que alguém assume. Não precisam indicar uma pessoa com idade ou gênero específico. Observe o que a personagem está fazendo nesta imagem antes de tirar uma conclusão.';
 }
 export function getCardStudy(c){
  const item=allStudies[c.slug];
  if(!item)return null;
  if(c.arcana==='major'){
   return {
-   type:'major',visual:item.visual,main:item.depth,tension:item.tension,
+   type:'major',visual:c.sight,main:accessibleCardProse[c.slug]||item.depth,advanced:item.depth,advancedVisual:item.visual,tension:item.tension,
    case:item.example,question:item.explore,
-   structure:'Os 22 Maiores formam um campo de imagens nomeadas, com sequências e relações possíveis. Em Pollack, podem ser observados como etapas de experiência e consciência, sem supor que toda pessoa viva uma jornada idêntica. Naiff organiza parte dos Maiores em seis caminhos com títulos e faixas próprios.',
-   comparative:'Na organização RWS desta escola, A Força é VIII e A Justiça XI. Naiff trabalha com uma sequência que as apresenta em outra posição. O nome e o desenho da carta devem ser considerados antes de transportar interpretações entre baralhos.',
+   structure:'Os Arcanos Maiores são as 22 cartas com nomes, como O Louco e A Justiça. Você pode estudar cada uma separadamente ou compará-las como uma sequência. Rachel Pollack explora essas relações entre imagens. Nei Naiff apresenta seis grupos para estudar os Maiores. São maneiras de organizar os significados, não acontecimentos que todas as pessoas terão de viver.',
+   comparative:'Nem todos os livros usam a mesma ordem das cartas. No baralho Rider–Waite–Smith, A Força é a carta VIII (8) e A Justiça é a carta XI (11). Nei Naiff apresenta essas duas cartas com a ordem invertida. Para comparar livros, observe o nome e a figura da carta, não só seu número.',
    sources:'Rachel Pollack, Setenta e oito graus de sabedoria, Parte I, capítulos 1–6; Nei Naiff, Curso completo de tarô, lições 6–11 (organização dos Maiores). Estas passagens são orientação geral de estudo, não atribuição de cada parágrafo ao autor.'
   };
  }
  const suit=suitStudies[c.suit];
  return {
-  type:'minor',visual:c.sight,main:item.reading,tension:item.counter,
+  type:'minor',visual:c.sight,main:accessibleCardProse[c.slug]||item.reading,advanced:item.reading,tension:item.counter,
   case:item.case,question:item.question,
   suit:suit,rank:rankText(c),
-  structure:'Cada um dos quatro naipes possui dez cartas numeradas e quatro figuras da corte. No Rider-Waite-Smith, Pamela Colman Smith desenhou cenas em muitas das cartas numeradas, abrindo relações que ultrapassam a contagem de objetos. O significado nasce do diálogo entre a cena, o naipe, a pergunta e outras cartas.',
-  comparative:'A associação '+(c.suit==='paus'?'Paus–Fogo':c.suit==='copas'?'Copas–Água':c.suit==='espadas'?'Espadas–Ar':'Ouros–Terra')+' pertence à convenção de estudo adotada aqui. Nei Naiff distingue os planos material, mental, sentimental e espiritual e utiliza os Menores como auxiliares dos Maiores em seu método de pares. Pollack dá destaque à leitura das cenas e às combinações. São enfoques diferentes; nenhum substitui a observação desta carta.',
+  structure:'Os Arcanos Menores têm quatro naipes: Paus, Copas, Espadas e Ouros. Cada um tem dez cartas numeradas e quatro figuras da corte (Valete, Cavaleiro, Rainha e Rei). Muitas cartas mostram cenas com pessoas e objetos. Primeiro, olhe o que acontece; depois, veja como a cena ajuda a entender o significado.',
+  comparative:'A associação '+(c.suit==='paus'?'Paus–Fogo':c.suit==='copas'?'Copas–Água':c.suit==='espadas'?'Espadas–Ar':'Ouros–Terra')+' pertence à convenção de estudo adotada aqui. Nei Naiff usa quatro campos para explicar situações: recursos materiais, pensamentos, sentimentos e espiritualidade. Em seu método, os Menores ajudam a detalhar a leitura dos Maiores. Pollack destaca a importância de olhar as cenas e comparar cartas. Os autores usam maneiras diferentes de ensinar. No começo, basta saber que existem métodos variados e observar a imagem da carta que está estudando.',
   sources:'Rachel Pollack, Setenta e oito graus de sabedoria, Parte II, capítulos 7–10 (cenas e quatro naipes); Nei Naiff, Curso completo de tarô, estudo dos Menores e lição eletiva 4 (quatro planos). As reflexões específicas nesta ficha são autorais e não citações literais.'
  };
 }
