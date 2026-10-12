@@ -43,11 +43,12 @@ test('a ficha apresenta fundamentos, observação, reflexão, método e fontes',
   assert.ok(html.includes('Por que a carta pode ter esse significado?'));
   assert.ok(html.includes('Quando essa ideia também pode trazer dificuldades'));
   assert.ok(html.includes('Outro exemplo do dia a dia'));
-  assert.ok(html.includes('Pollack e Naiff'));
-  assert.ok(html.includes('Em palavras simples')||html.includes('O que significa '));
+  assert.ok(html.includes('Rachel Pollack e Nei Naiff'));
+  assert.ok(html.includes('O que significa '));
+  assert.match(html,/Quero aprofundar: outra maneira de analisar esta carta/);
   assert.ok(html.includes('DE ONDE VEM ESTE ESTUDO?'));
   assert.ok(html.length>3000,c.name+': ficha não detalhada');
-  if(c.suit)assert.ok(html.includes('NAIPE / ELEMENTO SIMBÓLICO'));
+  if(c.suit)assert.ok(html.includes('ESTE GRUPO DE CARTAS É CHAMADO DE NAIPE'));
   const page=atlasDetailExpanded(c);
   assert.ok(page.includes('atlas-deep-reading'));
   assert.ok(page.includes('atlas-source'));
