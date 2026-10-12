@@ -157,6 +157,6 @@ test('a interface oferece avaliação acessível em Aprender, Práticas e Meu es
  }finally{globalThis.localStorage=saved;}
  for(const token of ["path==='/avaliacao'","renderAssessment()","handleAssessmentClick","handleAssessmentInput","handleAssessmentChange"])assert.ok(app.includes(token),token);
  for(const file of ['assessmentData.js','assessmentLogic.js','assessmentUI.js','assessment.css'])assert.ok(sw.includes(file),file);
- assert.match(sw,/arcana-app-shell-v8/);
+ assert.match(sw,/arcana-app-shell-v9/);
  assert.match(index,/styles\/assessment.css/);
 });
