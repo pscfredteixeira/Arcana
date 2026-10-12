@@ -66,3 +66,28 @@
 .lesson-more-theory summary{min-height:70px;padding:15px}
 .lesson-more-theory-text{padding:15px 17px 6px}
 }
+
+/* Didática dos laboratórios: primeiro ensinar, depois perguntar. */
+.practice-teach-first{margin:19px 0 22px;padding:clamp(16px,2.8vw,24px);border:1px solid #c9ab92;border-left:4px solid #945b53;background:#faf1e7;color:#45372f;max-width:100%}
+.practice-teach-first .eyebrow{color:#7c4b49;font-size:.66rem;line-height:1.4}
+.practice-teach-first h4{font-family:var(--serif);font-size:clamp(1.22rem,2.5vw,1.58rem);line-height:1.25;font-weight:500;color:#6e353c;margin:9px 0 10px}
+.practice-teach-first>p,.practice-worked-example p,.practice-optional-hint p{font-size:.94rem;line-height:1.76;color:#4b3d34;margin:0}
+.practice-worked-example{margin:14px 0 0;background:#efe2d4;padding:14px 16px;border-left:3px solid #b29374}
+.practice-worked-example strong{font-size:.78rem;color:#6a393e;display:block;margin-bottom:7px}
+.practice-optional-hint{margin-top:14px;border-top:1px solid #d8c3b2}
+.practice-optional-hint summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 2px;list-style:none;min-height:49px;font-weight:650;color:#763e43;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.practice-optional-hint summary::-webkit-details-marker{display:none}
+.practice-optional-hint summary span{font-size:1.25rem;font-weight:400}
+.practice-optional-hint[open] summary span{transform:rotate(45deg)}
+.practice-optional-hint>p{padding:0 2px 12px}
+.practice-inspection-guide{margin-top:12px;padding:13px 16px;background:#f3e6d7;border:1px solid #cdb6a1;font-size:.86rem;line-height:1.7;color:#59463d}
+.practice-inspection-guide strong{color:#693640}
+.course-quiz>.practice-teach-first,.course-match-head>.practice-teach-first,.x-bridge-question>.practice-teach-first,.six-challenge>.practice-teach-first{width:100%}
+@media(max-width:760px){
+ .practice-teach-first{padding:16px;margin:16px 0 19px}
+ .practice-teach-first h4{font-size:1.35rem}
+ .practice-teach-first>p,.practice-worked-example p,.practice-optional-hint p{font-size:.92rem}
+ .practice-worked-example{padding:12px 14px}
+ .practice-optional-hint summary{min-height:50px}
+}
+@media(prefers-reduced-motion:reduce){.practice-optional-hint summary span{transition:none}}
