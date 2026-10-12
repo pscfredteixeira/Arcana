@@ -60,7 +60,7 @@ test('todas as 18 seções das quatro aulas agora ensinam o básico antes da teo
 test('a nova formação é instalada também no aplicativo PWA sem apagar registros',()=>{
  const sw=read('sw.js');
  for(const file of ['accessibleMajors.js','accessiblePausCopas.js','accessibleEspadasOuros.js','accessibleCardProse.js','accessibleLessonProse.js'])assert.ok(sw.includes(file),'PWA sem '+file);
- assert.match(sw,/arcana-app-shell-v7/);
+ assert.match(sw,/arcana-app-shell-v8/);
  const css=read('styles/beginner.css');
  assert.match(css,/lesson-more-theory/);
  assert.match(css,/atlas-advanced-study/);
