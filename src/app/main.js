@@ -1,3 +1,4 @@
+import {dialogueHubPage,dialogueChapterPage,handleDialogueClick,handleDialogueInput} from '../dialogue/dialogueUI.js';
 import {majorJourneyHub,majorStationPage,handleMajorJourneyClick,handleMajorJourneyInput} from '../journey/majorJourneyUI.js';
 import {assessmentPage,renderAssessment,handleAssessmentClick,handleAssessmentInput,handleAssessmentChange} from '../assessment/assessmentUI.js';
 import {beginnerGuidePage} from '../ui/beginnerGuide.js';
@@ -26,6 +27,8 @@ const getRoute=()=>{
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
+  if(path==='/praticas/cartas-em-dialogo')return {active:'practice',content:dialogueHubPage(),title:'Cartas em Diálogo'};
+  if(path.startsWith('/praticas/cartas-em-dialogo/')){const content=dialogueChapterPage(path.slice('/praticas/cartas-em-dialogo/'.length));if(content)return {active:'practice',content,title:'Revisão de capítulo'};}
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
   if(path==='/avaliacao')return {active:'learn',content:assessmentPage(),title:'Avaliação de aprendizagem'};
   if(path==='/praticas/diamante')return {active:'practice',content:diamondGamePage(),title:'Diamante dos Arcanos'};
@@ -81,12 +84,14 @@ app.addEventListener('input',event=>{
  handleSpreadInput(event.target);
  handleAssessmentInput(event.target);
  handleMajorJourneyInput(event.target);
+ handleDialogueInput(event.target);
 });
 app.addEventListener('change',event=>{
   handleAssessmentChange(event.target);
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+  if(handleDialogueClick(event.target))return;
   if(handleMajorJourneyClick(event.target))return;
   if(handleAssessmentClick(event.target))return;
  if(handleAtelierClick(event.target))return;
