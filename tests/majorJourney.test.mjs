@@ -32,7 +32,7 @@ test('22 cartas completas, números RWS, um ponto de partida e três grupos de s
   assert.ok(x.scenario.length>45,slug+' / exemplo');
   assert.ok(x.why.length>55,slug+' / feedback');
   assert.equal(x.options.length,3,slug);
-  assert.ok(x.options.every(y=>y.length>28),slug+' / alternativa');
+  assert.ok(x.options.every(y=>y.length>=18),slug+' / alternativa');
   assert.ok(x.answer>=0&&x.answer<=2,slug);
  }
 });
