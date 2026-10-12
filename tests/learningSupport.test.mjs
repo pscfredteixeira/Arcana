@@ -66,7 +66,7 @@ test('os jogos mostram apoio pedagógico antes das alternativas, sem mudar o gab
 
 test('o iPhone recebe os novos recursos no cache sem alterar registros do aluno',()=>{
  const sw=read('sw.js');
- assert.match(sw,/arcana-app-shell-v7/);
+ assert.match(sw,/arcana-app-shell-v8/);
  assert.match(sw,/\.\/src\/games\/learningScaffolds\.js/);
  assert.match(read('styles/beginner.css'),/practice-teach-first/);
  assert.match(read('styles/beginner.css'),/practice-optional-hint/);
