@@ -1,3 +1,4 @@
+import {ASSESSMENT_KEY,loadAssessment,normalizeAssessment,resultsAssessment} from '../assessment/assessmentLogic.js';
 /**
  * ARCANA · Sprint 6 — leitura dos dados locais e cópias de segurança.
  * Não existe servidor, conta de aluno ou sincronização entre dispositivos.
@@ -25,7 +26,8 @@ export const ALLOWED_KEYS=Object.freeze([
   'arcana-spread-archive-v1',
   PRACTICE_KEY,
   ATELIER_KEY,
-  PATHS_KEY
+  PATHS_KEY,
+  ASSESSMENT_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -38,7 +40,8 @@ const KEY_LIMITS={
  'arcana-spread-archive-v1':240000,
  [PRACTICE_KEY]:2000,
  [ATELIER_KEY]:4000,
- [PATHS_KEY]:2000
+ [PATHS_KEY]:2000,
+ [ASSESSMENT_KEY]:9500
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -86,7 +89,14 @@ export function readStudySummary(storage){
  const practices=readPractices(storage);
  const atelier=normalizeAtelier(safeParse(safeGet(storage,ATELIER_KEY)));
  const journey=normalizeJourney(safeParse(safeGet(storage,PATHS_KEY)));
+ const assessment=loadAssessment(storage);
+ const resultAssessment=resultsAssessment(assessment);
  return {
+  assessmentComplete:resultAssessment.complete,
+  assessmentStarted:assessment.phase!=='welcome',
+  assessmentIndependent:resultAssessment.counts.sozinho,
+  assessmentWithSupport:resultAssessment.counts.apoio,
+  assessmentToReview:resultAssessment.counts.revisar,
   lessonCompleted:completed,
   lessonCompletions:allCompletions,
   lessonsCompletedCount:Object.values(allCompletions).filter(Boolean).length,
@@ -134,6 +144,11 @@ export function validateAndNormalizeKey(key,raw){
   const v=safeParse(raw);
   if(!plainObject(v)||!['choose','inspect','connect','answer','finished'].includes(v.phase))throw Error('Ateliê inválido.');
   return JSON.stringify(normalizeAtelier(v));
+ }
+ if(key===ASSESSMENT_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!['welcome','questions','writing','report'].includes(v.phase))throw Error('Avaliação de aprendizagem inválida.');
+  return JSON.stringify(normalizeAssessment(v));
  }
  if(key===PATHS_KEY){
   const v=safeParse(raw);
