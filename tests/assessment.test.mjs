@@ -74,11 +74,10 @@ test('erro repetido leva à revisão e não bloqueia o aluno indefinidamente',()
  assert.deepEqual(repeat,s,'não conta a mesma alternativa duas vezes');
  s=chooseAssessment(s,wrong(q)[1]);
  s=chooseAssessment(s,right(q));
- assert.equal(answerStatus(q,s.responses[q.id]),'com-apoio','acerto no terceiro ensaio ainda vale como com apoio');
+ assert.equal(answerStatus(q,s.responses[q.id]),'revisar','dois erros mostram que é importante revisar, mesmo após acertar');
  s=nextAssessment(s);
  assert.equal(s.index,1);
- // Without a third distinct wrong option in a three-alternative question,
- // "revisar" is only reachable for future larger option banks; no invented failure grade.
+ // O acerto foi permitido depois de duas falhas, mas o assunto entra para revisão.
 });
 test('interpretação livre não recebe nota automática nem exige texto idêntico ao modelo',()=>{
  let s=finishQuestions(startAssessment(initialAssessment()));
@@ -115,7 +114,7 @@ test('recuperar uma tentativa interrompida e normalizar dados ruins',()=>{
  s=nextAssessment(s);
  assert.equal(storeAssessment(local,s),true);
  assert.equal(loadAssessment(local).index,1);
- assert.equal(normalizeAssessment({phase:'report',index:20,responses:{},writing:'<script>alert(1)</script>'}).phase,'questions');
+ assert.equal(normalizeAssessment({phase:'report',index:20,responses:{},writing:'<script>alert(1)</script>'}).phase,'welcome');
  assert.equal(normalizeAssessment(null).phase,'welcome');
  const garbage={...s,responses:{estrutura:{attempts:['not-allowed']}}};
  assert.equal(normalizeAssessment(garbage).responses.estrutura.attempts.length,0);
