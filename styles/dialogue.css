@@ -114,3 +114,11 @@
  .dialogue-stepbar{font-size:.57rem}
 }
 @media(prefers-reduced-motion:reduce){.dialogue-meter>span{transition:none}}
+
+/* Acesso às revisões diretamente em cada capítulo da Jornada */
+.journey-review-link{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:20px 0 0;padding:19px 22px;background:#f0e1d2;border:1px solid #d0b6a5}
+.journey-review-link strong{color:#693c43;font:400 1.35rem var(--serif)}
+.journey-review-link p{font-size:.83rem;line-height:1.7;color:#5c5046;margin:8px 0 0}
+.journey-review-link .button{white-space:nowrap;text-align:center}
+.dialogue-practices-promo{margin-top:25px}
+@media(max-width:640px){.journey-review-link{flex-direction:column;align-items:stretch;padding:17px}.journey-review-link .button{width:100%}}
