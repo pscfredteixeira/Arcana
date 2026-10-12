@@ -46,7 +46,7 @@ export function answerStatus(q,r){
  if(!isResolved(q,r))return 'pendente';
  const last=r.attempts.at(-1);
  const correct=q.options.find(o=>o.id===last)?.correct===true;
- if(!correct)return 'revisar';
+ if(!correct||r.attempts.length>=3)return 'revisar';
  return r.attempts.length===1&&!r.hintUsed?'sozinho':'com-apoio';
 }
 export function startAssessment(raw){
