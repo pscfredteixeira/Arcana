@@ -1,3 +1,4 @@
+import {MAJOR_JOURNEY_KEY,loadMajorJourney,normalizeMajorJourney,majorProgress} from '../journey/majorJourneyLogic.js';
 import {ASSESSMENT_KEY,loadAssessment,normalizeAssessment,resultsAssessment} from '../assessment/assessmentLogic.js';
 /**
  * ARCANA · Sprint 6 — leitura dos dados locais e cópias de segurança.
@@ -27,7 +28,8 @@ export const ALLOWED_KEYS=Object.freeze([
   PRACTICE_KEY,
   ATELIER_KEY,
   PATHS_KEY,
-  ASSESSMENT_KEY
+  ASSESSMENT_KEY,
+  MAJOR_JOURNEY_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -41,7 +43,8 @@ const KEY_LIMITS={
  [PRACTICE_KEY]:2000,
  [ATELIER_KEY]:4000,
  [PATHS_KEY]:2000,
- [ASSESSMENT_KEY]:9500
+ [ASSESSMENT_KEY]:9500,
+ [MAJOR_JOURNEY_KEY]:18000
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -91,7 +94,11 @@ export function readStudySummary(storage){
  const journey=normalizeJourney(safeParse(safeGet(storage,PATHS_KEY)));
  const assessment=loadAssessment(storage);
  const resultAssessment=resultsAssessment(assessment);
+ const majorJourney=majorProgress(loadMajorJourney(storage));
  return {
+  majorJourneyCompleted:majorJourney.completed,
+  majorJourneyTotal:majorJourney.total,
+  majorJourneyFinished:majorJourney.finished,
   assessmentComplete:resultAssessment.complete,
   assessmentStarted:assessment.phase!=='welcome',
   assessmentIndependent:resultAssessment.counts.sozinho,
@@ -144,6 +151,11 @@ export function validateAndNormalizeKey(key,raw){
   const v=safeParse(raw);
   if(!plainObject(v)||!['choose','inspect','connect','answer','finished'].includes(v.phase))throw Error('Ateliê inválido.');
   return JSON.stringify(normalizeAtelier(v));
+ }
+ if(key===MAJOR_JOURNEY_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!Array.isArray(v.completed)||!['observe','understand','practice'].includes(v.stage))throw Error('Progresso da Jornada dos Maiores inválido.');
+  return JSON.stringify(normalizeMajorJourney(v));
  }
  if(key===ASSESSMENT_KEY){
   const v=safeParse(raw);
