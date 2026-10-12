@@ -41,7 +41,7 @@ test('o estudante não pode pular uma pergunta e aprende depois de errar',()=>{
  assert.deepEqual(dialogueProgress(s).chapters.map(x=>x.done),[0,0,0,0]);
  const first='comeco-acao',correct=dialogueTasks[first].answer;
  assert.equal(nextDialogueTask(s,'portal'),first);
- assert.deepEqual(chooseDialogue(s,'acao','agir-observar',2),s,'capítulo incorreto');
+ assert.deepEqual(chooseDialogue(s,'portal','agir-observar',2),s,'a pergunta pertence a outro capítulo');
  assert.deepEqual(chooseDialogue(s,'portal','qualquer',1),s,'tarefa inexistente');
  s=chooseDialogue(s,'portal',first,0);
  assert.equal(dialogueProgress(s).done,0,'o erro não conclui');
