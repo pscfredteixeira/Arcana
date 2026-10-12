@@ -1,3 +1,4 @@
+import {accessibleSection} from '../lessons/accessibleLessonProse.js';
 import {plainGuideForSection} from '../lessons/lessonPlainGuides.js';
 import {firstLookContent as lesson} from '../lessons/firstLookContent.js';
 import {cards} from '../data/cards.js';
@@ -12,7 +13,7 @@ const storage=(key,value)=>{
  try {if(value===undefined)return localStorage.getItem(key); localStorage.setItem(key,String(value));}catch{return null;}
 };
 let state={step:Math.min(3,Math.max(0,Number(storage('arcana-firstlook-step'))||0)),picked:-1};
-const chapter=s=>'<section class="arcana-chapter" id="'+esc(s.id)+'"><span class="eyebrow">'+esc(s.eyebrow)+'</span><h2>'+esc(s.title)+'</h2>'+(plainGuideForSection(s.id)?'<aside class="beginner-chapter-summary"><strong>Em palavras simples</strong><p>'+esc(plainGuideForSection(s.id)[0])+'</p><small><strong>Exemplo:</strong> '+esc(plainGuideForSection(s.id)[1])+'</small></aside>':'')+s.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<aside class="lesson-principle"><strong>Para guardar</strong><p>'+esc(s.principle)+'</p></aside></section>';
+const chapter=s=>'<section class="arcana-chapter" id="'+esc(s.id)+'"><span class="eyebrow">'+esc(s.eyebrow)+'</span><h2>'+esc(s.title)+'</h2>'+(plainGuideForSection(s.id)?'<aside class="beginner-chapter-summary"><strong>Em palavras simples</strong><p>'+esc(plainGuideForSection(s.id)[0])+'</p><small><strong>Exemplo:</strong> '+esc(plainGuideForSection(s.id)[1])+'</small></aside>':'')+(accessibleSection(s)||s.paragraphs).map(p=>'<p>'+esc(p)+'</p>').join('')+(accessibleSection(s)?'<details class="course-insight lesson-more-theory"><summary><span class="course-insight-symbol" aria-hidden="true">✧</span><span><strong>Para saber mais: explicação aprofundada</strong><small>Se quiser, leia o texto com mais detalhes dos autores e símbolos.</small></span><span class="course-insight-toggle" aria-hidden="true">+</span></summary><div class="lesson-more-theory-text">'+s.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div></details>':'')+'<aside class="lesson-principle"><strong>Para guardar</strong><p>'+esc(s.principle)+'</p></aside></section>';
 const citation=b=>'<p><strong>'+esc(b.author)+' — <em>'+esc(b.work)+'</em>.</strong> '+esc(b.where)+' '+esc(b.role)+'</p>';
 export function fullLessonPage(){
  const f=cards[0];
