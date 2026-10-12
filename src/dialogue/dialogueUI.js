@@ -8,6 +8,7 @@ import {
 
 const cardBySlug=new Map(cards.map(c=>[c.slug,c]));
 let saveNotice='';
+let justSolved=null;
 const getState=()=>{try{return loadDialogue(localStorage)}catch{return {answers:{},notes:{}}}};
 function save(state){
  try{if(!storeDialogue(localStorage,state))saveNotice='Não foi possível salvar os dados neste navegador.';else saveNotice='';}
@@ -18,7 +19,7 @@ const chapterNumber=id=>dialogueChapters.findIndex(c=>c.id===id)+1;
 export function dialogueHubPage(){
  const state=getState(),progress=dialogueProgress(state);
  return '<div class="container dialogue-page"><header class="page-intro"><div class="breadcrumb"><a href="#/praticas">Práticas</a> / Cartas em Diálogo</div><span class="eyebrow">SPRINT 10 · OFICINA DE COMPARAÇÃO</span><h1>Cartas em<br><em>diálogo.</em></h1><p class="lead">Uma carta pode falar de começar. Outra, de organizar um projeto. Quando colocamos as duas lado a lado, aprendemos a perceber diferenças e relações.</p><p>Você verá duas imagens, uma explicação simples e uma situação do cotidiano. Não há combinações mágicas a decorar nem respostas sobre o futuro.</p></header>'
- +'<section class="dialogue-overview"><div><span class="eyebrow">SEU PROGRESSO</span><strong>'+progress.done+' <small>de '+progress.total+'</small></strong><span>comparações concluídas</span></div><div><div class="dialogue-meter" role="progressbar" aria-label="Comparações concluídas" aria-valuemin="0" aria-valuemax="'+progress.total+'" aria-valuenow="'+progress.done+'"><span style="width:"'+Math.round(progress.done/progress.total*100)+'%"></span></div><p>'+(progress.finished?'Você concluiu os sete desafios. Volte para rever os contrastes e suas anotações.':'Pode escolher qualquer capítulo, mesmo que ainda não tenha estudado todas as cartas. As dicas não impedem a conclusão.')+'</p><a class="button" href="'+chapterLink(progress.chapters.find(x=>!x.finished)?.id||'portal')+'"> '+(progress.finished?'Rever comparações':'Começar ou continuar')+' →</a></div></section>'
+ +'<section class="dialogue-overview"><div><span class="eyebrow">SEU PROGRESSO</span><strong>'+progress.done+' <small>de '+progress.total+'</small></strong><span>comparações concluídas</span></div><div><div class="dialogue-meter" role="progressbar" aria-label="Comparações concluídas" aria-valuemin="0" aria-valuemax="'+progress.total+'" aria-valuenow="'+progress.done+'"><span style="width:'+Math.round(progress.done/progress.total*100)+'%"></span></div><p>'+(progress.finished?'Você concluiu os sete desafios. Volte para rever os contrastes e suas anotações.':'Pode escolher qualquer capítulo, mesmo que ainda não tenha estudado todas as cartas. As dicas não impedem a conclusão.')+'</p><a class="button" href="'+chapterLink(progress.chapters.find(x=>!x.finished)?.id||'portal')+'"> '+(progress.finished?'Rever comparações':'Começar ou continuar')+' →</a></div></section>'
  +'<div class="dialogue-guide"><h2>Como comparar duas cartas?</h2><div class="dialogue-guide-grid"><article><span>01</span><strong>Olhe os desenhos</strong><p>Descreva o que aparece em cada imagem, sem imaginar acontecimentos futuros.</p></article><article><span>02</span><strong>Encontre a diferença</strong><p>Entenda o que cada carta costuma representar. Os sentidos podem se complementar.</p></article><article><span>03</span><strong>Use numa situação</strong><p>Escolha uma explicação que conecte os dois significados a um exemplo real.</p></article></div></div>'
  +'<section class="dialogue-chapters" aria-label="Revisões dos capítulos">'+dialogueChapters.map((ch,i)=>{
    const p=progress.chapters[i],sample=dialogueTasks[ch.taskIds[0]];
@@ -41,7 +42,7 @@ function chapterFinished(ch,state,progress){
  +'<div class="dialogue-conclusion-actions">'+(next?'<a class="button" href="'+chapterLink(next.id)+'">Ir para a próxima revisão →</a>':'<a class="button" href="#/jornada">Revisar a Jornada dos 22 Maiores →</a>')+'<a class="button secondary" href="#/praticas/cartas-em-dialogo">Ver as quatro revisões</a></div></section>';
 }
 function activeTask(ch,state,progress){
- const id=nextDialogueTask(state,ch.id);
+ const id=justSolved&&ch.taskIds.includes(justSolved)?justSolved:nextDialogueTask(state,ch.id);
  if(!id)return chapterFinished(ch,state,progress);
  const task=dialogueTasks[id],taskIdx=ch.taskIds.indexOf(id);
  const ans=state.answers[id]||{attempts:[],hintUsed:false};
@@ -56,12 +57,13 @@ function activeTask(ch,state,progress){
   const tried=ans.attempts.includes(i);
   return '<button type="button" data-dialogue-choice="'+i+'" '+(explained||tried?'disabled':'')+' class="'+(tried?(i===task.answer?'correct':'wrong'):'')+'"><span>'+String(i+1).padStart(2,'0')+'</span><span>'+e(opt.text)+'</span></button>';
  }).join('')+'</div>'+feedback(task,ans)
- +(ans.hintUsed?'<aside class="dialogue-hint"><strong>Dica</strong><p>'+e(task.hint)+'</p></aside>':'<button type="button" class="dialogue-hint-button" data-dialogue-hint>Preciso de uma dica →</button>')
+ +(explained?'<div class="dialogue-next-action"><button type="button" class="button" data-dialogue-next>'+(nextDialogueTask(state,ch.id)?'Próximo desafio':'Ver o resumo do capítulo')+' →</button></div>':ans.hintUsed?'<aside class="dialogue-hint"><strong>Dica</strong><p>'+e(task.hint)+'</p></aside>':'<button type="button" class="dialogue-hint-button" data-dialogue-hint>Preciso de uma dica →</button>')
  +'</div></section>';
 }
 export function dialogueChapterPage(id){
  const ch=findDialogueChapter(id);
  if(!ch)return '';
+ justSolved=null;
  const state=getState(),progress=dialogueProgress(state);
  const cp=progress.chapters.find(x=>x.id===id);
  return '<div class="container dialogue-page dialogue-single"><div class="dialogue-back"><a href="#/praticas/cartas-em-dialogo">← Voltar às revisões</a><span>'+cp.done+' de '+cp.total+' desafios deste capítulo</span></div><header class="dialogue-single-header"><span class="eyebrow">CARTAS EM DIÁLOGO · REVISÃO '+String(chapterNumber(id)).padStart(2,'0')+'</span><h1>'+e(ch.title)+'</h1><p>'+e(ch.intro)+'</p></header><div id="dialogue-root" data-dialogue-chapter="'+e(id)+'">'+activeTask(ch,state,progress)+'</div><footer class="dialogue-endnote"><p>Comparar cartas não permite descobrir acontecimentos futuros. O objetivo é explicar a ligação entre duas imagens e uma situação com clareza.</p><a href="#/jornada">Retomar a Jornada dos Maiores →</a></footer>'+(saveNotice?'<p role="status">'+e(saveNotice)+'</p>':'')+'</div>';
@@ -75,13 +77,15 @@ function rerender(){
  root.querySelector('[data-dialogue-focus]')?.focus?.({preventScroll:true});
 }
 export function handleDialogueClick(target){
- const btn=target?.closest?.('[data-dialogue-choice],[data-dialogue-hint]');
+ const btn=target?.closest?.('[data-dialogue-choice],[data-dialogue-hint],[data-dialogue-next]');
  if(!btn)return false;
  const root=document.getElementById('dialogue-root');
  if(!root)return false;
+ if(btn.hasAttribute('data-dialogue-next')){justSolved=null;rerender();return true;}
  const chapterId=root.dataset.dialogueChapter,state=getState(),taskId=nextDialogueTask(state,chapterId);
  if(!taskId)return false;
  const updated=btn.hasAttribute('data-dialogue-hint')?hintDialogue(state,chapterId,taskId):chooseDialogue(state,chapterId,taskId,Number(btn.dataset.dialogueChoice));
+ if(btn.hasAttribute('data-dialogue-choice')&&updated.answers[taskId]?.attempts.includes(dialogueTasks[taskId].answer))justSolved=taskId;
  save(updated);
  rerender();
  return true;
