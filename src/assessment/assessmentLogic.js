@@ -80,7 +80,9 @@ export function nextAssessment(raw){
 export function saveAssessmentWriting(raw,value){
  const s=normalizeAssessment(raw);
  if(s.phase!=='writing')return s;
- return {...s,writing:String(value).slice(0,MAX_WRITING),sampleRevealed:false,checks:[]};
+ const writing=String(value).slice(0,MAX_WRITING);
+ const enough=writing.trim().length>=45;
+ return {...s,writing,sampleRevealed:enough&&s.sampleRevealed,checks:enough?s.checks:[]};
 }
 export function showAssessmentExample(raw){
  const s=normalizeAssessment(raw);
