@@ -65,6 +65,7 @@ function progress(lesson,step){
 function choice(activity,lesson,step){
  const answered=selectedChoice!==null;
  const chosen=activity.options[selectedChoice];
+ const help=beginnerExercises.course[lesson.slug]?.[step];
  return '<div class="course-quiz"><span class="eyebrow">'+e(activity.title)+'</span><h3>'+e(activity.question)+'</h3>'+(help?learningScaffold(help):'')+'<div class="course-quiz-answers" role="group" aria-label="Alternativas">'+activity.options.map((o,i)=>'<button type="button" data-course-choice="'+i+'" '+(answered?'disabled':'')+' class="'+(selectedChoice===i?(o.right?'correct':'incorrect'):'')+'"><span class="course-quiz-index">'+String(i+1).padStart(2,'0')+'</span><span>'+e(o.text)+'</span></button>').join('')+'</div>'
  +(chosen?'<div class="course-feedback '+(chosen.right?'correct':'incorrect')+'" role="status"><strong>'+(chosen.right?'Você construiu uma relação consistente.':'Vamos olhar novamente.')+'</strong><p>'+e(chosen.why)+'</p></div><div class="course-quiz-actions"><button type="button" class="button '+(chosen.right?'':'secondary')+'" data-course-'+(chosen.right?'next':'retry')+'>'+(chosen.right?'Continuar →':'Tentar outra resposta')+'</button></div>':'')+'</div>';
 }
