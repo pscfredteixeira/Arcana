@@ -1,0 +1,115 @@
+/* ARCANA — Avaliação formativa, mobile-first */
+.assessment-page{max-width:1160px}
+.assessment-page-heading{padding-bottom:30px}
+.assessment-page-heading h1 em{color:var(--wine);font-weight:400}
+.assessment-privacy{font-size:.8rem;color:var(--muted);line-height:1.8;border-top:1px solid var(--line);padding:22px 0 75px}
+.assessment-page #assessment-root{scroll-margin-top:20px}
+.assessment-welcome{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,.65fr);gap:clamp(20px,4vw,55px);padding:clamp(22px,4vw,48px);background:var(--paper-deep);border:1px solid #ccb6a7}
+.assessment-welcome h2,.assessment-report>h2,.assessment-transfer-head h2{font-family:var(--serif);font-size:clamp(2rem,4.8vw,3.3rem);font-weight:400;line-height:1.13;letter-spacing:-.02em;color:var(--burgundy);margin:14px 0 18px}
+.assessment-welcome-copy>p{font-size:.97rem;line-height:1.83;color:#57473e;max-width:580px}
+.assessment-overview{display:grid;gap:12px;margin:25px 0}
+.assessment-overview>div{display:flex;align-items:center;gap:17px;border-top:1px solid #c9b5a7;padding:11px 0}
+.assessment-overview strong{font:400 1.65rem var(--serif);color:var(--wine)}
+.assessment-overview span{font-size:.91rem;line-height:1.55;color:#544a42}
+.assessment-fine{font-size:.8rem!important;line-height:1.7!important}
+.assessment-welcome-art{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px}
+.assessment-welcome-art .assessment-card-art{max-width:260px;width:100%}
+.assessment-welcome-art>span{font:italic 1.2rem var(--serif);color:#725a51;text-align:center}
+.assessment-card-art{width:100%;max-width:290px;padding:11px;background:#e7d6c3;border:1px solid #b8a089;box-shadow:0 12px 25px #5b453019}
+.assessment-card-art .card-image-shell{width:100%;height:auto;aspect-ratio:70/120}
+.assessment-card-art .card-image-shell img{width:100%;height:100%;object-fit:contain}
+.assessment-progress{display:flex;align-items:center;gap:15px;padding:15px 0 20px}
+.assessment-progress>span{font-size:.79rem;font-weight:700;color:var(--burgundy);white-space:nowrap}
+.assessment-progress>div{flex:1;background:#e4d7cc;height:6px;overflow:hidden;border-radius:5px}
+.assessment-progress>div>span{height:100%;display:block;background:#823f48;transition:width .3s ease}
+.assessment-question,.assessment-transfer,.assessment-report{padding:clamp(18px,3.3vw,35px);background:#fbf7ef;border:1px solid #d4c3b5}
+.assessment-question-layout{display:grid;grid-template-columns:minmax(170px,.65fr) minmax(0,1.5fr);gap:clamp(20px,4vw,48px);align-items:start}
+.assessment-question-art{display:grid;justify-items:center;gap:12px}
+.assessment-question-art>span,.assessment-transfer-art>strong{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--burgundy);text-align:center}
+.assessment-question-main h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.38rem,2.9vw,2rem);line-height:1.38;color:#512c31;margin:16px 0 12px}
+.assessment-assist-text{font-size:.88rem;line-height:1.65;color:#625349}
+.assessment-options{display:grid;gap:10px;margin:20px 0 14px}
+.assessment-options button{display:grid;grid-template-columns:38px 1fr;align-items:start;gap:14px;text-align:left;border:1px solid #cab4a2;background:#f5eadf;padding:16px 17px;min-height:67px;color:#4e3f37;cursor:pointer;font:inherit;font-size:.92rem;line-height:1.58;border-radius:4px}
+.assessment-options button:not(:disabled):hover,.assessment-options button:not(:disabled):focus-visible{border-color:#8e5354;background:#eee0d1}
+.assessment-options button>span:first-child{font-family:var(--serif);color:#935e5a;font-size:1.45rem;line-height:1.1}
+.assessment-options button:disabled:not(.selected-correct):not(.selected-wrong){opacity:.54;cursor:default}
+.assessment-options button.selected-correct{border:2px solid #73886d;background:#e8f0e2}
+.assessment-options button.selected-wrong{border:2px solid #af6b60;background:#f6e7e3}
+.assessment-feedback{padding:17px 19px;border-left:4px solid #9b625a;background:#f3e4dc;margin:15px 0}
+.assessment-feedback.is-success{border-color:#6e8662;background:#edf3e7}
+.assessment-feedback strong{font-size:.93rem;color:#5c3437}
+.assessment-feedback p{font-size:.87rem;line-height:1.7;margin:7px 0}
+.assessment-hint-button{padding:11px 0;min-height:48px;border:0;background:transparent;color:var(--wine);font:inherit;font-weight:700;font-size:.87rem;text-decoration:underline;text-underline-offset:4px;cursor:pointer;text-align:left}
+.assessment-hint{background:#f2e7da;border-left:3px solid #98734f;padding:14px 17px;margin:16px 0;color:#544034}
+.assessment-hint p{line-height:1.7;font-size:.87rem;margin:6px 0}
+.assessment-next{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;margin-top:19px}
+.assessment-result-pill{display:inline-block;padding:6px 11px;border:1px solid #af9785;color:#624d42;background:#efe6dc;border-radius:30px;font-size:.75rem;font-weight:700}
+.assessment-result-pill.sozinho{background:#e1eddf;color:#2e5733;border-color:#99b39b}
+.assessment-result-pill.com-apoio{background:#eee6d3;color:#70562d;border-color:#bba478}
+.assessment-result-pill.revisar{background:#f2e1df;color:#773b3a;border-color:#c4948b}
+.assessment-transfer-head{max-width:780px}
+.assessment-transfer-head>p{line-height:1.7;color:#594c42}
+.assessment-transfer-grid{display:grid;grid-template-columns:minmax(175px,.62fr) minmax(0,1.55fr);gap:clamp(20px,4vw,48px);margin-top:20px}
+.assessment-transfer-art{display:flex;flex-direction:column;align-items:center;gap:13px}
+.assessment-transfer-art a{font-size:.83rem;color:var(--wine);text-align:center}
+.assessment-transfer-task>p{line-height:1.73;color:#5c4c42;margin:10px 0 16px}
+.assessment-transfer-task>h3{font-family:var(--serif);color:var(--burgundy);font-weight:500;font-size:clamp(1.36rem,2.4vw,1.75rem);line-height:1.37}
+.assessment-transfer-task>label[for]{display:block;font-weight:700;font-size:.88rem;color:#613c40;margin:16px 0 9px}
+.assessment-transfer-task textarea{width:100%;min-height:180px;resize:vertical;border:1px solid #ac8d7c;border-radius:5px;background:#fffdfa;color:#49352f;padding:15px;line-height:1.7;font:inherit;font-size:1rem}
+.assessment-writing-count{font-size:.78rem!important;color:#78665c!important}
+.assessment-model{border:1px solid #b8a089;border-left:4px solid #8b6552;background:#f0e4d7;padding:19px;margin:21px 0}
+.assessment-model strong{color:#623942}
+.assessment-model p{font-size:.91rem;line-height:1.78;color:#5b4a3e}
+.assessment-rubric{margin:20px 0 25px}
+.assessment-rubric>strong{font-family:var(--serif);font-size:1.4rem;color:#6e3c41}
+.assessment-rubric>p{font-size:.86rem;line-height:1.7;color:#5c4f46}
+.assessment-check{display:flex;align-items:start;gap:14px;padding:14px 12px;border:1px solid #d2bfb0;background:#f4ecdf;margin:9px 0;font-size:.87rem;line-height:1.6;color:#533d38;cursor:pointer}
+.assessment-check input{accent-color:#773b43;width:21px;height:21px;flex:0 0 21px;margin:2px 0 0}
+.assessment-report-lede{font-family:var(--serif);font-size:1.3rem;color:#5c4940;line-height:1.6}
+.assessment-report-numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 35px}
+.assessment-report-numbers>div{background:#f0e4d8;padding:20px;border-top:3px solid #995d58;display:flex;flex-direction:column;gap:9px}
+.assessment-report-numbers strong{font:400 clamp(1.75rem,3vw,2.65rem) var(--serif);color:#632f36}
+.assessment-report-numbers span{font-size:.77rem;line-height:1.62;color:#66574d}
+.assessment-report h3{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,1.9rem);font-weight:500;color:#6a333d;margin:25px 0 18px}
+.assessment-skill-list{display:grid;gap:10px}
+.assessment-skill-list article{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 19px;background:#f4eade;border:1px solid #d5c0ae}
+.assessment-skill-list article>div{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.assessment-skill-list article strong{font-size:.86rem;color:#4e3c34}
+.assessment-skill-list a,.assessment-writing-report a{color:var(--wine);font-size:.83rem;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.assessment-writing-report{border:1px solid #c8af9b;background:#f3e8dc;padding:22px;margin:30px 0}
+.assessment-writing-report blockquote{white-space:pre-wrap;border-left:3px solid #a87b69;padding:14px 19px;background:#fcf7ef;font-size:.89rem;line-height:1.75;overflow-wrap:anywhere;margin:15px 0}
+.assessment-writing-report p{line-height:1.75;font-size:.88rem}
+.assessment-report-end{padding:23px 0;border-top:1px solid #d3bca9}
+.assessment-report-end p{line-height:1.75;color:#594a41}
+.assessment-report-actions{display:flex;flex-wrap:wrap;gap:11px;align-items:center}
+.assessment-reset-confirm{margin-top:18px;border:2px solid #8f5960;padding:20px;background:#f4e4da}
+.assessment-reset-confirm p{font-size:.9rem;line-height:1.7}
+.assessment-reset-confirm .button{margin-right:9px;margin-top:8px}
+.assessment-storage-note{font-size:.86rem;background:#f4e4da;padding:13px;margin:12px 0}
+@media(max-width:750px){
+ .assessment-welcome,.assessment-question-layout,.assessment-transfer-grid{grid-template-columns:1fr}
+ .assessment-welcome-art{display:none}
+ .assessment-question-art{display:grid;grid-template-columns:105px 1fr;justify-items:start;align-items:center}
+ .assessment-question-art .assessment-card-art{max-width:105px;padding:5px}
+ .assessment-question-art>span{font-size:1.2rem;text-align:left}
+ .assessment-transfer-art{display:grid;grid-template-columns:120px 1fr;align-items:center;justify-items:start}
+ .assessment-transfer-art .assessment-card-art{max-width:120px;padding:6px;grid-row:span 2}
+ .assessment-transfer-art>strong{font-size:1.2rem}
+ .assessment-transfer-art>a{text-align:left}
+ .assessment-question,.assessment-transfer,.assessment-report{padding:18px}
+ .assessment-options button{min-height:65px}
+ .assessment-report-numbers{grid-template-columns:1fr;gap:8px}
+ .assessment-report-numbers>div{padding:13px 18px}
+ .assessment-report-numbers strong{font-size:2rem}
+ .assessment-skill-list article{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:420px){
+ .assessment-question-art{grid-template-columns:85px 1fr}
+ .assessment-question-art .assessment-card-art{max-width:85px}
+ .assessment-transfer-art{grid-template-columns:105px 1fr}
+ .assessment-transfer-art .assessment-card-art{max-width:105px}
+ .assessment-options button{grid-template-columns:25px 1fr;gap:11px;padding:14px 13px}
+ .assessment-options button>span:first-child{font-size:1.22rem}
+ .assessment-next .button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.assessment-progress>div>span{transition:none}}
