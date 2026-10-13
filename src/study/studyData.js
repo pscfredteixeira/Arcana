@@ -1,3 +1,4 @@
+import {TRIO_KEY,loadTrio,normalizeTrio,trioProgress} from '../trios/trioLogic.js';
 import {DIALOGUE_KEY,loadDialogue,normalizeDialogue,dialogueProgress} from '../dialogue/dialogueLogic.js';
 import {MAJOR_JOURNEY_KEY,loadMajorJourney,normalizeMajorJourney,majorProgress} from '../journey/majorJourneyLogic.js';
 import {ASSESSMENT_KEY,loadAssessment,normalizeAssessment,resultsAssessment} from '../assessment/assessmentLogic.js';
@@ -31,7 +32,8 @@ export const ALLOWED_KEYS=Object.freeze([
   PATHS_KEY,
   ASSESSMENT_KEY,
   MAJOR_JOURNEY_KEY,
-  DIALOGUE_KEY
+  DIALOGUE_KEY,
+  TRIO_KEY
 ]);
 const KEY_LIMITS={
  'arcana-font':20,
@@ -47,7 +49,8 @@ const KEY_LIMITS={
  [PATHS_KEY]:2000,
  [ASSESSMENT_KEY]:9500,
  [MAJOR_JOURNEY_KEY]:18000,
- [DIALOGUE_KEY]:8000
+ [DIALOGUE_KEY]:8000,
+ [TRIO_KEY]:15000
 };
 const slugs=cards.map(c=>c.slug);
 const plainObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
@@ -99,7 +102,13 @@ export function readStudySummary(storage){
  const resultAssessment=resultsAssessment(assessment);
  const majorJourney=majorProgress(loadMajorJourney(storage));
  const dialogue=dialogueProgress(loadDialogue(storage));
+ const trios=trioProgress(loadTrio(storage));
  return {
+  triosCompleted:trios.completed,
+  triosTotal:trios.total,
+  triosIndependent:trios.independent,
+  triosFinished:trios.finished,
+  triosStarted:trios.started,
   dialogueCompleted:dialogue.done,
   dialogueTotal:dialogue.total,
   dialogueFinished:dialogue.finished,
@@ -161,6 +170,11 @@ export function validateAndNormalizeKey(key,raw){
   const v=safeParse(raw);
   if(!plainObject(v)||!['choose','inspect','connect','answer','finished'].includes(v.phase))throw Error('Ateliê inválido.');
   return JSON.stringify(normalizeAtelier(v));
+ }
+ if(key===TRIO_KEY){
+  const v=safeParse(raw);
+  if(!plainObject(v)||!plainObject(v.lessons))throw Error('Progresso de Três Cartas inválido.');
+  return JSON.stringify(normalizeTrio(v));
  }
  if(key===DIALOGUE_KEY){
   const v=safeParse(raw);
