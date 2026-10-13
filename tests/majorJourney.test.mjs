@@ -130,5 +130,5 @@ test('o PWA guarda a jornada e o backup antigo continua compatível',()=>{
  assert.equal(Object.hasOwn(old,MAJOR_JOURNEY_KEY),false);
  const sw=read('sw.js');
  for(const file of ['majorJourneyData.js','majorJourneyLogic.js','majorJourneyUI.js','majorJourney.css'])assert.ok(sw.includes(file));
- assert.match(sw,/arcana-app-shell-v10/);
+ assert.match(sw,/arcana-app-shell-v11/);
 });
