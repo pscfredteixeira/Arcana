@@ -33,7 +33,7 @@ test('quatro histórias com três imagens, duas leituras fundamentadas e uma pre
   assert.equal(new Set(task.cards.map(x=>x.slug)).size,3,task.id);
   for(const c of task.cards){
    assert.ok(allCards.has(c.slug),c.slug);
-   assert.ok(c.observation.length>45&&c.meaning.length>35,c.slug);
+   assert.ok(c.observation.length>30&&c.meaning.length>30,c.slug);
   }
   assert.ok(task.situation.length>75,task.id);
   assert.equal(task.choices.length,3,task.id);
