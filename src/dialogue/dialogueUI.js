@@ -39,7 +39,7 @@ function chapterFinished(ch,state,progress){
  +'<div class="dialogue-conclusion-stats"><strong>'+progress.done+' / '+progress.total+'</strong><span>comparações concluídas no total</span></div>'
  +'<div class="dialogue-takeaways">'+ch.taskIds.map(id=>'<article><strong>'+e(dialogueTasks[id].title)+'</strong><p>'+e(dialogueTasks[id].relation)+'</p></article>').join('')+'</div>'
  +'<label for="dialogue-note">O que aprendi sobre a relação entre essas cartas? (opcional)</label><textarea id="dialogue-note" data-dialogue-note="'+e(ch.id)+'" maxlength="'+DIALOGUE_NOTE_LIMIT+'" rows="4" placeholder="Explique a diferença com suas palavras, sem decorar uma frase.">'+e(state.notes[ch.id]||'')+'</textarea><p class="dialogue-save-note">Salvo somente neste navegador. Também entra no backup de Meu estudo.</p>'
- +'<div class="dialogue-conclusion-actions">'+(next?'<a class="button" href="'+chapterLink(next.id)+'">Ir para a próxima revisão →</a>':'<a class="button" href="#/jornada">Revisar a Jornada dos 22 Maiores →</a>')+'<a class="button secondary" href="#/praticas/cartas-em-dialogo">Ver as quatro revisões</a></div></section>';
+ +'<div class="dialogue-conclusion-actions">'+(next?'<a class="button" href="'+chapterLink(next.id)+'">Ir para a próxima revisão →</a>':'<a class="button" href="#/praticas/tres-cartas">Avançar para três cartas →</a>')+'<a class="button secondary" href="#/praticas/cartas-em-dialogo">Ver as quatro revisões</a></div></section>';
 }
 function activeTask(ch,state,progress){
  const id=justSolved&&ch.taskIds.includes(justSolved)?justSolved:nextDialogueTask(state,ch.id);
