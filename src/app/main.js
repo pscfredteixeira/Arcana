@@ -1,3 +1,4 @@
+import {trioHubPage,trioScenarioPage,handleTrioClick,handleTrioInput,handleTrioChange} from '../trios/trioUI.js';
 import {dialogueHubPage,dialogueChapterPage,handleDialogueClick,handleDialogueInput} from '../dialogue/dialogueUI.js';
 import {majorJourneyHub,majorStationPage,handleMajorJourneyClick,handleMajorJourneyInput} from '../journey/majorJourneyUI.js';
 import {assessmentPage,renderAssessment,handleAssessmentClick,handleAssessmentInput,handleAssessmentChange} from '../assessment/assessmentUI.js';
@@ -27,6 +28,8 @@ const getRoute=()=>{
   if(path==='/aula/primeiro-olhar')return {active:'learn',content:fullLessonPage(),title:'A arte de olhar'};
   if(path.startsWith('/aula/')){const lesson=lessonBySlug(path.slice(6));if(lesson)return {active:'learn',content:expandedLessonPage(lesson),title:lesson.title};}
   if(path==='/atlas')return {active:'atlas',content:atlasPageExpanded(),title:'Atlas'};
+  if(path==='/praticas/tres-cartas')return {active:'practice',content:trioHubPage(),title:'Três Cartas, Uma História'};
+  if(path.startsWith('/praticas/tres-cartas/')){const content=trioScenarioPage(path.slice('/praticas/tres-cartas/'.length));if(content)return {active:'practice',content,title:'Três Cartas, Uma História'};}
   if(path==='/praticas/cartas-em-dialogo')return {active:'practice',content:dialogueHubPage(),title:'Cartas em Diálogo'};
   if(path.startsWith('/praticas/cartas-em-dialogo/')){const content=dialogueChapterPage(path.slice('/praticas/cartas-em-dialogo/'.length));if(content)return {active:'practice',content,title:'Revisão de capítulo'};}
   if(path==='/praticas')return {active:'practice',content:practicesHub(),title:'Práticas'};
@@ -85,12 +88,15 @@ app.addEventListener('input',event=>{
  handleAssessmentInput(event.target);
  handleMajorJourneyInput(event.target);
  handleDialogueInput(event.target);
+ handleTrioInput(event.target);
 });
 app.addEventListener('change',event=>{
+  handleTrioChange(event.target);
   handleAssessmentChange(event.target);
  if(event.target?.id==='study-import-file')void handleStudyFile(event.target);
 });
 app.addEventListener('click',event=>{
+  if(handleTrioClick(event.target))return;
   if(handleDialogueClick(event.target))return;
   if(handleMajorJourneyClick(event.target))return;
   if(handleAssessmentClick(event.target))return;
