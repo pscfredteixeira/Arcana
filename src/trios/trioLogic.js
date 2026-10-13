@@ -60,7 +60,7 @@ export function toggleTrioChoice(raw,id,index){
  const s=normalizeTrio(raw),task=trioById(id);
  if(!task||!Number.isInteger(index)||index<0||index>=task.choices.length||isSolved(s,id))return s;
  const current=readLesson(s,id);
- let chosen=current.selected.includes(index)?current.selected.filter(x=>x!==index):current.selected.length>=2?[current.selected[1],index]:[...current.selected,index];
+ let chosen=current.selected.includes(index)?current.selected.filter(x=>x!==index):current.selected.length>=2?current.selected:[...current.selected,index];
  return replaceLesson(s,id,{...current,selected:sortedPair(chosen)});
 }
 export function useTrioHint(raw,id){
@@ -73,7 +73,7 @@ export function submitTrioChoices(raw,id){
  const s=normalizeTrio(raw),task=trioById(id);
  if(!task||isSolved(s,id))return s;
  const current=readLesson(s,id);
- if(!validPair(task,current.selected)||current.submissions.length>=6)return s;
+ if(!validPair(task,current.selected)||current.submissions.length>=6||current.submissions.some(pair=>pair.every((n,i)=>n===current.selected[i])))return s;
  // Keep incorrect submissions visible for meaningful feedback and count support.
  return replaceLesson(s,id,{...current,submissions:[...current.submissions,sortedPair(current.selected)]});
 }
