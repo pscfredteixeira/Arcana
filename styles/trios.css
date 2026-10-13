@@ -1,0 +1,96 @@
+/* ARCANA — Sprint 11: Três Cartas, Uma História */
+.trio-page{max-width:1140px;padding-bottom:55px}
+.trio-page .page-intro h1 em{color:var(--wine);font-weight:400}
+.trio-page .page-intro .lead{max-width:790px}
+.trio-intro{display:grid;grid-template-columns:minmax(150px,.65fr) minmax(0,1.5fr);gap:25px;align-items:center;background:#efe2d3;border:1px solid #c9ad99;padding:clamp(20px,4vw,40px);margin:20px 0 40px}
+.trio-intro>div:first-child{display:flex;flex-direction:column;gap:8px}
+.trio-intro>div:first-child>strong{font:400 3.5rem/1 var(--serif);color:var(--burgundy)}
+.trio-intro>div:first-child small{font-size:1.3rem;color:#9c7667}
+.trio-intro p,.trio-context>p{color:#5b4b41;font-size:.95rem;line-height:1.8}
+.trio-intro .button{display:inline-block;margin-top:7px}
+.trio-scenarios>h2{font:400 2.15rem var(--serif);color:var(--burgundy)}
+.trio-scenario{background:#f8f0e6;border:1px solid #d4bead;padding:clamp(18px,3vw,28px);margin:18px 0}
+.trio-scenario-head{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #d7c0ac;padding-bottom:14px}
+.trio-state{font-size:.77rem;color:#6b5b4f}
+.trio-scenario h3{font:400 clamp(1.5rem,3vw,2.05rem) var(--serif);margin:16px 0 10px;color:var(--burgundy)}
+.trio-scenario>p{max-width:760px;color:#625146;line-height:1.7;font-size:.92rem}
+.trio-scenario>.button{margin-top:17px}
+.trio-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.trio-scenario .trio-cards{margin:22px 0}
+.trio-card{background:#f0e2d4;border:1px solid #d3bba7;padding:12px;min-width:0}
+.trio-card-art{width:min(100%,168px);margin:0 auto 12px}
+.trio-card-art .card-image-shell{width:100%;aspect-ratio:70/120;height:auto}
+.trio-card-art img{width:100%;height:100%;object-fit:contain}
+.trio-card-copy h3{font:400 clamp(1.15rem,2.4vw,1.48rem) var(--serif);color:#713940;margin:7px 0 10px}
+.trio-card-copy p{font-size:.86rem;line-height:1.74;margin:10px 0;color:#59483f}
+.trio-card-copy p strong{color:#663d41}
+.trio-method,.trio-footer{font-size:.84rem;line-height:1.78;color:#675549;border-top:1px solid #cfb8a6;margin:30px 0;padding:20px 0}
+.trio-method strong{color:var(--burgundy)}
+.trio-back{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #d0bbaa;padding:15px 0;margin:10px 0 25px}
+.trio-back a{color:var(--wine);font-size:.85rem;font-weight:700}
+.trio-back>span{font-size:.8rem;color:#82675b}
+.trio-single-heading h1{font:400 clamp(2.1rem,4.8vw,3.4rem)/1.17 var(--serif);color:var(--burgundy);margin:12px 0}
+.trio-single-heading p{max-width:780px;line-height:1.78;font-size:1rem;color:#5f4e43}
+.trio-context{background:#faf4ec;border:1px solid #cdb6a2;padding:clamp(15px,3.4vw,30px);margin-top:25px}
+.trio-context .trio-cards{margin:19px 0 0}
+.trio-context .trio-card{padding:16px}
+.trio-activity{border:1px solid #cbb3a1;background:#f8eee2;padding:clamp(18px,3.5vw,34px);margin:23px 0}
+.trio-activity h2{font:400 clamp(1.6rem,3.4vw,2.4rem)/1.29 var(--serif);color:var(--burgundy);margin:14px 0}
+.trio-activity>p{color:#5e4d43;font-size:.94rem;line-height:1.76}
+.trio-options{display:grid;gap:10px;margin:20px 0 12px}
+.trio-options button{display:grid;grid-template-columns:35px 1fr;gap:14px;align-items:start;text-align:left;padding:17px;background:#fffbf5;border:1px solid #c9b29f;border-radius:4px;color:#4e3f36;font:inherit;line-height:1.6;font-size:.93rem;min-height:66px;cursor:pointer}
+.trio-options button:not(:disabled):hover,.trio-options button:not(:disabled):focus-visible{background:#f1e2d6;border-color:#854954}
+.trio-options button.is-selected{background:#e6ecdf;border:2px solid #74916d}
+.trio-options button .trio-option-mark{color:var(--wine);font:400 1.4rem var(--serif)}
+.trio-options button:disabled{cursor:default}
+.trio-choice-count{font-size:.8rem!important;color:#786055!important}
+.trio-feedback{margin:19px 0;padding:18px;border-left:4px solid #ae7168;background:#f1ddd6}
+.trio-feedback.is-good{background:#e7eee2;border-color:#80996b}
+.trio-feedback>strong{color:#6d3c42}
+.trio-feedback p{color:#55473e;font-size:.88rem;line-height:1.8}
+.trio-hint-button{display:block;background:transparent;border:0;color:var(--wine);padding:16px 2px;cursor:pointer;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.trio-hint{background:#ece2d5;border-left:3px solid #9b7c53;margin-top:17px;padding:17px}
+.trio-hint strong{color:#6b4442}
+.trio-hint p{color:#5c483e;font-size:.9rem;line-height:1.75;margin-bottom:0}
+.trio-activity>label{display:block;font-weight:700;color:#65383e;margin:19px 0 9px;font-size:.91rem}
+.trio-activity textarea{display:block;width:100%;min-height:177px;resize:vertical;font:inherit;line-height:1.7;font-size:1rem;border-radius:4px;border:1px solid #b79783;background:#fffcf6;padding:15px;color:#43362e}
+.trio-writing-length{font-size:.8rem!important;color:#7b695a!important}
+.trio-model{background:#e9e6d8;border-left:4px solid #8b9673;padding:18px;margin:21px 0}
+.trio-model strong{color:#526144}
+.trio-model p{font-size:.92rem;line-height:1.83;color:#4e5042}
+.trio-rubric{margin:19px 0}
+.trio-rubric h3,.trio-report h3{font:400 1.55rem var(--serif);color:#753f45;margin:17px 0 10px}
+.trio-rubric p{font-size:.89rem;line-height:1.7;color:#55473d}
+.trio-check{display:flex;align-items:start;gap:12px;border:1px solid #d4bdac;padding:15px;background:#fffbf4;margin:8px 0;cursor:pointer;line-height:1.6;font-size:.88rem;color:#55443c}
+.trio-check input{width:21px;height:21px;flex:0 0 21px;accent-color:#733b45;margin:2px 0 0}
+.trio-report .trio-selfresult{display:flex;align-items:center;gap:17px;background:#e8e9dc;padding:18px}
+.trio-selfresult strong{font:400 2rem var(--serif);color:#693b42}
+.trio-selfresult span{font-size:.85rem;color:#5b5447}
+.trio-report blockquote{white-space:pre-wrap;overflow-wrap:anywhere;border-left:4px solid #a67e66;background:#fffaf3;padding:16px;font-size:.93rem;line-height:1.8}
+.trio-report-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.trio-footer>div{display:flex;flex-wrap:wrap;gap:10px 22px}
+.trio-footer a{color:var(--wine);font-weight:700}
+.trio-practices-promo{margin-top:22px}
+@media(max-width:750px){
+ .trio-intro{grid-template-columns:1fr}
+ .trio-intro>div:first-child{display:grid;grid-template-columns:1fr auto}
+ .trio-intro>div:first-child strong{grid-row:1 / span 2;grid-column:2;font-size:2.9rem}
+ .trio-context .trio-cards{grid-template-columns:1fr}
+ .trio-context .trio-card{display:grid;grid-template-columns:105px minmax(0,1fr);gap:14px;align-items:start}
+ .trio-context .trio-card-art{width:100%;max-width:105px;margin:0}
+ .trio-context .trio-card-copy h3{font-size:1.42rem}
+ .trio-context .trio-card-copy p{font-size:.94rem}
+ .trio-report-actions .button{width:100%;text-align:center}
+ .trio-activity>.button{width:100%;text-align:center}
+ .trio-scenario .trio-card{padding:8px}
+ .trio-scenario .trio-card-copy h3{font-size:1.08rem}
+ .trio-scenario .trio-card-copy .eyebrow{font-size:.6rem}
+ .trio-scenario .trio-cards{gap:7px}
+}
+@media(max-width:390px){
+ .trio-context .trio-card{grid-template-columns:88px minmax(0,1fr);gap:11px}
+ .trio-context .trio-card-copy p{font-size:.89rem}
+ .trio-options button{grid-template-columns:26px 1fr;gap:10px;padding:14px}
+ .trio-intro>div:first-child strong{font-size:2.5rem}
+ .trio-scenario .trio-card-copy h3{font-size:1rem}
+}
