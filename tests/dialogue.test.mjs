@@ -116,7 +116,7 @@ test('a oficina aparece nas quatro áreas e fica no cache do iPhone',()=>{
  assert.match(read('src/journey/majorJourneyUI.js'),/journey-review-link/);
  assert.match(read('src/study/studyUI.js'),/Cartas em Diálogo/);
  assert.match(read('index.html'),/styles\/dialogue.css/);
- assert.match(read('sw.js'),/arcana-app-shell-v10/);
+ assert.match(read('sw.js'),/arcana-app-shell-v11/);
  for(const name of ['dialogueData.js','dialogueLogic.js','dialogueUI.js','dialogue.css'])assert.ok(read('sw.js').includes(name),name);
 });
 test('clicar no exercício mostra a explicação do erro e preserva o acerto antes de avançar',()=>{
