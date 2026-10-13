@@ -62,3 +62,9 @@ Disponível em `#/jornada`: o Louco e três grupos de sete cartas (I–VII, VIII
 Disponível em `#/praticas/cartas-em-dialogo`: sete exercícios de comparação em quatro revisões que correspondem aos capítulos da Jornada. Duas cartas lado a lado, exemplos cotidianos, feedback específico, dica opcional, síntese do capítulo e anotações. A oficina é independente do avanço na Jornada e seu progresso é armazenado localmente com backup. Ver [SPRINT10_REPORT.md](SPRINT10_REPORT.md).
 
 **Próxima etapa possível:** ampliar para trios de cartas e justificativas escritas, combinadas com revisão espaçada. O curso completo de quinze módulos continua em expansão.
+
+## Sprint 11 — Três Cartas, Uma História (13/10/2026)
+
+Disponível em `#/praticas/tres-cartas`: quatro situações do cotidiano, cada uma com três Arcanos Maiores Rider–Waite–Smith. O aluno observa as imagens, identifica **duas interpretações defensáveis**, explica por que uma terceira é inadequada, escreve uma leitura própria e compara seu raciocínio a um exemplo. Uma rubrica de três critérios orienta a autoavaliação da escrita, sem nota artificial. Respostas, progresso e anotações integram o backup de Meu estudo. Ver [SPRINT11_REPORT.md](SPRINT11_REPORT.md).
+
+**Percurso existente:** fundamentos → 22 Maiores → Cartas em Diálogo (dois Maiores) → Três Cartas, Uma História → avaliação e prática livre. O curso completo ainda precisa desenvolver os Menores, figuras da corte e módulos posteriores.
